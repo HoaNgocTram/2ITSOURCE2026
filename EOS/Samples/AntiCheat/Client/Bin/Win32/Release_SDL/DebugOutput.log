@@ -1,0 +1,120 @@
+[2025.10.01-07.01.05:929] [EOS SDK] Initializing ...
+[2025.10.01-07.01.05:946] [EOS SDK] Initialized. Setting Logging Callback ...
+[2025.10.01-07.01.05:946] [EOS SDK] Logging Callback Set
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOS: Default Network Status: EOS_NS_Online
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOS: [Boot] EOSSDK Version 1.18.0.4-45343210 booting at 2025-10-01T07:01:05.946Z using C
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOS: Encryption key length is 55; encryption keys must be 64 in length to work with data storage
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOSRTC: A background mode has been assigned. BackgroundMode=[LeaveRooms]
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOS: [Boot] EOSSDK Platform Configuration win32-dynamic-x86
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOS: [Boot] EOSSDK Platform Properties [OS=Windows/10.0.26100.5074.64bit, ClientId=xyza7891guWoBMPDSNQp8Ceio1GLqTX3, ProductId=a91729130eb949eaa22ef2e3bd7ea5cb, SandboxId=61afb5ef566148b0bfdda3bba8b80407, DeploymentId=df8f76f8a0714673bf45cda2cb81c7d9, ProductName=Gunz VN, ProductVersion=1.0, IsServer=false, Flags=EnableD3D9Overlay+EnableD3D10Overlay+EnableOpenGLOverlay]
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOSAnalytics: Start Session (User: ...)
+[2025.10.01-07.01.05:946] [EOS SDK] LogEOSOverlay: OverlayPath registry key found in HKLM
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Overlay library loaded, version ++EOSSDK+Release-Overlay-CL-41331449
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Beginning dxgi factory detour
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Factory detour complete
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Beginning swap chain detour
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Attempting to create swap chain using D3D11
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Successfully created swap chain using D3D11 with feature level b000
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Swapchain detour complete
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSOverlay: Overlay loaded and initialized
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSUI: Social Overlay: Configuring intent payload handlers for FSocialOverlayJavascript
+[2025.10.01-07.01.06:119] [EOS SDK] LogEOSUI: Hot key event ignored because there are no known users.
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSAntiCheat: [AntiCheatClient] Anti-cheat client not available. Verify that the game was started using the anti-cheat bootstrapper if you intend to use it.
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSRTC: RTCPlatform RTC has been bound to a game thread id: '31320'
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSRTC: RTCPlatform Initializing SharedLibRtcInstance
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSRTC: [Core] Initializing LibRTC...
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSRTC: RTCPlatform InitializeLibRtcSession
+[2025.10.01-07.01.06:129] [EOS SDK] LogEOSRTC: RTCPlatform Creating LibRTC session
+[2025.10.01-07.01.06:359] OpenGL Context Chosen: 3.1, Wanted: 3.1
+[2025.10.01-07.01.06:407] AssetDir: E:\DesperateSource\EOS\Samples\AntiCheat\Client\Bin\Win32\Release_SDL\../../../../../Shared/
+[2025.10.01-07.01.06:413] Can't get a handle to the Anti-Cheat Client Interface. Ensure the game was started via the Anti-Cheat bootstrapper and check DebugOutput.log for more details.
+[2025.10.01-07.01.06:414] [EOS SDK] Overlay Display Settings Updated: Visible(FALSE) ExclusiveInput(FALSE)
+[2025.10.01-07.01.06:414] [EOS SDK] LogEOS: Updating Platform SDK Config, Time: 0.283301
+[2025.10.01-07.01.06:418] [EOS SDK] LogEOSOverlay: Window subclass attached to 00151356
+[2025.10.01-07.01.06:418] [EOS SDK] LogEOSOverlay: Creating overlay widget manager
+[2025.10.01-07.01.06:524] [EOS SDK] LogEOSOverlay: Launching render process
+[2025.10.01-07.01.06:530] [EOS SDK] LogEOSOverlay: Overlay ready. Firing 3 OnReady handlers
+[2025.10.01-07.01.06:530] [EOS SDK] LogEOSOverlay: Overlay ready. Firing 0 OnReady handlers
+[2025.10.01-07.01.06:531] [EOS SDK] LogEOSOverlay: Tick thread starting...
+[2025.10.01-07.01.06:619] [EOS SDK] LogEOSOverlay: Enabling shared texture updates
+[2025.10.01-07.01.07:401] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished successful HTTP request for operation GetPlatformConfigRoute to service SDKConfig.
+[2025.10.01-07.01.07:417] [EOS SDK] LogEOS: SDK Config Platform Update Request Successful, Time: 1.269799
+[2025.10.01-07.01.07:418] [EOS SDK] LogEOSAnalytics: EOS SDK Analytics disabled for route [1].
+[2025.10.01-07.01.07:418] [EOS SDK] LogEOS: Updating Product SDK Config, Time: 1.286464
+[2025.10.01-07.01.08:170] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished successful HTTP request for operation TokenGrant to service EOSAuth.
+[2025.10.01-07.01.08:171] [EOS SDK] LogEOSConnect: ConnectClientAuthTask Success
+[2025.10.01-07.01.08:174] [EOS SDK] LogEOSAnalytics: Start Session (User: ...)
+[2025.10.01-07.01.08:468] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished successful HTTP request for operation GetProductConfigRoute to service SDKConfig.
+[2025.10.01-07.01.08:485] [EOS SDK] LogEOS: SDK Config Product Update Request Successful, Time: 2.337149
+[2025.10.01-07.01.08:486] [EOS SDK] LogEOS: SDK Config Data - Watermark: -227189215
+[2025.10.01-07.01.08:486] [EOS SDK] LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 2.337149, Update Interval: 359.102753
+[2025.10.01-07.01.08:817] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished successful HTTP request for operation SendBackendEvent to service Metrics.
+[2025.10.01-07.01.16:417] [EOS SDK] LogEOSRTC: TickTracker Tick is delayed. TimePeriod=[10.003282s]  TickIntervalThreshold=[0.100000s] MaxTickInterval=[0.436117s] MaxExecutionTime=[0.000018s] TicksCount=[574] ExpectedTicksCount=[1000]
+[2025.10.01-07.01.28:583] [EOS SDK] Logging In with Host: Host (e.g. 127.0.0.1:10000)
+[2025.10.01-07.01.28:616] [EOS SDK] LogHttp: 0813BED0: invalid HTTP response code received. URL: http://Host (e.g. 127.0.0.1:10000)/Credentials/exchange_code, HTTP code: 0, content length: 0, actual payload size: 0
+[2025.10.01-07.01.28:617] [EOS SDK] LogHttp: 0813BED0: request failed, libcurl error: 3 (URL using bad/illegal format or missing URL)
+[2025.10.01-07.01.28:617] [EOS SDK] LogHttp: 0813BED0: libcurl info message cache 0 (URL rejected: Malformed input to a URL function)
+[2025.10.01-07.01.28:617] [EOS SDK] LogHttp: 0813BED0: libcurl info message cache 1 (Closing connection)
+[2025.10.01-07.01.28:617] [EOS SDK] LogHttp: Retry exhausted on http://Host (e.g. 127.0.0.1:10000)/Credentials/exchange_code
+[2025.10.01-07.01.28:617] [EOS SDK] LogEOS: Failed to connect to the backend. ServiceName=[Internal:AuthTracker], OperationName=[Internal:GenerateUserAuthByDeveloperFlow], Url=[<Redacted>]
+[2025.10.01-07.01.28:617] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished failed HTTP request for operation Internal:GenerateUserAuthByDeveloperFlow to service Internal:AuthTracker.
+[2025.10.01-07.01.28:633] [EOS SDK] LogEOSAuth: Failed to get an exchange code from the dev auth tool. Result=[1]
+[2025.10.01-07.01.28:652] [EOS SDK] LogEOSAuth: UserAuthGenerated: Received EOS_NoConnection
+[2025.10.01-07.01.28:668] [EOS SDK] Login Complete - User ID: NULL
+[2025.10.01-07.01.28:669]  - Login Mode: 2
+[2025.10.01-07.01.28:669] [EOS SDK] Login Failed - Error Code: EOS_NoConnection
+[2025.10.01-07.01.35:699] [EOS SDK] Logging In with Account Portal
+[2025.10.01-07.01.35:699] [EOS SDK] LogEOSAuth: BeginDesktopCrossplayLogin: Desktop crossplay can be used with this login type
+[2025.10.01-07.01.35:699] [EOS SDK] LogEOS: FWindowsDesktopCrossplay::GetSessionStartupInfo: Environment variable EOS_SESSION_STARTUPINFO is not set
+[2025.10.01-07.01.35:699] [EOS SDK] LogEOSAuth: BeginDesktopCrossplayLogin: Desktop crossplay is not ready: EOS_DesktopCrossplay_ApplicationNotBootstrapped
+[2025.10.01-07.01.35:699] [EOS SDK] LogEOSAuth: BeginDesktopCrossplayLogin: Desktop crossplay is not required for login
+[2025.10.01-07.01.36:032] [EOS SDK] LogEOSHTTP: FEpicGamesPlatform::HttpRequestComplete: Finished successful HTTP request for operation InitiateDeviceFlowv2 to service OAuth.
+[2025.10.01-07.01.36:034] [EOS SDK] LogEOSAuth: GenerateUserAuthByDeviceCode: Received FUserAuthToken
+[2025.10.01-07.01.36:051] [EOS SDK] LogEOSAuth: UserAuthGenerated: Device auth to be continued at: <Redacted>
+[2025.10.01-07.01.36:051] [EOS SDK] LogEOSAuth: LaunchAccountPortalWithOverlay: Launching with overlay: <Redacted>
+[2025.10.01-07.01.36:051] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Formed overlay request: <Redacted>
+[2025.10.01-07.01.36:051] [EOS SDK] LogEOSOverlay: Overlay loading <Redacted> in instance 35605811468074828
+[2025.10.01-07.01.36:075] [EOS SDK] LogEOSOverlay: LoadURL result received. [Success=1, BrowserID=1]
+[2025.10.01-07.01.36:076] [EOS SDK] LogEOSOverlay: Browser status 0 received for browser 1
+[2025.10.01-07.01.36:076] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Load: 0
+[2025.10.01-07.01.36:076] [EOS SDK] Overlay Display Settings Updated: Visible(TRUE) ExclusiveInput(TRUE)
+[2025.10.01-07.01.36:076] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 0
+[2025.10.01-07.01.38:350] [EOS SDK] LogEOSOverlay: Received new texture handle. [Type=0, InstanceId=35605811468074828, BrowserId=1, TabId=0, Handle=00000F04, Duplicated=00000C24]
+[2025.10.01-07.01.38:850] [EOS SDK] LogEOSOverlay: Browser status 1 received for browser 1
+[2025.10.01-07.01.38:850] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 1
+[2025.10.01-07.01.39:050] [EOS SDK] LogEOSOverlay: Browser status 0 received for browser 1
+[2025.10.01-07.01.39:050] [EOS SDK] LogEOSOverlay: Browser status 1 received for browser 1
+[2025.10.01-07.01.39:050] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 0
+[2025.10.01-07.01.39:050] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSOverlay: Browser status 0 received for browser 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSOverlay: Browser status 1 received for browser 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSOverlay: Browser status 0 received for browser 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSOverlay: Browser status 1 received for browser 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 0
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 1
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 0
+[2025.10.01-07.01.39:350] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 1
+[2025.10.01-07.01.39:667] [EOS SDK] LogEOSOverlay: Browser status 0 received for browser 1
+[2025.10.01-07.01.39:667] [EOS SDK] LogEOSOverlay: Browser status 1 received for browser 1
+[2025.10.01-07.01.39:667] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 0
+[2025.10.01-07.01.39:667] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 1
+[2025.10.01-07.01.49:451] [EOS SDK] LogEOSOverlay: Closing browser [InstanceId=35605811468074828, BrowserId=1, TabId=0]
+[2025.10.01-07.01.49:698] [EOS SDK] LogEOSOverlay: Closing active browser [InstanceId=35605811468074828, BrowserId=1, TabId=0]
+[2025.10.01-07.01.49:735] [EOS SDK] LogEOSOverlay: Browser status 3 received for browser 1
+[2025.10.01-07.01.49:735] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::Login: Status: 3
+[2025.10.01-07.01.49:735] [EOS SDK] LogEOSAuth: FAccountPortalBrowserManager::FAccountPortalBrowserStateData::Finish: [Login] Finishing with result: EOS_Canceled
+[2025.10.01-07.01.49:735] [EOS SDK] LogEOSAuth: LaunchAccountPortalWithOverlay: Canceled because the overlay browser was closed
+[2025.10.01-07.01.49:735] [EOS SDK] LogEOSAuth: UserAuthGenerated: Received EOS_Canceled
+[2025.10.01-07.01.49:735] [EOS SDK] Overlay Display Settings Updated: Visible(FALSE) ExclusiveInput(FALSE)
+[2025.10.01-07.01.49:749] [EOS SDK] Login Complete - User ID: NULL
+[2025.10.01-07.01.49:749]  - Login Mode: 3
+[2025.10.01-07.01.49:749] [EOS SDK] Login Failed - Error Code: EOS_Canceled
+[2025.10.01-07.01.51:935] [EOS SDK] Shutting Down ...
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform PreShutdownLibRtcSession
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform clearing LibRTC session
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform ShutdownLibRtcSession
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform Destroying LibRTC session
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform Destroying SharedLibRtcInstance
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: [Core] Shutting down LibRTC...
+[2025.10.01-07.01.51:935] [EOS SDK] LogEOSRTC: RTCPlatform has been unbound from a game thread id: '31320'
+[2025.10.01-07.01.52:990] [EOS SDK] Shutdown Complete

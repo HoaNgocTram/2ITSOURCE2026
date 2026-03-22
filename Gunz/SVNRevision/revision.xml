@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+<entry
+   kind="dir"
+   path="C:\Users\espau\Desktop\fgoonz\Stable\Gunz"
+   revision="140">
+<url>http://25.156.24.244:13338/svn/fgsource/trunk/Stable/Gunz</url>
+<relative-url>^/trunk/Stable/Gunz</relative-url>
+<repository>
+<root>http://25.156.24.244:13338/svn/fgsource</root>
+<uuid>5c1ac45a-86ee-b24f-8eda-fd2c84742f31</uuid>
+</repository>
+<wc-info>
+<wcroot-abspath>C:/Users/espau/Desktop/fgoonz</wcroot-abspath>
+<schedule>normal</schedule>
+<depth>infinity</depth>
+</wc-info>
+<commit
+   revision="140">
+<author>secrets</author>
+<date>2015-08-25T01:50:18.235373Z</date>
+</commit>
+</entry>
+</info>

@@ -1,0 +1,813 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  stdafx.cpp
+  CodePageConversion.cpp
+  DiskSerialNumber.cpp
+  MClipboard.cpp
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(248,5): warning C4996: 'GetVersionExA': was declared deprecated
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(277,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(353,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(422,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(443,17): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+E:\DesperateSource\cml\source\DiskSerialNumber.cpp(484,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/DiskSerialNumber.cpp')
+  
+  md5wrapper.cpp
+E:\DesperateSource\cml\source\md5wrapper.cpp(64,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/md5wrapper.cpp')
+  
+E:\DesperateSource\cml\source\md5wrapper.cpp(113,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/md5wrapper.cpp')
+  
+  md5_code.cpp
+  MDataChecker.cpp
+  MMatrix.cpp
+  MVector3.cpp
+  MZip.cpp
+E:\DesperateSource\cml\source\MZip.cpp(480,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(595,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(830,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(859,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(944,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(947,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(949,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(965,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(969,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(988,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(992,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1092,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1093,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1094,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1105,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1113,6): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1115,6): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1118,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1154,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1156,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1157,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1168,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1176,6): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1178,6): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+E:\DesperateSource\cml\source\MZip.cpp(1181,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MZip.cpp')
+  
+  seed.cpp
+  HMAC_SHA1.cpp
+  MMD5.cpp
+E:\DesperateSource\cml\source\MMD5.cpp(245,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MMD5.cpp')
+  
+E:\DesperateSource\cml\source\MMD5.cpp(280,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MMD5.cpp')
+  
+E:\DesperateSource\cml\source\MMD5.cpp(320,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MMD5.cpp')
+  
+E:\DesperateSource\cml\source\MMD5.cpp(334,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MMD5.cpp')
+  
+  SHA1.cpp
+E:\DesperateSource\cml\source\SHA1.cpp(168,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(246,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(247,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(251,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(252,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(257,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(258,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(262,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(263,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+E:\DesperateSource\cml\source\SHA1.cpp(266,7): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/SHA1.cpp')
+  
+  CfgFile.cpp
+E:\DesperateSource\cml\Include\CfgFile.h(51,11): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Include\CfgFile.h(75,20): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Include\CfgFile.h(104,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Include\CfgFile.h(121,11): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Source\CfgFile.cpp(128,18): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Source\CfgFile.cpp(160,17): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+E:\DesperateSource\cml\Source\CfgFile.cpp(194,18): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CfgFile.cpp')
+  
+  CMError.c
+E:\DesperateSource\cml\Source\CMError.c(58,28): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPVOID'
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(47,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(48,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(50,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(51,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(58,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(70,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(131,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(133,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(135,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(137,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+E:\DesperateSource\cml\Source\CMError.c(138,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMError.c')
+  
+  CMLexicalAnalyzer.cpp
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(21,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(34,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(39,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(47,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(68,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+E:\DesperateSource\cml\Source\CMLexicalAnalyzer.cpp(74,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CMLexicalAnalyzer.cpp')
+  
+  CommonLog.cpp
+E:\DesperateSource\cml\Include\CommonLog.h(36,18): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+E:\DesperateSource\cml\Include\CommonLog.h(38,18): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+E:\DesperateSource\cml\Include\CommonLog.h(60,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+E:\DesperateSource\cml\Include\CommonLog.h(62,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+E:\DesperateSource\cml\Include\CommonLog.h(64,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+E:\DesperateSource\cml\Source\CommonLog.cpp(33,3): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/CommonLog.cpp')
+  
+  FileInfo.cpp
+E:\DesperateSource\cml\Source\FileInfo.cpp(55,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(152,2): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(153,2): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(156,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(162,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(163,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(205,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(215,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(222,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(233,41): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(235,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(272,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(273,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(279,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(286,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(292,2): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(332,27): warning C4244: 'initializing': conversion from 'fpos_t' to 'unsigned int', possible loss of data
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(334,17): warning C4244: 'argument': conversion from 'fpos_t' to 'size_t', possible loss of data
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(338,54): warning C4244: 'argument': conversion from 'fpos_t' to 'DWORD', possible loss of data
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(347,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(379,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(394,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/FileInfo.cpp')
+  
+E:\DesperateSource\cml\Source\FileInfo.cpp(410,34): warning C4293: '>>': shift count negative or too big, undefined behavior
+  (compiling source file '/Source/FileInfo.cpp')
+  
+  hash.c
+E:\DesperateSource\cml\Source\hash.c(73,17): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  (compiling source file '/Source/hash.c')
+  
+  LibPak.cpp
+E:\DesperateSource\cml\Source\LibPak.cpp(153,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/LibPak.cpp')
+  
+  Generating Code...
+  Compiling...
+  MArchive.cpp
+  MAsyncHttp.cpp
+E:\DesperateSource\cml\Include\MAsyncHttp.h(89,42): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(212,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(216,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(217,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(218,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(220,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(283,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+E:\DesperateSource\cml\source\MAsyncHttp.cpp(353,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MAsyncHttp.cpp')
+  
+  MBlobArray.cpp
+  MCheckSum.cpp
+E:\DesperateSource\cml\Source\MCheckSum.cpp(103,7): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MCheckSum.cpp')
+  
+  MChunkReWriter.cpp
+  MCrashDump.cpp
+  MCRC32.cpp
+  MCrypt.cpp
+  MCsvParser.cpp
+E:\DesperateSource\cml\source\MCsvParser.cpp(27,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MCsvParser.cpp')
+  
+  MDebug.cpp
+E:\DesperateSource\cml\Source\MDebug.cpp(35,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(52,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(59,11): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(60,22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(157,2): warning C4996: '_strtime': This function or variable may be unsafe. Consider using _strtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(189,2): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(246,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+E:\DesperateSource\cml\Source\MDebug.cpp(262,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MDebug.cpp')
+  
+  MemPool.cpp
+  MHttpSpooler.cpp
+E:\DesperateSource\cml\Include\MSync.h(39,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MHttpSpooler.cpp')
+  
+E:\DesperateSource\cml\Include\MAsyncHttp.h(89,42): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MHttpSpooler.cpp')
+  
+  MInet.cpp
+E:\DesperateSource\cml\Include\MSync.h(39,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MInet.cpp')
+  
+  MInetUtil.cpp
+E:\DesperateSource\cml\source\MInetUtil.cpp(14,21): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(15,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(37,20): warning C4018: '<=': signed/unsigned mismatch
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(34,25): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(36,18): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(38,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(69,16): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiling source file '/source/MInetUtil.cpp')
+  
+E:\DesperateSource\cml\source\MInetUtil.cpp(79,18): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiling source file '/source/MInetUtil.cpp')
+  
+  MLex.cpp
+E:\DesperateSource\cml\source\MLex.cpp(73,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MLex.cpp')
+  
+E:\DesperateSource\cml\source\MLex.cpp(76,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MLex.cpp')
+  
+  MLocale.cpp
+  MMemoryProxy.cpp
+  MPageArray.cpp
+  MPdb.cpp
+E:\DesperateSource\cml\Source\MPdb.cpp(427,7): warning C4996: 'GetVersionExA': was declared deprecated
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(479,7): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(695,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(805,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(811,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(815,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(816,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(817,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(818,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(824,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(828,4): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(840,5): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(842,5): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(845,5): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(850,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+E:\DesperateSource\cml\Source\MPdb.cpp(853,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MPdb.cpp')
+  
+  MProcessController.cpp
+E:\DesperateSource\cml\source\MProcessController.cpp(75,9): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/source/MProcessController.cpp')
+  
+E:\DesperateSource\cml\source\MProcessController.cpp(89,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MProcessController.cpp')
+  
+  Generating Code...
+  Compiling...
+  MProfiler.cpp
+E:\DesperateSource\cml\Include\MProfiler.h(92,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(177,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(207,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(239,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(248,5): warning C4996: '_strtime': This function or variable may be unsafe. Consider using _strtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(249,5): warning C4996: '_strdate': This function or variable may be unsafe. Consider using _strdate_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(251,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(254,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(273,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+E:\DesperateSource\cml\Source\MProfiler.cpp(288,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MProfiler.cpp')
+  
+  MRegistry.cpp
+E:\DesperateSource\cml\Source\MRegistry.cpp(17,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+E:\DesperateSource\cml\Source\MRegistry.cpp(38,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+E:\DesperateSource\cml\Source\MRegistry.cpp(49,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+E:\DesperateSource\cml\Source\MRegistry.cpp(63,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+E:\DesperateSource\cml\Source\MRegistry.cpp(98,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+E:\DesperateSource\cml\Source\MRegistry.cpp(135,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MRegistry.cpp')
+  
+  MRsaEncrypt.cpp
+  MSmartRefresh.cpp
+  MStateMachine.cpp
+  MStrEx.cpp
+  MSync.cpp
+E:\DesperateSource\cml\Include\MSync.h(39,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MSync.cpp')
+  
+  MThread.cpp
+  MTraceMemory.cpp
+E:\DesperateSource\cml\source\MTraceMemory.cpp(103,7): warning C4996: 'GetVersionExA': was declared deprecated
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+E:\DesperateSource\cml\source\MTraceMemory.cpp(152,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+E:\DesperateSource\cml\source\MTraceMemory.cpp(174,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+E:\DesperateSource\cml\source\MTraceMemory.cpp(175,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+E:\DesperateSource\cml\source\MTraceMemory.cpp(250,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+E:\DesperateSource\cml\source\MTraceMemory.cpp(257,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/source/MTraceMemory.cpp')
+  
+  MUtil.cpp
+E:\DesperateSource\cml\Source\MUtil.cpp(20,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(24,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(29,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(34,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(39,3): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(96,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(97,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(98,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+E:\DesperateSource\cml\Source\MUtil.cpp(99,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MUtil.cpp')
+  
+  MXml.cpp
+E:\DesperateSource\cml\Source\MXml.cpp(67,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(77,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(86,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(167,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(169,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(214,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(223,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(300,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(302,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(307,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(369,7): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(373,12): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(412,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(413,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(439,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(472,9): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(487,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(536,4): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(576,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(616,3): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(630,7): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(832,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+E:\DesperateSource\cml\Source\MXml.cpp(983,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MXml.cpp')
+  
+  MZFileSystem.cpp
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(29,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(38,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(60,6): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(94,6): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(113,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(114,2): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(143,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(155,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(161,5): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(163,8): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(166,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(177,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(180,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(197,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(199,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(219,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(241,26): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(299,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(306,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(311,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(373,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(374,2): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(421,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(495,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(510,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(529,12): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(538,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(541,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(551,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(568,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(577,7): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(579,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(587,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(598,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(609,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(692,16): warning C4018: '>': signed/unsigned mismatch
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(814,6): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(820,7): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _stricmp. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(823,5): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(826,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(827,5): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(838,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+E:\DesperateSource\cml\Source\MZFileSystem.cpp(839,2): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+  (compiling source file '/Source/MZFileSystem.cpp')
+  
+  Generating Code...
+  MFolderNotifier.cpp
+E:\DesperateSource\cml\source\MFolderNotifier.cpp(147,19): warning C4996: 'wcstombs': This function or variable may be unsafe. Consider using wcstombs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DesperateSource\cml\source\MFolderNotifier.cpp(148,20): warning C4996: 'wcstombs': This function or variable may be unsafe. Consider using wcstombs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  cml.vcxproj -> E:\DesperateSource\cml\Runtime\Lib\cmld.lib

@@ -1,0 +1,17 @@
+[2025.10.01-07.07.33:799] [EOS SDK] Initializing ...
+[2025.10.01-07.07.33:829] [EOS SDK] Initialized. Setting Logging Callback ...
+[2025.10.01-07.07.33:829] [EOS SDK] Logging Callback Set
+[2025.10.01-07.07.33:829] [EOS SDK] Product Id is empty, add your product id from Epic Games DevPortal to SampleConstants
+[2025.10.01-07.07.33:829] [EOS SDK] Sandbox Id is empty, add your sandbox id from Epic Games DevPortal to SampleConstants
+[2025.10.01-07.07.33:829] [EOS SDK] Deployment Id is empty, add your deployment id from Epic Games DevPortal to SampleConstants
+[2025.10.01-07.07.33:829] [EOS SDK] Platform Create failed ...
+[2025.10.01-07.07.34:077] OpenGL Context Chosen: 3.1, Wanted: 3.1
+[2025.10.01-07.07.34:182] AssetDir: E:\DesperateSource\EOS\Samples\AuthAndFriends\Bin\Win32\Release_SDL\../../../../Shared/
+[2025.10.01-07.07.34:213] EOS SDK SetCurrentPayload: A1B2C3D4E5
+[2025.10.01-07.07.34:213] [EOS SDK] LogEOS: EOS_Platform_GetCustomInvitesInterface - One or more parameters are null
+[2025.10.01-07.07.34:213] [EOS SDK] LogEOS: EOS_CustomInvites_SetCustomInvite - One or more parameters are null
+[2025.10.01-07.07.34:214] [EOS SDK] LogEOS: EOS_Platform_GetUIInterface - One or more parameters are null
+[2025.10.01-07.07.34:214] [EOS SDK] LogEOS: EOS_UI_AddNotifyDisplaySettingsUpdated - One or more parameters are null
+[2025.10.01-07.07.34:216] [EOS SDK] Platform Create Failed!
+[2025.10.01-07.07.48:859] [EOS SDK] Shutting Down ...
+[2025.10.01-07.07.48:886] [EOS SDK] Shutdown Complete

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<XML ID="WebViewWindow">
+    <FRAME item="WebViewFrame">
+        <FRAMELOOK>DefaultFrameLook</FRAMELOOK>
+        <BOUNDS>
+            <X>0</X>
+            <Y>0</Y>
+            <W>780</W>
+            <H>580</H>
+        </BOUNDS>
+        <ALIGN>
+            <HALIGN>center</HALIGN>
+            <VALIGN>center</VALIGN>
+        </ALIGN>
+        <VISIBLE>false</VISIBLE>
+        <TEXT>GunZ Web Browser</TEXT>
+    </FRAME>
+
+    <PICTURE item="WebViewArea" parent="WebViewFrame">
+        <BOUNDS>
+            <X>15</X>
+            <Y>35</Y>
+            <W>750</W>
+            <H>500</H>
+        </BOUNDS>
+    </PICTURE>
+
+    <BUTTON item="CloseWebView" parent="WebViewFrame">
+        <BOUNDS>
+            <X>355</X>
+            <Y>540</Y>
+            <W>70</W>
+            <H>30</H>
+        </BOUNDS>
+        <TEXT>Close</TEXT>
+    </BUTTON>
+</XML>

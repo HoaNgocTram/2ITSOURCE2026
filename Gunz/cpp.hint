@@ -1,0 +1,10 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define MSG_WORD_GENRECORD
+#define ZGetGameClient() (ZApplication::GetGameInterface() ? ZApplication::GetGameInterface()->GetGameClient() : NULL)
+#define DISCORD_EXPORT __declspec(dllexport)
+#define DISCORD_EXPORT __declspec(dllimport)
+#define DISCORD_EXPORT __attribute__((visibility("default")))
+#define DISCORD_EXPORT
+#define _SPEC

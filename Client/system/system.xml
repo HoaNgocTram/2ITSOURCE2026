@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" ?>
+
+<XML>
+	<XMLHEADER>version="1.0"</XMLHEADER>
+
+	<SKIN>Default</SKIN>
+
+	<DEFFONT>Arial</DEFFONT>
+
+	<IME>false</IME>
+
+	<BAREPORT>
+		<ADDR>www.battlearena.com</ADDR>
+		<DIR>incoming/gunz_US</DIR>
+	</BAREPORT>
+
+	<EMBLEM_URL>https://gunz.2it.in/gunz/</EMBLEM_URL>
+	<TEMBLEM_URL>https://gunz.2it.in/gunz/</TEMBLEM_URL>
+
+	<CASHSHOP_URL>https://gunz.2it.in/</CASHSHOP_URL>
+
+	<HOMEPAGE>
+	    <URL>https://gunz.2it.in</URL>
+	    <TITLE>GunZ 2IT</TITLE>
+	</HOMEPAGE>
+
+	<LOCATORLIST>
+		<LOCATOR id="1" IP="103.15.222.108" />
+	</LOCATORLIST>
+</XML>

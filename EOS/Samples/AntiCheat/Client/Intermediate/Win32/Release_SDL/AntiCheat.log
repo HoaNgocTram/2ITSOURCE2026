@@ -1,0 +1,133 @@
+﻿  Copying New Files to Bin
+  File not found - SDL2.pdb
+  pch.cpp
+  BaseGame.cpp
+  BaseLevel.cpp
+  BaseMenu.cpp
+  AccountHelpers.cpp
+  Authentication.cpp
+  EosUI.cpp
+  Friends.cpp
+  Metrics.cpp
+  Platform.cpp
+  Player.cpp
+  Users.cpp
+  Console.cpp
+  AnimatedTexture.cpp
+  AssetUtils.cpp
+  AuthDialogs.cpp
+  Button.cpp
+  Checkbox.cpp
+  ConsoleDialog.cpp
+  Dialog.cpp
+  ExitDialog.cpp
+  Compiling...
+  Font.cpp
+  FriendInfo.cpp
+  FriendList.cpp
+  FriendsDialog.cpp
+  PopupDialog.cpp
+  ProgressBar.cpp
+  Scroller.cpp
+  SDLTTF.cpp
+  SelectableStringViewListEntry.cpp
+  Sprite.cpp
+  StringViewListEntry.cpp
+  TableRowView.cpp
+  TextEditor.cpp
+  TextField.cpp
+  TextLabel.cpp
+  Texture.cpp
+  TextureManager.cpp
+  TextView.cpp
+  Widget.cpp
+  Model.cpp
+  Compiling...
+  SDLSpriteBatch.cpp
+  VectorRender.cpp
+  Input.cpp
+  SDLInput.cpp
+  Main.cpp
+  SDLMain.cpp
+E:\DesperateSource\EOS\Samples\AuthAndFriends\Source\SampleConstants.h(5,8): error C2011: 'SampleConstants': 'struct' type redefinition
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(56,36): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(56,36): error C2737: 'MinimumWindowWidth': constexpr object must be initialized
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(57,36): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(57,36): error C2737: 'MinimumWindowHeight': constexpr object must be initialized
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(58,36): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(58,36): error C2737: 'DefaultWindowWidth': constexpr object must be initialized
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(59,36): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(59,36): error C2737: 'DefaultWindowHeight': constexpr object must be initialized
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(116,44): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(116,44): error C2065: 'GameName': undeclared identifier
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(360,27): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(361,28): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(366,27): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+E:\DesperateSource\EOS\Samples\Shared\Source\Main\Main.cpp(367,28): error C2027: use of undefined type 'SampleConstants'
+  (compiling source file '/Shared/Source/Main/Main.cpp')
+      E:\DesperateSource\EOS\Samples\AntiCheat\Client\Source\SampleConstants.h(4,8):
+      see declaration of 'SampleConstants'
+  
+  DeviceResources.cpp
+  WinMain.cpp
+  Vector2.cpp
+  Vector3.cpp
+  CommandLine.cpp
+  DebugLog.cpp
+  Settings.cpp
+  StringUtils.cpp
+  Utils.cpp
+  AntiCheatClient.cpp
+  AntiCheatDialog.cpp
+  AntiCheatNetworkTransport.cpp
+  AntiCheatP2PNetworkTransport.cpp
+  Game.cpp
+  Compiling...
+  Menu.cpp
+  TCPClient.cpp
