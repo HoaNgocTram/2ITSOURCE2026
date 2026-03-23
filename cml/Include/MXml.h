@@ -25,7 +25,7 @@ using namespace std;
 	typedef MSXML2::IXMLDOMTextPtr					MXmlDomTextPtr;
 	typedef MSXML2::IXMLDOMParseErrorPtr			MXmlDomParseErrorPtr;
 #else
-	#import "msxml.dll" named_guids no_implementation
+	#import "msxml3.dll" named_guids no_implementation rename_namespace("MSXML")
 
 	typedef MSXML::IXMLDOMDocumentPtr				MXmlDomDocPtr;
 	typedef MSXML::IXMLDOMNodePtr					MXmlDomNodePtr;
