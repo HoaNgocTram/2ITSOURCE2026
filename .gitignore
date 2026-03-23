@@ -4,6 +4,7 @@
 /EOS/Samples/.vs
 /Build/*
 /EOS/SDK/Tool/*.exe
+/Gunz/Release_Desperate/*.log
 # Compiled Object files
 *.slo
 *.lo
