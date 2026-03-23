@@ -191,7 +191,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>E:\DesperateSource\EOS\SDK\Include;../sdk/dx9/include;../CSCommon/Include;../SafeUDP/Include;../CML/Include;../RealSpace2/IBspObject;../RealSpace2/Include;../MAI/Include;../RealSpace/Include;../Mint2/Include;../RealSound/Include;../sdk/vmprotect/Include/C;../sdk/themida/include/;../sdk/themida/lib/;../sdk/opus/include;../sdk/portaudio/include;../sdk/xor/include;../gunz/discord/include;../sdk/lua/include/x86;../sdk/lottie/include;../sdk/crypto/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../EOS/SDK/Include;../sdk/dx9/include;../CSCommon/Include;../SafeUDP/Include;../CML/Include;../RealSpace2/IBspObject;../RealSpace2/Include;../MAI/Include;../RealSpace/Include;../Mint2/Include;../RealSound/Include;../sdk/vmprotect/Include/C;../sdk/themida/include/;../sdk/themida/lib/;../sdk/opus/include;../sdk/portaudio/include;../sdk/xor/include;../gunz/discord/include;../sdk/lua/include/x86;../sdk/lottie/include;../sdk/crypto/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_RELEASE;LOCALE_NHNUSA;_PUBLISH;_USING_CXR;_LOCATOR;PSAPI_VERSION=1;SPYMODE;SODIUM_STATIC;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;BUILDER_STATIC_DEFINE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
