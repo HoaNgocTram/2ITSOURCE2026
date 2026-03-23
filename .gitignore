@@ -2,12 +2,21 @@
 *.d
 /Gunz/.vs
 /EOS/Samples/.vs
+/Build/*
 # Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
-
+*.log
+*.pdb
+*.idb
+*.tlog
+*.tlh
+*.tli
+*.res
+*.ipdb
+*.iobj
 # Precompiled Headers
 *.gch
 *.pch
@@ -29,5 +38,7 @@
 
 # Executables
 *.exe
+*.exp
 *.out
 *.app
+*.map

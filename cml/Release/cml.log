@@ -1,1 +1,60 @@
-﻿
+﻿  stdafx.cpp
+  CodePageConversion.cpp
+  DiskSerialNumber.cpp
+  MClipboard.cpp
+  md5wrapper.cpp
+  md5_code.cpp
+  MDataChecker.cpp
+  MMatrix.cpp
+  MVector3.cpp
+  MZip.cpp
+  seed.cpp
+  HMAC_SHA1.cpp
+  MMD5.cpp
+  SHA1.cpp
+  CfgFile.cpp
+  CMError.c
+  CMLexicalAnalyzer.cpp
+  CommonLog.cpp
+  FileInfo.cpp
+  hash.c
+  LibPak.cpp
+  Generating Code...
+  Compiling...
+  MArchive.cpp
+  MAsyncHttp.cpp
+  MBlobArray.cpp
+  MCheckSum.cpp
+  MChunkReWriter.cpp
+  MCrashDump.cpp
+  MCRC32.cpp
+  MCrypt.cpp
+  MCsvParser.cpp
+  MDebug.cpp
+  MemPool.cpp
+  MHttpSpooler.cpp
+  MInet.cpp
+  MInetUtil.cpp
+  MLex.cpp
+  MLocale.cpp
+  MMemoryProxy.cpp
+  MPageArray.cpp
+  MPdb.cpp
+  MProcessController.cpp
+  Generating Code...
+  Compiling...
+  MProfiler.cpp
+  MRegistry.cpp
+  MRsaEncrypt.cpp
+  MSmartRefresh.cpp
+  MStateMachine.cpp
+  MStrEx.cpp
+  MSync.cpp
+  MThread.cpp
+  MTraceMemory.cpp
+  MUtil.cpp
+  MXml.cpp
+  MZFileSystem.cpp
+  Generating Code...
+  MFolderNotifier.cpp
+  cml.vcxproj -> E:\2ITSOURCE2026\cml\Runtime\Lib\cml.lib

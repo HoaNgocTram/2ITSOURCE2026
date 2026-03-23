@@ -162,6 +162,9 @@ private:
 
 	bool m_bShowReload;
 	bool m_bShowEmpty;
+	MBitmap* m_pReloadBitmap;
+	MBitmap* pEmptyBitmap;
+	float m_fReloadTime;
 
 	// Äù½ºÆ® °ü·Ã
 	ZBossGaugeEffect*	m_pBossHPPanel;
@@ -199,7 +202,9 @@ public:
 
 	void Clear();
 
-	void Draw();
+	//void Draw();
+	void Draw(MDrawContext* pDC);
+	void DrawReloadStatus(MDrawContext* pDC);
 	void DrawScoreBoard();
 	void DrawSpectator();
 	void DrawMyHPAPHud(MDrawContext* pDC); //Custom: Toggle change bar HP

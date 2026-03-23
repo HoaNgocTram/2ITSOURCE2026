@@ -1,1 +1,241 @@
-﻿
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  stdafx.cpp
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  MServerStatus.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MServerStatus.cpp')
+  
+  MLogManager.cpp
+  MLocatorView.cpp
+  MLocatorUDP.cpp
+  MLocatorStatistics.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorStatistics.cpp')
+  
+  MLocatorDBMgr.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorDBMgr.cpp')
+  
+  MLocatorConfig.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocatorConfig.cpp')
+  
+  MLocator.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/MLocator.cpp')
+  
+  MainFrm.cpp
+  LocatorView.cpp
+  LocatorDoc.cpp
+  Locator.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Locator.cpp')
+  
+  ExceptionAttacher.cpp
+E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\RealCPNet.h(35,14): warning C4091: 'typedef ': ignored on left of 'RCP_IO_OPERATION' when no variable is declared
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchWorldItem.h(94,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchWorldItem.h(124,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(23,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(191,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(335,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(355,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(448,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(738,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/ExceptionAttacher.cpp')
+  
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1291 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Locator.vcxproj -> E:\2ITSOURCE2026\Build\Locator\Locator.exe

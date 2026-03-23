@@ -1209,74 +1209,89 @@ void ZScreenEffectManager::DrawGauges(MDrawContext* pDC)
 	}
 
 }
-void ZScreenEffectManager::Draw()
+void ZScreenEffectManager::DrawReloadStatus(MDrawContext* pDC)
 {
-	ZCharacter *pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
-	if(!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
+	if (!m_bShowReload && !m_bShowEmpty || pDC == NULL) return;
 
-	if(!ZGetCombatInterface()->GetObserverMode() && !ZGetCombatInterface()->IsSkupUIDraw())
+	float fTime = (float)GetTickCount() * 0.001f;
+
+	// Công thức "Chớp tắt tử thần" - Nháy 2 lần mỗi giây (0.5s/chu kỳ)
+	int nAlpha = 127 + (int)(128.0f * sin(fTime * 12.56f));
+
+	// Giới hạn Alpha trong tầm an toàn 0-255
+	if (nAlpha < 0) nAlpha = 0;
+	if (nAlpha > 255) nAlpha = 255;
+
+	MBitmap* pImg = (m_bShowReload) ? MBitmapManager::Get("Ingame_Reload.png") : MBitmapManager::Get("Ingame_Empty.png");
+
+	if (pImg)
 	{
-		RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE,	FALSE);
-		RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+		float fScaleX = (float)MGetWorkspaceWidth() / 1920.0f;
+		float fScaleY = (float)MGetWorkspaceHeight() / 1080.0f;
 
-		if(pTargetCharacter) 
+		int nDrawX = MGetWorkspaceWidth() - (int)(914.0f * fScaleX);
+		int nDrawY = MGetWorkspaceHeight() - (int)(555.0f * fScaleY);
+		int nDrawW = (int)(112.0f * fScaleX);
+		int nDrawH = (int)(34.0f * fScaleY);
+
+		pDC->SetColor(255, 255, 255, nAlpha); // Áp dụng Alpha nhấp nháy
+		pDC->SetBitmap(pImg);
+		pDC->Draw(nDrawX, nDrawY, nDrawW, nDrawH);
+		pDC->SetColor(255, 255, 255, 255); // Trả lại màu trắng chuẩn
+	}
+}
+void ZScreenEffectManager::Draw(MDrawContext* pDC)
+{
+	ZCharacter* pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
+	if (!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
+
+	// 1. Kiểm tra chế độ quan sát và ẩn UI
+	if (ZGetCombatInterface()->GetObserverMode() || ZGetCombatInterface()->IsSkupUIDraw()) return;
+
+	// 2. Logic kiểm tra đạn (Update trạng thái)
+	ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
+	m_bShowReload = false;
+	m_bShowEmpty = false;
+
+	if (pSelectedItem && pSelectedItem->GetItemType() != MMIT_MELEE)
+	{
+		if (pSelectedItem->GetBulletCurrMagazine() <= 0)
 		{
-			ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
-
-			if(pSelectedItem){
-				if( pSelectedItem->GetItemType() != MMIT_MELEE ) {
-					if (pSelectedItem->GetBulletCurrMagazine() <= 0) {
-						if(pSelectedItem->isReloadable()==false) {
-							m_bShowReload = false;
-							m_bShowEmpty = true;
-						}
-						else {
-							m_bShowReload = true;
-							m_bShowEmpty = false;
-						}
-					}
-					else {
-						m_bShowReload = false;
-						m_bShowEmpty = false;
-					}
-				}
-				else {
-					m_bShowReload = false;
-					m_bShowEmpty = false;
-				}
+			// Nếu không còn đạn để thay -> EMPTY, ngược lại -> RELOAD
+			if (pSelectedItem->GetBulletSpare() <= 0) {
+				m_bShowEmpty = true;
 			}
-		}
-
-		if( m_bShowReload ) {
-			if(m_pReload)
-			{
-				m_pReload->Update();
-				m_pReload->Draw(0);
-			}
-		}
-		else if(m_bShowEmpty) {
-			if(m_pEmpty)
-			{
-				m_pEmpty->Update();
-				m_pEmpty->Draw(0);
+			else {
+				m_bShowReload = true;
 			}
 		}
 	}
 
-	LPDIRECT3DDEVICE9 pd3dDevice=RGetDevice();
-	pd3dDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
-	pd3dDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
+	// 3. Vẽ các thành phần Screen Effect
+	// A. Vẽ Reload/Empty báo động
+	DrawReloadStatus(pDC);
 
-	if ( !ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
+	// B. Vẽ Combo (HIT, HEADSHOT...)
+	DrawCombo(pDC);
+
+	// C. Reset render state nếu cần (cho chắc ăn)
+	RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+	RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+
+	LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+	pd3dDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+	pd3dDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+
+	if (!ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
 	{
-		if(ZGetCombatInterface()->IsShowUI())
+		if (ZGetCombatInterface()->IsShowUI())
 			DrawEffects(); // ÄÞº¸ ¿¡´Ï¸ÞÀÌ¼Ç µå·Î¿E
 
 		// ÄÞº¸ÀÌÆåÆ®´Â Á÷Á¢°E®ÇØÁà¾ßÇÑ´Ù
 		//DrawCombo(pDC);
 	}
 
-	if(ZGetCombatInterface()->IsShowUI())
+	if (ZGetCombatInterface()->IsShowUI())
 	{
 		DrawQuestEffects(); // Äù½ºÆ®½Ã K.O ÀÌ¹ÌÁE
 		DrawDuelEffects();
@@ -1284,6 +1299,81 @@ void ZScreenEffectManager::Draw()
 		DrawCTFEffects();
 	}
 }
+//void ZScreenEffectManager::Draw()
+//{
+//	ZCharacter *pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
+//	if(!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
+//
+//	if(!ZGetCombatInterface()->GetObserverMode() && !ZGetCombatInterface()->IsSkupUIDraw())
+//	{
+//		RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE,	FALSE);
+//		RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+//
+//		if(pTargetCharacter) 
+//		{
+//			ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
+//
+//			if(pSelectedItem){
+//				if( pSelectedItem->GetItemType() != MMIT_MELEE ) {
+//					if (pSelectedItem->GetBulletCurrMagazine() <= 0) {
+//						if(pSelectedItem->isReloadable()==false) {
+//							m_bShowReload = false;
+//							m_bShowEmpty = true;
+//						}
+//						else {
+//							m_bShowReload = true;
+//							m_bShowEmpty = false;
+//						}
+//					}
+//					else {
+//						m_bShowReload = false;
+//						m_bShowEmpty = false;
+//					}
+//				}
+//				else {
+//					m_bShowReload = false;
+//					m_bShowEmpty = false;
+//				}
+//			}
+//		}
+//
+//		if( m_bShowReload ) {
+//			if(m_pReload)
+//			{
+//				m_pReload->Update();
+//				m_pReload->Draw(0);
+//			}
+//		}
+//		else if(m_bShowEmpty) {
+//			if(m_pEmpty)
+//			{
+//				m_pEmpty->Update();
+//				m_pEmpty->Draw(0);
+//			}
+//		}
+//	}
+//
+//	LPDIRECT3DDEVICE9 pd3dDevice=RGetDevice();
+//	pd3dDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
+//	pd3dDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
+//
+//	if ( !ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
+//	{
+//		if(ZGetCombatInterface()->IsShowUI())
+//			DrawEffects(); // ÄÞº¸ ¿¡´Ï¸ÞÀÌ¼Ç µå·Î¿E
+//
+//		// ÄÞº¸ÀÌÆåÆ®´Â Á÷Á¢°E®ÇØÁà¾ßÇÑ´Ù
+//		//DrawCombo(pDC);
+//	}
+//
+//	if(ZGetCombatInterface()->IsShowUI())
+//	{
+//		DrawQuestEffects(); // Äù½ºÆ®½Ã K.O ÀÌ¹ÌÁE
+//		DrawDuelEffects();
+//		DrawTDMEffects();
+//		DrawCTFEffects();
+//	}
+//}
 
 void ZScreenEffectManager::DrawMyWeaponImage()
 {
@@ -1695,21 +1785,29 @@ void ZScreenEffectManager::DrawCombo(MDrawContext* pDC)
 
 		// Tọa độ cắt pixel dựa trên Ingame_KillDirection.png
 		switch (g_nKillLevel) {
-		case ZCI_HEADSHOT:      kSrcX = 641;  kSrcW = 905 - 641; break; // HEAD SHOT
-		case ZCI_FANTASTIC:     kSrcX = 142;  kSrcW = 398 - 142; break; // FANTASTIC
-		case ZCI_EXCELLENT:     kSrcX = 1435; kSrcW = 1695 - 1435; break; // EXCELLENT
-		case ZCI_UNBELIEVABLE:  kSrcX = 1695; kSrcW = 2048 - 1695; break; // UNBELIEVABLE
+		case ZCI_FANTASTIC:     kSrcX = 0;  kSrcW = 411 - 0; break; // FANTASTIC
+		case ZCI_ALLKILL:		kSrcX = 412;  kSrcW = 824 - 412; break;
+		case ZCI_EXCELLENT:     kSrcX = 1649; kSrcW = 2060 - 1649; break; // EXCELLENT
+		case ZCI_UNBELIEVABLE:  kSrcX = 2062; kSrcW = 2473 - 2062; break; // UNBELIEVABLE
+		case ZCI_HEADSHOT:      kSrcX = 2475;  kSrcW = 2886 - 2475; break; // HEAD SHOT
 		// Có thể thêm các case khác nếu có ảnh tương ứng
 		}
+
+		// 1. Xác định lại vị trí vạch Boundary (nVachX) dựa trên lề phải nMaxRightX
+		int nVachW = (int)(438.0f * fScale);
+		int nVachX = nMaxRightX - nVachW; // Vạch bám lề phải
 
 		if (kSrcW > 0) {
 			int nKDisplayW = (int)(kSrcW * fScale);
 			int nKDisplayH = (int)(kImgH * fScale);
 
-			// Vị trí: Nằm dưới GOOD/NICE (nBaseY + 100) một khoảng nữa
-			int nMidVach = (int)(219.0f * fScale);
-			int nKX = nMaxRightX + nMidVach - (nKDisplayW / 2);
-			int nKY = nBaseY + (int)(165.0f * fScale); // Căn chỉnh nằm ngay dưới GOOD
+			// 2. CÔNG THỨC CĂN GIỮA CHUẨN:
+			// Tọa độ X = (Vị trí đầu vạch) + (Nửa chiều dài vạch) - (Nửa chiều dài chữ Kill)
+			int nMidVach = nVachW / 2;
+			int nKX = nVachX + nMidVach - (nKDisplayW / 2);
+
+			// Tọa độ Y: Nằm dưới GOOD/NICE một chút (khoảng 165px tính từ BaseY là đẹp)
+			int nKY = nBaseY + (int)(165.0f * fScale);
 
 			pDC->SetBitmap(pImgKill);
 			pDC->Draw(nKX, nKY, nKDisplayW, nKDisplayH, kSrcX, 0, kSrcW, kImgH);

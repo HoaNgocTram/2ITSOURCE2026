@@ -1212,9 +1212,9 @@ void ZCombatInterface::UpdateNetworkAlive(MDrawContext* pDC)
 void ZCombatInterface::OnDraw(MDrawContext* pDC)
 {
 	//#ifdef LOCALE_KOREA
-	if (ZGetScreenEffectManager()) {
-		ZGetScreenEffectManager()->DrawCombo(pDC);
-	}
+	//if (ZGetScreenEffectManager()) {
+	//	ZGetScreenEffectManager()->DrawCombo(pDC);
+	//}
 	if (timeGetTime() - m_dLastTimeTick > 500)
 	{
 		UpdateNetworkAlive(pDC);
@@ -1318,7 +1318,7 @@ void ZCombatInterface::OnDraw(MDrawContext* pDC)
 #ifdef _RADIO
 	GetVoteInterface()->DrawRadioCommandList(pDC);
 #endif
-	ZGetScreenEffectManager()->Draw();
+	ZGetScreenEffectManager()->Draw(pDC);
 
 	if (IsShowUI())
 	{

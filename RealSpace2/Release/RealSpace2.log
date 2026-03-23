@@ -1,1 +1,201 @@
-﻿
+﻿  stdafx.cpp
+  RBspObject.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RBspObject.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RBspObject.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RBspObject.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Source\RBspObject.cpp(373,22): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/Source/RBspObject.cpp')
+  
+  RHalfEdgeMesh.cpp
+  RMesh.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RMesh.cpp')
+  
+  RMesh_Frame.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Frame.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Frame.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Frame.cpp')
+  
+  RMesh_Load.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Load.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Load.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Load.cpp')
+  
+  RMesh_Mtrl.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Mtrl.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Mtrl.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Mtrl.cpp')
+  
+  RMesh_Render.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Render.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Render.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMesh_Render.cpp')
+  
+  RMeshMgr.cpp
+  RMeshNode.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uC774' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uAC1C' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uB97C' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uB118' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uC744' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uC218' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uC5C6' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uC2B5' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uB2C8' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RMeshNode.cpp(225,12): warning C4566: character represented by universal-character-name '\uB2E4' cannot be represented in the current code page (1252)
+  (compiling source file '/source/RMeshNode.cpp')
+  
+  RMeshNodeData.cpp
+  RMeshNodeStringTable.cpp
+  RMeshUtil.cpp
+  RMtrl.cpp
+  rvector.cpp
+  RVisualMesh.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RVisualMesh.cpp(515,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RVisualMesh.cpp(1617,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RVisualMesh.cpp(1624,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\source\RVisualMesh.cpp(1689,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMesh.cpp')
+  
+  RVisualMeshMgr.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshMgr.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshMgr.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshMgr.cpp')
+  
+  RVisualMeshUtil.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshUtil.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshUtil.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/source/RVisualMeshUtil.cpp')
+  
+  RAniEventInfo.cpp
+  RAnimation.cpp
+  RAnimationFile.cpp
+  Generating Code...
+  Compiling...
+  RAnimationMgr.cpp
+  RAnimationNode.cpp
+  RBoundary.cpp
+  RCharCloth.cpp
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RCharCloth.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(406,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RCharCloth.cpp')
+  
+E:\2ITSOURCE2026\RealSpace2\Include\RVisualMesh.h(583,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Source/RCharCloth.cpp')
+  
+  RCloth.cpp
+  RCylinder.cpp
+  RSphere.cpp
+  RCollisionDetection.cpp
+  RDummyList.cpp
+  RDynamicLight.cpp
+  RLenzFlare.cpp
+  RLightList.cpp
+  RMaterialList.cpp
+  ROcclusionList.cpp
+  RPVS.cpp
+  RRoam.cpp
+  RSolidBsp.cpp
+  RAStar.cpp
+  RNavigationMesh.cpp
+  RNavigationNode.cpp
+  Generating Code...
+  Compiling...
+  RBaseTexture.cpp
+  RCamera.cpp
+  RError.cpp
+  RFont.cpp
+  RParticleSystem.cpp
+  RShaderMgr.cpp
+  RToken.cpp
+  RealSpace2.cpp
+  RFrameWork.cpp
+  RTypes.cpp
+  Generating Code...
+  RealSpace2.vcxproj -> E:\2ITSOURCE2026\RealSpace2\Runtime\Lib\RealSpace2.lib
