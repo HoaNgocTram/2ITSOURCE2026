@@ -210,7 +210,7 @@
     <Link>
       <AdditionalOptions>/fixed:no %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>E:\DesperateSource\EOS\SDK\Lib\EOSSDK-Win32-Shipping.lib;fmodvc.lib;../CML/Lib/zlib.lib;../sdk/lottie/lib/rlottie.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\DesperateSource\EOS\SDK\Lib;E:\DesperateSource\Gunz\curl\lib\dynamic;../sdk/dx9/lib/x86;../sdk/bullet/lib;../MatchServer/vld;../RealSpace2\lib;../RealSound/Lib;Dxerr8.lib;Lib;../../sdk/crypto/lib;../sdk/vmprotect/Lib/Windows;../sdk/themida/lib/;../sdk/themida/include/;../sdk/detours/lib.X86;../sdk/portaudio/lib/Release/Release;../sdk/opus/lib/Release;../sdk/portaudio/lib/Release;../sdk/crypto/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\EOS\SDK\Lib;..\Gunz\curl\lib\dynamic;../sdk/dx9/lib/x86;../sdk/bullet/lib;../MatchServer/vld;../RealSpace2\lib;../RealSound/Lib;Dxerr8.lib;Lib;../../sdk/crypto/lib;../sdk/vmprotect/Lib/Windows;../sdk/themida/lib/;../sdk/themida/include/;../sdk/detours/lib.X86;../sdk/portaudio/lib/Release/Release;../sdk/opus/lib/Release;../sdk/portaudio/lib/Release;../sdk/crypto/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Runtime\Gunz.pdb</ProgramDatabaseFile>
