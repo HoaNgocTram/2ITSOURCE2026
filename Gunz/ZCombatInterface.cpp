@@ -5228,6 +5228,7 @@ void ZCombatInterface::DrawMatchStatus(MDrawContext* pDC)
 {
 	if (RIsReadyToRender() != R_OK) return;
 	if (ZGetGame() == NULL || ZGetConfiguration()->GetEtc()->bScore == true) return;
+	if (GetObserverMode()) return; //ko vẽ khi đang chết hoặc theo dõi
 
 	ZMatch* pMatch = ZGetGame()->GetMatch();
 	ZCharacter* pMyChar = ZGetGame()->m_pMyCharacter;
