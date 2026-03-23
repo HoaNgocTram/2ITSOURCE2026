@@ -1,5 +1,1 @@
-﻿  stdafx.cpp
-  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
-  MCountryFilterDBMgr.cpp
-  MCountryFilter.cpp
-  MCountryFilter.vcxproj -> E:\2ITSOURCE2026\MCountryFilter\Runtime\Lib\MCountryFilter.lib
+﻿

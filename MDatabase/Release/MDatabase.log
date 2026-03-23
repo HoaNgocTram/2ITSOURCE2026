@@ -1,5 +1,1 @@
-﻿  stdafx.cpp
-  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
-  MDatabase.cpp
-  ODBCRecordset.cpp
-  MDatabase.vcxproj -> E:\2ITSOURCE2026\MDatabase\Runtime\Lib\MDatabase.lib
+﻿

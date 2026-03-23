@@ -3,6 +3,7 @@
 /Gunz/.vs
 /EOS/Samples/.vs
 /Build/*
+/EOS/SDK/Tool/*.exe
 # Compiled Object files
 *.slo
 *.lo
@@ -35,9 +36,8 @@
 *.a
 
 # Executables
-*.exe
-*.exp
+
 *.out
 *.app
 *.map
-*.dll
+
