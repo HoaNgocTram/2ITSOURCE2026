@@ -1,1 +1,444 @@
-﻿
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2203,5): warning MSB9008: The referenced project ..\detours\detours\detours.vcxproj does not exist.
+C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  stdafx.cpp
+  AntiCheat.cpp
+  AntiInject.cpp
+  AutoBan.cpp
+  BasicTypesUI.cpp
+  CriticalSection.cpp
+  detours.cpp
+  DiscordGunz.cpp
+  connection_win.cpp
+  discord_register_win.cpp
+  discord_rpc.cpp
+  dllmain.cpp
+  rpc_connection.cpp
+  serialization.cpp
+  Hitboxes.cpp
+  ProgressBarUI.cpp
+  WebViewOverlay.cpp
+  WebviewTokenHelper.cpp
+  WidgetUI.cpp
+  WindowUI.cpp
+  ZConsoleDebug.cpp
+  ZEACManager.cpp
+  ZGlobalAnnounce.cpp
+  ZGuard.cpp
+  LottieWidget.cpp
+  NewChat.cpp
+  RGCommands.cpp
+  RGMain.cpp
+  VoiceChat.cpp
+  ZActorAction.cpp
+  ZActorActionManager.cpp
+  ZActorBase.cpp
+  ZActorMesh.cpp
+  ZActorWithFSM.cpp
+  ZAntiHack.cpp
+  ZBandiCapturer.cpp
+  ZCanvas.cpp
+  ZCombatChat.cpp
+  ZCombatInterface.cpp
+  ZCombatQuestScreen.cpp
+  ZCrossHair.cpp
+  ZDirectInput.cpp
+  ZFSM.cpp
+  ZFSMCondition.cpp
+  ZFSMFunctionServer.cpp
+  ZFSMManager.cpp
+  ZFSMParser.cpp
+  ZFSMState.cpp
+  ZFSMStateEnteredTimeStamper.cpp
+  ZFSMTransition.cpp
+  ZFunctions.cpp
+  ZGameInput.cpp
+  ZGameInput_Debug.cpp
+  ZInput.cpp
+  ZLicense.cpp
+  ZMapCache.cpp
+  ZMiniMap.cpp
+  ZObserver.cpp
+  ZPlayerManager.cpp
+  ZLadderWarsRankingListBox.cpp
+  ZRadar.cpp
+  ZRuleCustomGame.cpp
+  ZRuleDropGunGame.cpp
+  ZRulePaint.cpp
+  ZRuleQuestChallenge.cpp
+  ZRuleSkillMap.cpp
+  ZRuleSpy.cpp
+  ZSerialKey.cpp
+  ZTranslator.cpp
+  ZVoteInterface.cpp
+  ZWeaponNewQuest.cpp
+  ZWeaponScreenEffect.cpp
+  MCommandLogFrame.cpp
+  Mint4Gunz.cpp
+  Mint4R2.cpp
+  ZActionKey.cpp
+  ZBitmapManager.cpp
+  ZBmNumLabel.cpp
+  ZButton.cpp
+  ZCharacterSelectView.cpp
+  ZCharacterView.cpp
+  ZCharacterViewList.cpp
+  ZClanListBox.cpp
+  ZCombatMenu.cpp
+  ZDuelTournamentRankingListBox.cpp
+  ZEquipmentListBox.cpp
+  ZFrame.cpp
+  ZIDLResource.cpp
+  ZItemMenu.cpp
+  ZItemSlotView.cpp
+  ZMapListBox.cpp
+  ZMeshView.cpp
+  ZMeshViewList.cpp
+  ZMsgBox.cpp
+  ZPlayerListBox.cpp
+  ZPlayerMenu.cpp
+  ZPlayerSelectListBox.cpp
+  ZRoomListBox.cpp
+  ZScoreListBox.cpp
+  ZServerView.cpp
+  ZShopEquipListbox.cpp
+  ZStageInfoBox.cpp
+  ZToolTip.cpp
+  ZChat.cpp
+  ZChat_Cmds.cpp
+  ZChatCmd.cpp
+  ZConsole.cpp
+  ZCountDown.cpp
+  ZEmblemInterface.cpp
+  ZFile.cpp
+  ZGameInterface.cpp
+  ZGameInterface_OnCommand.cpp
+  ZInitialLoading.cpp
+  ZInterface.cpp
+  ZInterfaceBackground.cpp
+  ZInterfaceListener.cpp
+  ZItemIconBitmap.cpp
+  ZLoading.cpp
+  ZMonsterBookInterface.cpp
+  ZMyInfo.cpp
+  ZNetRepository.cpp
+  ZOptionInterface.cpp
+  ZPlayerList.cpp
+  ZReportAbuse.cpp
+  ZScreenDebugger.cpp
+  ZShop.cpp
+  ZShopEquipInterface.cpp
+  ZShopEquipItem.cpp
+  ZShopEquipItemConfirm.cpp
+  ZStageInterface.cpp
+  ZStageSetting.cpp
+  ZMyGambleItem.cpp
+  ZMyItem.cpp
+  ZMyItemList.cpp
+  ZMyQuestItem.cpp
+  ZMyBuff.cpp
+  ZMyBuffMgr.cpp
+  ZNPCInfoFromserver.cpp
+  ZQuest.cpp
+  ZQuestGameInfo.cpp
+  ZQuestMap.cpp
+  ZSurvival.cpp
+  ZAniEventHandler.cpp
+  ZEffectAniMesh.cpp
+  ZEffectBase.cpp
+  ZEffectBillboard.cpp
+  ZEffectBillboardList.cpp
+  ZEffectBulletMark.cpp
+  ZEffectBulletMarkList.cpp
+  ZEffectFlashBang.cpp
+  ZEffectGunFire.cpp
+  ZEffectLightFragment.cpp
+  ZEffectLightFragmentList.cpp
+  ZEffectLightTracer.cpp
+  ZEffectManager.cpp
+  ZEffectMesh.cpp
+  ZEffectSmoke.cpp
+  ZEffectStaticMesh.cpp
+  ZScreenEffectManager.cpp
+  ZCharacter.cpp
+  ZCharacterBuff.cpp
+  ZCharacterItem.cpp
+  ZCharacterManager.cpp
+  ZCharacterObject.cpp
+  ZItem.cpp
+  ZItemDesc.cpp
+  ZMyCharacter.cpp
+  ZNetCharacter.cpp
+  ZObject.cpp
+  ZObjectManager.cpp
+  ZShadow.cpp
+  ZModule.cpp
+  ZModule_ColdDamage.cpp
+  ZModule_FireDamage.cpp
+  ZModule_HealOverTime.cpp
+  ZModule_HPAP.cpp
+  ZModule_LightningDamage.cpp
+  ZModule_Movable.cpp
+  ZModule_PoisonDamage.cpp
+  ZModule_QuestStatus.cpp
+  ZModule_Resistance.cpp
+  ZModule_Skills.cpp
+  ZSkill.cpp
+  ZActor.cpp
+  ZActorAnimation.cpp
+  ZActorController.cpp
+  ZBrain.cpp
+  ZEnemy.cpp
+  ZEnvObject.cpp
+  ZRangeWeaponHitDice.cpp
+  ZStateMachine.cpp
+  ZTask.cpp
+  ZTask_AttackMelee.cpp
+  ZTask_AttackRange.cpp
+  ZTask_Delay.cpp
+  ZTask_MoveToPos.cpp
+  ZTask_RotateToDir.cpp
+  ZTask_Skill.cpp
+  ZTaskManager.cpp
+  ZBehavior.cpp
+  ZBehavior_Attack.cpp
+  ZBehavior_Idle.cpp
+  ZBehavior_Patrol.cpp
+  ZBehavior_Script.cpp
+  ZActorSound.cpp
+  ZSoundEngine.cpp
+  ZSoundFMod.cpp
+  Physics.cpp
+  CGLEncription.cpp
+  main.cpp
+  ZApplication.cpp
+  ZCamera.cpp
+  ZChannelRule.cpp
+  ZClan.cpp
+  ZConfiguration.cpp
+  ZGame.cpp
+  ZGameAction.cpp
+  ZGameType.cpp
+  ZGlobal.cpp
+  ZHelpScreen.cpp
+  ZMap.cpp
+  ZMapDesc.cpp
+  ZReplay.cpp
+  ZTestGame.cpp
+  ZTimer.cpp
+  ZUtil.cpp
+  ZWorld.cpp
+  ZWorldManager.cpp
+  ZMatch.cpp
+  ZRule.cpp
+  ZRuleAssassinate.cpp
+  ZRuleBaseQuest.cpp
+  ZRuleBerserker.cpp
+  ZRuleDeathMatch.cpp
+  ZRuleDuel.cpp
+  ZRuleDuelTournament.cpp
+  ZRuleGladiator.cpp
+  ZRuleQuest.cpp
+  ZRuleSurvival.cpp
+  ZRuleTraining.cpp
+  ZWeapon.cpp
+  ZWeaponMgr.cpp
+  ZBirdDummyAI.cpp
+  ZBirdDummyClient.cpp
+  ZBirdTest.cpp
+  MSysInfo.cpp
+  ZClothEmblem.cpp
+  ZProfiler.cpp
+  ZSkyBox.cpp
+  ZStencilLight.cpp
+  ZWater.cpp
+  ZWorldItem.cpp
+  MEmblemMgr.cpp
+  ZCommandTable.cpp
+  ZGameClient.cpp
+  ZGameClient_Clan.cpp
+  ZGameClient_DuelTournament.cpp
+  ZGameClient_Ladder.cpp
+  ZGameClient_OnCommand.cpp
+  ZGameTypeList.cpp
+  ZLocatorList.cpp
+  ZNetAgreementBuilder.cpp
+  ZPost.cpp
+  ZPostLocal.cpp
+  ZSecurity.cpp
+  upnp.cpp
+  ZCommandUDPHackShield.cpp
+  ZBaseAuthInfo.cpp
+  ZLocale.cpp
+  ZGameOnJPAuth.cpp
+  ZNetmarble.cpp
+  ZNetmarbleJP.cpp
+  ZNHN_USA.cpp
+  ZNHN_USA_Poll.cpp
+  ZNHN_USA_Report.cpp
+  ZLanguageConf.cpp
+  ZMessages.cpp
+  ZStringResManager.cpp
+  ZTips.cpp
+  SecurityTest.cpp
+  ZGameGuard.cpp
+  ZWorldObject.cpp
+  ZWorldObject_Movable.cpp
+  ZWorldObject_Navigation.cpp
+     Creating library ..\Build\Gunz\Gunz.lib and object ..\Build\Gunz\Gunz.exp
+  LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+detours.lib(disasm.obj) : warning LNK4099: PDB 'detours.pdb' was not found with 'detours.lib(disasm.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\detours.pdb'; linking object as if no debug info
+portaudio.lib(pa_allocation.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_allocation.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_converters.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_converters.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_cpuload.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_cpuload.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_debugprint.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_debugprint.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_dither.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_dither.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_front.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_front.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_process.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_process.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_ringbuffer.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_ringbuffer.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_stream.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_stream.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_win_wasapi.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_win_wasapi.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_win_wmme.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_win_wmme.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_win_coinitialize.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_win_coinitialize.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_win_hostapis.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_win_hostapis.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_win_util.obj) : warning LNK4099: PDB '' was not found with 'portaudio.lib(pa_win_util.obj)' or at ''; linking object as if no debug info
+portaudio.lib(pa_win_waveformat.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_win_waveformat.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+portaudio.lib(pa_win_wdmks_utils.obj) : warning LNK4099: PDB 'portaudio.pdb' was not found with 'portaudio.lib(pa_win_wdmks_utils.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\portaudio.pdb'; linking object as if no debug info
+celt.lib(bands.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(bands.obj)' or at ''; linking object as if no debug info
+celt.lib(celt.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(celt.obj)' or at ''; linking object as if no debug info
+celt.lib(celt_decoder.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(celt_decoder.obj)' or at ''; linking object as if no debug info
+celt.lib(celt_encoder.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(celt_encoder.obj)' or at ''; linking object as if no debug info
+celt.lib(celt_lpc.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(celt_lpc.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(cwrs.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(cwrs.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(entcode.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(entcode.obj)' or at ''; linking object as if no debug info
+celt.lib(entdec.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(entdec.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(entenc.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(entenc.obj)' or at ''; linking object as if no debug info
+celt.lib(kiss_fft.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(kiss_fft.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(laplace.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(laplace.obj)' or at ''; linking object as if no debug info
+celt.lib(mathops.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(mathops.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(mdct.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(mdct.obj)' or at ''; linking object as if no debug info
+celt.lib(modes.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(modes.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(pitch.obj) : warning LNK4099: PDB '' was not found with 'celt.lib(pitch.obj)' or at ''; linking object as if no debug info
+celt.lib(quant_bands.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(quant_bands.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(rate.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(rate.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(vq.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(vq.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(pitch_sse.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(pitch_sse.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+celt.lib(x86cpu.obj) : warning LNK4099: PDB 'celt.pdb' was not found with 'celt.lib(x86cpu.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\celt.pdb'; linking object as if no debug info
+opus.lib(analysis.obj) : warning LNK4099: PDB '' was not found with 'opus.lib(analysis.obj)' or at ''; linking object as if no debug info
+opus.lib(mlp.obj) : warning LNK4099: PDB 'opus.pdb' was not found with 'opus.lib(mlp.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\opus.pdb'; linking object as if no debug info
+opus.lib(mlp_data.obj) : warning LNK4099: PDB '' was not found with 'opus.lib(mlp_data.obj)' or at ''; linking object as if no debug info
+opus.lib(opus.obj) : warning LNK4099: PDB '' was not found with 'opus.lib(opus.obj)' or at ''; linking object as if no debug info
+opus.lib(opus_decoder.obj) : warning LNK4099: PDB '' was not found with 'opus.lib(opus_decoder.obj)' or at ''; linking object as if no debug info
+opus.lib(opus_encoder.obj) : warning LNK4099: PDB '' was not found with 'opus.lib(opus_encoder.obj)' or at ''; linking object as if no debug info
+opus.lib(repacketizer.obj) : warning LNK4099: PDB 'opus.pdb' was not found with 'opus.lib(repacketizer.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\opus.pdb'; linking object as if no debug info
+silk_common.lib(A2NLSF.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(A2NLSF.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(ana_filt_bank_1.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(ana_filt_bank_1.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(biquad_alt.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(biquad_alt.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(bwexpander.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(bwexpander.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(bwexpander_32.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(bwexpander_32.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(check_control_input.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(check_control_input.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(CNG.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(CNG.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(code_signs.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(code_signs.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(control_audio_bandwidth.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(control_audio_bandwidth.obj)' or at ''; linking object as if no debug info
+silk_common.lib(control_codec.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(control_codec.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(control_SNR.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(control_SNR.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(decoder_set_fs.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(decoder_set_fs.obj)' or at ''; linking object as if no debug info
+silk_common.lib(decode_core.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(decode_core.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(decode_frame.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(decode_frame.obj)' or at ''; linking object as if no debug info
+silk_common.lib(decode_indices.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(decode_indices.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(decode_parameters.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(decode_parameters.obj)' or at ''; linking object as if no debug info
+silk_common.lib(decode_pitch.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(decode_pitch.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(decode_pulses.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(decode_pulses.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(dec_API.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(dec_API.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(encode_indices.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(encode_indices.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(encode_pulses.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(encode_pulses.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(enc_API.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(enc_API.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(gain_quant.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(gain_quant.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(HP_variable_cutoff.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(HP_variable_cutoff.obj)' or at ''; linking object as if no debug info
+silk_common.lib(init_decoder.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(init_decoder.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(init_encoder.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(init_encoder.obj)' or at ''; linking object as if no debug info
+silk_common.lib(inner_prod_aligned.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(inner_prod_aligned.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(interpolate.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(interpolate.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(lin2log.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(lin2log.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(log2lin.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(log2lin.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(LPC_analysis_filter.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(LPC_analysis_filter.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(LPC_inv_pred_gain.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(LPC_inv_pred_gain.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(LP_variable_cutoff.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(LP_variable_cutoff.obj)' or at ''; linking object as if no debug info
+silk_common.lib(NLSF2A.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF2A.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_decode.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_decode.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_del_dec_quant.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_del_dec_quant.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_encode.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_encode.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_stabilize.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_stabilize.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_unpack.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_unpack.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_VQ.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_VQ.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NLSF_VQ_weights_laroia.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NLSF_VQ_weights_laroia.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NSQ.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NSQ.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NSQ_del_dec.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NSQ_del_dec.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(pitch_est_tables.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(pitch_est_tables.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(PLC.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(PLC.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(process_NLSFs.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(process_NLSFs.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(quant_LTP_gains.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(quant_LTP_gains.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_down2.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_down2.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_down2_3.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_down2_3.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_private_AR2.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_private_AR2.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_private_down_FIR.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_private_down_FIR.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_private_IIR_FIR.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_private_IIR_FIR.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(resampler_private_up2_HQ.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(resampler_private_up2_HQ.obj)' or at ''; linking object as if no debug info
+silk_common.lib(resampler_rom.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(resampler_rom.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(shell_coder.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(shell_coder.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(sigm_Q15.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(sigm_Q15.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(sort.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(sort.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_decode_pred.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_decode_pred.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_encode_pred.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_encode_pred.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_find_predictor.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_find_predictor.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_LR_to_MS.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_LR_to_MS.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_MS_to_LR.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_MS_to_LR.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(stereo_quant_pred.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(stereo_quant_pred.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(sum_sqr_shift.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(sum_sqr_shift.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_gain.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_gain.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_LTP.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_LTP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_NLSF_CB_NB_MB.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_NLSF_CB_NB_MB.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_NLSF_CB_WB.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_NLSF_CB_WB.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_other.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_other.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_pitch_lag.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_pitch_lag.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(tables_pulses_per_block.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(tables_pulses_per_block.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(table_LSF_cos.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(table_LSF_cos.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(VAD.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(VAD.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(VQ_WMat_EC.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(VQ_WMat_EC.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NSQ_del_dec_sse.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(NSQ_del_dec_sse.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(NSQ_sse.obj) : warning LNK4099: PDB '' was not found with 'silk_common.lib(NSQ_sse.obj)' or at ''; linking object as if no debug info
+silk_common.lib(VAD_sse.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(VAD_sse.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(VQ_WMat_EC_sse.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(VQ_WMat_EC_sse.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_common.lib(x86_silk_map.obj) : warning LNK4099: PDB 'silk_common.pdb' was not found with 'silk_common.lib(x86_silk_map.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_common.pdb'; linking object as if no debug info
+silk_float.lib(apply_sine_window_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(apply_sine_window_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(autocorrelation_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(autocorrelation_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(burg_modified_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(burg_modified_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(bwexpander_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(bwexpander_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(corrMatrix_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(corrMatrix_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(encode_frame_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(encode_frame_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(energy_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(energy_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(find_LPC_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(find_LPC_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(find_LTP_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(find_LTP_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(find_pitch_lags_FLP.obj) : warning LNK4099: PDB '' was not found with 'silk_float.lib(find_pitch_lags_FLP.obj)' or at ''; linking object as if no debug info
+silk_float.lib(find_pred_coefs_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(find_pred_coefs_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(inner_product_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(inner_product_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(k2a_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(k2a_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(levinsondurbin_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(levinsondurbin_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(LPC_analysis_filter_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(LPC_analysis_filter_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(LPC_inv_pred_gain_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(LPC_inv_pred_gain_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(LTP_analysis_filter_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(LTP_analysis_filter_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(LTP_scale_ctrl_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(LTP_scale_ctrl_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(noise_shape_analysis_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(noise_shape_analysis_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(pitch_analysis_core_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(pitch_analysis_core_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(prefilter_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(prefilter_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(process_gains_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(process_gains_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(regularize_correlations_FLP.obj) : warning LNK4099: PDB '' was not found with 'silk_float.lib(regularize_correlations_FLP.obj)' or at ''; linking object as if no debug info
+silk_float.lib(residual_energy_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(residual_energy_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(scale_copy_vector_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(scale_copy_vector_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(scale_vector_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(scale_vector_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(schur_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(schur_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(solve_LS_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(solve_LS_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(sort_FLP.obj) : warning LNK4099: PDB '' was not found with 'silk_float.lib(sort_FLP.obj)' or at ''; linking object as if no debug info
+silk_float.lib(warped_autocorrelation_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(warped_autocorrelation_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+silk_float.lib(wrappers_FLP.obj) : warning LNK4099: PDB 'silk_float.pdb' was not found with 'silk_float.lib(wrappers_FLP.obj)' or at 'E:\2ITSOURCE2026\Gunz\Runtime\silk_float.pdb'; linking object as if no debug info
+  Gunz.vcxproj -> E:\2ITSOURCE2026\Build\Gunz\Gunz.exe
