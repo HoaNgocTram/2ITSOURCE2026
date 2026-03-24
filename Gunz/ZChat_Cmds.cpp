@@ -29,6 +29,7 @@
 #include "RGMain.h"
 #include "Config.h"
 
+
 void ChatCmd_Test(const char* line, const int argc, char **const argv);				// Testing
 void ChatCmd_Exit(const char* line, const int argc, char** const argv);
 void ChatCmd_Help(const char* line, const int argc, char **const argv);				// µµ¿ò¸»
@@ -64,6 +65,7 @@ void ChatCmd_VoteYes(const char* line,const int argc, char **const argv);
 void ChatCmd_VoteNo(const char* line,const int argc, char **const argv);
 void ChatCmd_Kick(const char* line,const int argc, char **const argv);
 void ChatCmd_MouseSensitivity(const char* line,const int argc, char **const argv);
+void ChatCmd_ReloadUI(const char* line, const int argc, char** const argv);	// reloadUI
 
 // Custom: Command callbacks
 void ChatCmd_AdminSummon(const char* line,const int argc, char **const argv);
@@ -252,6 +254,7 @@ void ZChat::InitCmds()
 	_CC_AC("unignore",					&ChatCmd_UnIgnorePlayer,	CCF_ALL, ARGVNoMin, 1, true, "/unignore <charname>", "Removes a player from the ignore list");
 	_CC_AC("ignorelist",				&ChatCmd_IgnoreList,		CCF_ALL, ARGVNoMin,	ARGVNoMax, true, "/ignorelist", "Display users in the ignore list");
 	_CC_AC("nojjang",                   &ChatCmd_HideJjang,         CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/nojjang", "");
+	_CC_AC("rl_ui",						&ChatCmd_ReloadUI,			CCF_ALL, ARGVNoMin, ARGVNoMax, true, "/rl_ui", "Reload all UI XML files");	// reloadUI
 	//_CC_AC("super", &ChatCmd_Ki, CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/super", "");
 	_CC_AC("jump", &ChatCmd_NinjaJump, CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/jump", "");
 	_CC_AC("clean", &ChatCmd_ClearChat, CCF_ALL, ARGVNoMin, 1, true, "/clean", "");
@@ -581,6 +584,13 @@ void ChatCmd_Whisper(const char* line, const int argc, char **const argv)
 		sprintf(szMsg, "(To %s) : %s", szRName, pszMsg);	//jintriple3 À¯ÀE³×ÀÓÀº ±×´EÎ Ãâ·ÂµÇµµ·Ï...
 		ZChatOutput(MCOLOR(96,96,168), szMsg, ZChat::CL_CURRENT);
 	}
+}
+
+// reloadUI
+void ChatCmd_ReloadUI(const char* line, const int argc, char** const argv)
+{
+	ZChatOutput("UI will reload next frame...", ZChat::CMT_SYSTEM);
+	ZGetGameInterface()->m_bPendingUIReload = true;
 }
 
 void ChatCmd_CreateChatRoom(const char* line, const int argc, char **const argv)

@@ -81,6 +81,7 @@ public:
 	bool				m_bViewUI;
 	bool				m_bTeamPlay;
 	bool				m_bLoginTimeout;
+	bool				m_bPendingUIReload = false;	// reloadUI
 	DWORD				m_dwLoginTimeout;
 #ifdef _AFKSYSTEM
 	DWORD				m_dwAfkTimer;
