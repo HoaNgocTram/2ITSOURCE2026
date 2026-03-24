@@ -383,6 +383,13 @@ void Chat::OutputChatMsg(const char *szMsg, u32 dwColor)
 			return;
 		}
 	}
+	if (Msgs.size() > 10) {
+		Msgs.erase(Msgs.begin());
+		// Sau khi xóa tin đầu, phải cập nhật lại LineSegments để tránh lệch dòng
+		LineSegments.clear();
+		for (int i = 0; i < (int)Msgs.size(); ++i)
+			DivideIntoLines(i, std::back_inserter(LineSegments));
+	}
 
 	Msgs.emplace_back();
 	auto&& Msg = Msgs.back();

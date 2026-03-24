@@ -34,6 +34,7 @@
 *.res
 *.ipdb
 *.iobj
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -52,7 +53,6 @@
 *.a
 
 # Executables
-
 *.out
 *.app
 *.map
