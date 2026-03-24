@@ -5248,7 +5248,7 @@ void ZGameInterface::OnDraw(MDrawContext *pDC)
 {
 	m_nDrawCount++;
 
-	// reloadUI === Hot Reload UI ===
+	// reloadUI
 	if (m_bPendingUIReload)
 	{
 		m_bPendingUIReload = false;
@@ -5265,7 +5265,7 @@ void ZGameInterface::OnDraw(MDrawContext *pDC)
 		}
 		return; // skip drawing this frame
 	}
-	// === End Hot Reload ===
+	// === End reloadUI ===
 
 	__BP(11,"ZGameInterface::OnDraw");
 
