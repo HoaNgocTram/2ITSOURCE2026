@@ -2610,6 +2610,14 @@ void ZOptionInterface::Resize(int w, int h)
 		if (pCamera)
 			pCamera->AdjustDist();
 	}*/
+
+	// reloadUI === Auto center Option window ===
+	MWidget* pOption = ZGetGameInterface()->GetIDLResource()->FindWidget("OptionGroup");
+	if (pOption)
+	{
+		MRECT rc = pOption->GetRect();
+		pOption->SetPosition((w - rc.w) / 2, (h - rc.h) / 2);
+	}
 }
 
 void ZOptionInterface::GetOldScreenResolution()

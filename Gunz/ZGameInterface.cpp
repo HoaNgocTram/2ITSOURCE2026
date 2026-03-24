@@ -5248,6 +5248,25 @@ void ZGameInterface::OnDraw(MDrawContext *pDC)
 {
 	m_nDrawCount++;
 
+	// reloadUI === Hot Reload UI ===
+	if (m_bPendingUIReload)
+	{
+		m_bPendingUIReload = false;
+		char* szSkin = ZGetConfiguration()->GetInterfaceSkinName();
+		ChangeInterfaceSkin(szSkin);
+
+		MWidget* pOption = m_IDLResource.FindWidget("OptionGroup");
+		if (pOption)
+		{
+			int sw = MGetWorkspaceWidth();
+			int sh = MGetWorkspaceHeight();
+			pOption->SetPosition((sw - pOption->GetRect().w) / 2,
+				(sh - pOption->GetRect().h) / 2);
+		}
+		return; // skip drawing this frame
+	}
+	// === End Hot Reload ===
+
 	__BP(11,"ZGameInterface::OnDraw");
 
 	if(m_bLoading) 
