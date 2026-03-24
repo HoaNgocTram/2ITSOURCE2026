@@ -5252,18 +5252,28 @@ void ZGameInterface::OnDraw(MDrawContext *pDC)
 	if (m_bPendingUIReload)
 	{
 		m_bPendingUIReload = false;
-		char* szSkin = ZGetConfiguration()->GetInterfaceSkinName();
-		ChangeInterfaceSkin(szSkin);
 
-		MWidget* pOption = m_IDLResource.FindWidget("OptionGroup");
-		if (pOption)
+		// only reload when not ingame (lobby, stage, login,...)
+		if (GetState() == GUNZ_GAME)
 		{
-			int sw = MGetWorkspaceWidth();
-			int sh = MGetWorkspaceHeight();
-			pOption->SetPosition((sw - pOption->GetRect().w) / 2,
-				(sh - pOption->GetRect().h) / 2);
+			ZChatOutput("Cannot reload UI while in-game. Use in lobby/stage.", ZChat::CMT_SYSTEM);
 		}
-		return; // skip drawing this frame
+		else
+		{
+			char* szSkin = ZGetConfiguration()->GetInterfaceSkinName();
+			ChangeInterfaceSkin(szSkin);
+
+			MWidget* pOption = m_IDLResource.FindWidget("OptionGroup");
+			if (pOption)
+			{
+				int sw = MGetWorkspaceWidth();
+				int sh = MGetWorkspaceHeight();
+				MRECT rc = pOption->GetRect();
+				pOption->SetPosition((sw - rc.w) / 2, (sh - rc.h) / 2);
+			}
+			ZChatOutput("UI reloaded!", ZChat::CMT_SYSTEM);
+		}
+		return;
 	}
 	// === End reloadUI ===
 
