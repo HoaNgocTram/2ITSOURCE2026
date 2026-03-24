@@ -1240,133 +1240,58 @@ void ZScreenEffectManager::DrawReloadStatus(MDrawContext* pDC)
 		pDC->SetColor(255, 255, 255, 255); // Trả lại màu trắng chuẩn
 	}
 }
-void ZScreenEffectManager::Draw(MDrawContext* pDC)
-{
-	ZCharacter* pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
-	if (!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
-
-	// 1. Kiểm tra chế độ quan sát và ẩn UI
-	if (ZGetCombatInterface()->GetObserverMode() || ZGetCombatInterface()->IsSkupUIDraw()) return;
-
-	// 2. Logic kiểm tra đạn (Update trạng thái)
-	ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
-	m_bShowReload = false;
-	m_bShowEmpty = false;
-
-	if (pSelectedItem && pSelectedItem->GetItemType() != MMIT_MELEE)
-	{
-		if (pSelectedItem->GetBulletCurrMagazine() <= 0)
-		{
-			// Nếu không còn đạn để thay -> EMPTY, ngược lại -> RELOAD
-			if (pSelectedItem->GetBulletSpare() <= 0) {
-				m_bShowEmpty = true;
-			}
-			else {
-				m_bShowReload = true;
-			}
-		}
-	}
-
-	// 3. Vẽ các thành phần Screen Effect
-	// A. Vẽ Reload/Empty báo động
-	DrawReloadStatus(pDC);
-
-	// B. Vẽ Combo (HIT, HEADSHOT...)
-	DrawCombo(pDC);
-
-	// C. Reset render state nếu cần (cho chắc ăn)
-	RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
-	RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-
-	LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
-	pd3dDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-	pd3dDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-
-	if (!ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
-	{
-		if (ZGetCombatInterface()->IsShowUI())
-			DrawEffects(); // ÄÞº¸ ¿¡´Ï¸ÞÀÌ¼Ç µå·Î¿E
-
-		// ÄÞº¸ÀÌÆåÆ®´Â Á÷Á¢°E®ÇØÁà¾ßÇÑ´Ù
-		//DrawCombo(pDC);
-	}
-
-	if (ZGetCombatInterface()->IsShowUI())
-	{
-		DrawQuestEffects(); // Äù½ºÆ®½Ã K.O ÀÌ¹ÌÁE
-		DrawDuelEffects();
-		DrawTDMEffects();
-		DrawCTFEffects();
-	}
-}
-//void ZScreenEffectManager::Draw()
+//void ZScreenEffectManager::Draw(MDrawContext* pDC)
 //{
-//	ZCharacter *pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
-//	if(!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
+//	ZCharacter* pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
+//	if (!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
 //
-//	if(!ZGetCombatInterface()->GetObserverMode() && !ZGetCombatInterface()->IsSkupUIDraw())
+//	// 1. Kiểm tra chế độ quan sát và ẩn UI
+//	if (ZGetCombatInterface()->GetObserverMode() || ZGetCombatInterface()->IsSkupUIDraw()) return;
+//
+//	// 2. Logic kiểm tra đạn (Update trạng thái)
+//	ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
+//	m_bShowReload = false;
+//	m_bShowEmpty = false;
+//
+//	if (pSelectedItem && pSelectedItem->GetItemType() != MMIT_MELEE)
 //	{
-//		RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE,	FALSE);
-//		RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-//
-//		if(pTargetCharacter) 
+//		if (pSelectedItem->GetBulletCurrMagazine() <= 0)
 //		{
-//			ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
-//
-//			if(pSelectedItem){
-//				if( pSelectedItem->GetItemType() != MMIT_MELEE ) {
-//					if (pSelectedItem->GetBulletCurrMagazine() <= 0) {
-//						if(pSelectedItem->isReloadable()==false) {
-//							m_bShowReload = false;
-//							m_bShowEmpty = true;
-//						}
-//						else {
-//							m_bShowReload = true;
-//							m_bShowEmpty = false;
-//						}
-//					}
-//					else {
-//						m_bShowReload = false;
-//						m_bShowEmpty = false;
-//					}
-//				}
-//				else {
-//					m_bShowReload = false;
-//					m_bShowEmpty = false;
-//				}
+//			// Nếu không còn đạn để thay -> EMPTY, ngược lại -> RELOAD
+//			if (pSelectedItem->GetBulletSpare() <= 0) {
+//				m_bShowEmpty = true;
 //			}
-//		}
-//
-//		if( m_bShowReload ) {
-//			if(m_pReload)
-//			{
-//				m_pReload->Update();
-//				m_pReload->Draw(0);
-//			}
-//		}
-//		else if(m_bShowEmpty) {
-//			if(m_pEmpty)
-//			{
-//				m_pEmpty->Update();
-//				m_pEmpty->Draw(0);
+//			else {
+//				m_bShowReload = true;
 //			}
 //		}
 //	}
 //
-//	LPDIRECT3DDEVICE9 pd3dDevice=RGetDevice();
-//	pd3dDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
-//	pd3dDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
+//	// 3. Vẽ các thành phần Screen Effect
+//	// A. Vẽ Reload/Empty báo động
+//	DrawReloadStatus(pDC);
 //
-//	if ( !ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
+//	// B. Vẽ Combo (HIT, HEADSHOT...)
+//	DrawCombo(pDC);
+//
+//	// C. Reset render state nếu cần (cho chắc ăn)
+//	RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+//	RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+//
+//	LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+//	pd3dDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+//	pd3dDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+//
+//	if (!ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
 //	{
-//		if(ZGetCombatInterface()->IsShowUI())
+//		if (ZGetCombatInterface()->IsShowUI())
 //			DrawEffects(); // ÄÞº¸ ¿¡´Ï¸ÞÀÌ¼Ç µå·Î¿E
 //
 //		// ÄÞº¸ÀÌÆåÆ®´Â Á÷Á¢°E®ÇØÁà¾ßÇÑ´Ù
 //		//DrawCombo(pDC);
 //	}
 //
-//	if(ZGetCombatInterface()->IsShowUI())
+//	if (ZGetCombatInterface()->IsShowUI())
 //	{
 //		DrawQuestEffects(); // Äù½ºÆ®½Ã K.O ÀÌ¹ÌÁE
 //		DrawDuelEffects();
@@ -1374,6 +1299,81 @@ void ZScreenEffectManager::Draw(MDrawContext* pDC)
 //		DrawCTFEffects();
 //	}
 //}
+void ZScreenEffectManager::Draw(MDrawContext* pDC)
+{
+	ZCharacter *pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
+	if(!pTargetCharacter || !pTargetCharacter->GetInitialized()) return;
+
+	if(!ZGetCombatInterface()->GetObserverMode() && !ZGetCombatInterface()->IsSkupUIDraw())
+	{
+		RGetDevice()->SetRenderState(D3DRS_ALPHATESTENABLE,	FALSE);
+		RGetDevice()->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+
+		if(pTargetCharacter) 
+		{
+			ZItem* pSelectedItem = pTargetCharacter->GetItems()->GetSelectedWeapon();
+
+			if(pSelectedItem){
+				if( pSelectedItem->GetItemType() != MMIT_MELEE ) {
+					if (pSelectedItem->GetBulletCurrMagazine() <= 0) {
+						if(pSelectedItem->isReloadable()==false) {
+							m_bShowReload = false;
+							m_bShowEmpty = true;
+						}
+						else {
+							m_bShowReload = true;
+							m_bShowEmpty = false;
+						}
+					}
+					else {
+						m_bShowReload = false;
+						m_bShowEmpty = false;
+					}
+				}
+				else {
+					m_bShowReload = false;
+					m_bShowEmpty = false;
+				}
+			}
+		}
+
+		if( m_bShowReload ) {
+			if(m_pReload)
+			{
+				m_pReload->Update();
+				m_pReload->Draw(0);
+			}
+		}
+		else if(m_bShowEmpty) {
+			if(m_pEmpty)
+			{
+				m_pEmpty->Update();
+				m_pEmpty->Draw(0);
+			}
+		}
+	}
+
+	LPDIRECT3DDEVICE9 pd3dDevice=RGetDevice();
+	pd3dDevice->SetSamplerState( 0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR );
+	pd3dDevice->SetSamplerState( 0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR );
+
+	if ( !ZGetGame()->IsReplay() || ZGetGame()->IsShowReplayInfo())
+	{
+		if(ZGetCombatInterface()->IsShowUI())
+			DrawEffects(); // ÄÞº¸ ¿¡´Ï¸ÞÀÌ¼Ç µå·Î¿E
+
+		// ÄÞº¸ÀÌÆåÆ®´Â Á÷Á¢°E®ÇØÁà¾ßÇÑ´Ù
+		DrawCombo(pDC);
+	}
+
+	if(ZGetCombatInterface()->IsShowUI())
+	{
+		DrawQuestEffects(); // Äù½ºÆ®½Ã K.O ÀÌ¹ÌÁE
+		DrawDuelEffects();
+		DrawTDMEffects();
+		DrawCTFEffects();
+	}
+}
 
 void ZScreenEffectManager::DrawMyWeaponImage()
 {

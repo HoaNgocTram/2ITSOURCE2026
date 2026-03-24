@@ -8755,28 +8755,28 @@ void ZGame::PostPeerPingInfo()
 	}
 }
 
-void ZGame::PostSyncReport()
-{
-	DWORD nNowTime = GetTickTime();
-
-#ifdef _PUBLISH
-	if ((nNowTime - m_nLastTime[ZLASTTIME_SYNC_REPORT]) >= MATCH_CYCLE_CHECK_SPEEDHACK) {
-#else
-	if ((nNowTime - m_nLastTime[ZLASTTIME_SYNC_REPORT]) >= 1000/*MATCH_CYCLE_CHECK_SPEEDHACK*/) {
-#endif
-		m_nLastTime[ZLASTTIME_SYNC_REPORT] = nNowTime;
-		int nDataChecksum = 0;
-		if (m_DataChecker.UpdateChecksum() == false) {
-			nDataChecksum = m_DataChecker.GetChecksum();
-			ZGetApplication()->Exit();
-		}
-
-		if (ZCheckHackProcess() == true) {
-			ZPostDisconnect();
-		}
-		ZPOSTCMD2(MC_MATCH_GAME_REPORT_TIMESYNC, MCmdParamUInt(nNowTime), MCmdParamUInt(nDataChecksum));
-	}
-	}
+//void ZGame::PostSyncReport()
+//{
+//	DWORD nNowTime = GetTickTime();
+//
+//#ifdef _PUBLISH
+//	if ((nNowTime - m_nLastTime[ZLASTTIME_SYNC_REPORT]) >= MATCH_CYCLE_CHECK_SPEEDHACK) {
+//#else
+//	if ((nNowTime - m_nLastTime[ZLASTTIME_SYNC_REPORT]) >= 1000/*MATCH_CYCLE_CHECK_SPEEDHACK*/) {
+//#endif
+//		m_nLastTime[ZLASTTIME_SYNC_REPORT] = nNowTime;
+//		int nDataChecksum = 0;
+//		if (m_DataChecker.UpdateChecksum() == false) {
+//			nDataChecksum = m_DataChecker.GetChecksum();
+//			ZGetApplication()->Exit();
+//		}
+//
+//		if (ZCheckHackProcess() == true) {
+//			ZPostDisconnect();
+//		}
+//		ZPOSTCMD2(MC_MATCH_GAME_REPORT_TIMESYNC, MCmdParamUInt(nNowTime), MCmdParamUInt(nDataChecksum));
+//	}
+//}
 
 // pOwner / pTarget = ½ðÄ³¸¯ÅÍ / ¸ÂÀº Ä³¸¯ÅÍ
 void ZGame::CheckCombo(ZCharacter * pOwnerCharacter, ZObject * pHitObject, bool bPlaySound)

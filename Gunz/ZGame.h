@@ -307,7 +307,7 @@ public:
 	void PostUpdateCharacter();
 #endif
 	void PostPeerPingInfo();
-	void PostSyncReport();
+	//void PostSyncReport();
 	void PostMyBuffInfo();
 
 #ifdef _POSTABINFO

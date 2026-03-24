@@ -2269,36 +2269,36 @@ void ZCombatInterface::ShowFPS(MDrawContext* pDC)
 	if (ZGetGameInterface()->GetCombatInterface()->GetObserverMode()) return;
 
 	// --- LOGIC TOGGLE ---
-	static unsigned long nLastTime = 0;
-	if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState('F') & 0x8000))
-	{
-		unsigned long nNow = timeGetTime();
-		if (nNow - nLastTime > 300) // Chỉ cho phép đảo trạng thái sau mỗi 300ms
-		{
-			// Đảo ngược giá trị cấu hình (Toggle)
-			bool bCurrent = ZGetConfiguration()->GetEtc()->bShowFPS;
-			ZGetConfiguration()->GetEtc()->bShowFPS = !bCurrent;
-			nLastTime = nNow;
-		}
-	}
+	//static unsigned long nLastTime = 0;
+	//if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState('F') & 0x8000))
+	//{
+	//	unsigned long nNow = timeGetTime();
+	//	if (nNow - nLastTime > 300) // Chỉ cho phép đảo trạng thái sau mỗi 300ms
+	//	{
+	//		// Đảo ngược giá trị cấu hình (Toggle)
+	//		bool bCurrent = ZGetConfiguration()->GetEtc()->bShowFPS;
+	//		ZGetConfiguration()->GetEtc()->bShowFPS = !bCurrent;
+	//		nLastTime = nNow;
+	//	}
+	//}
 
-	// --- LOGIC VẼ ---
-	// Chỉ vẽ khi cấu hình bShowFPS là true và không nhấn Tab (Score)
-	if (ZGetConfiguration()->GetEtc()->bShowFPS && !ZIsActionKeyPressed(ZACTION_SCORE))
-	{
-		char szFPS[128];
-		float FPS = (float)g_fFPS;
+	//// --- LOGIC VẼ ---
+	//// Chỉ vẽ khi cấu hình bShowFPS là true và không nhấn Tab (Score)
+	//if (ZGetConfiguration()->GetEtc()->bShowFPS && !ZIsActionKeyPressed(ZACTION_SCORE))
+	//{
+	//	char szFPS[128];
+	//	float FPS = (float)g_fFPS;
 
-		// Phân loại màu sắc theo FPS (Đoạn này viết khá mượt rồi)
-		if (FPS >= 240)      pDC->SetColor(MCOLOR(0xFF17FF00));
-		else if (FPS >= 120) pDC->SetColor(MCOLOR(0xFF8CFD81));
-		else if (FPS >= 60)  pDC->SetColor(MCOLOR(0xFFB8FCB1));
-		else if (FPS >= 30)  pDC->SetColor(MCOLOR(0xFFF7FF00));
-		else                 pDC->SetColor(MCOLOR(0xFFFF0000));
+	//	// Phân loại màu sắc theo FPS (Đoạn này viết khá mượt rồi)
+	//	if (FPS >= 240)      pDC->SetColor(MCOLOR(0xFF17FF00));
+	//	else if (FPS >= 120) pDC->SetColor(MCOLOR(0xFF8CFD81));
+	//	else if (FPS >= 60)  pDC->SetColor(MCOLOR(0xFFB8FCB1));
+	//	else if (FPS >= 30)  pDC->SetColor(MCOLOR(0xFFF7FF00));
+	//	else                 pDC->SetColor(MCOLOR(0xFFFF0000));
 
-		sprintf(szFPS, "FPS: %3.0f", FPS);
-		TextRelative(pDC, 700.f / 800.f, 10.f / 600.f, szFPS);
-	}
+	//	sprintf(szFPS, "FPS: %3.0f", FPS);
+	//	TextRelative(pDC, 700.f / 800.f, 10.f / 600.f, szFPS);
+	//}
 }
 #ifdef _INPUTFPS
 void ZCombatInterface::ShowInputRate(MDrawContext* pDC)
@@ -5228,6 +5228,7 @@ void ZCombatInterface::DrawMatchStatus(MDrawContext* pDC)
 {
 	if (RIsReadyToRender() != R_OK) return;
 	if (ZGetGame() == NULL || ZGetConfiguration()->GetEtc()->bScore == true) return;
+	if (GetObserverMode()) return; //ko vẽ khi đang chết hoặc theo dõi
 
 	ZMatch* pMatch = ZGetGame()->GetMatch();
 	ZCharacter* pMyChar = ZGetGame()->m_pMyCharacter;
