@@ -6375,8 +6375,8 @@ White Tee</STR>
 <!-- Interface XML -->
 
 <!-- common -->
-<STR id="UI_COMMON_OK">OK (O)</STR>
-<STR id="UI_COMMON_CANCEL">Hủy (C)</STR>
+<STR id="UI_COMMON_OK">OK (&amp;O)</STR>
+<STR id="UI_COMMON_CANCEL">Hủy (&amp;C)</STR>
 
 <!-- lobby Tips -->
 <STR id="UI_TOOLTIP_SHOP">Vật phẩm mới trong Cửa hàng, mua bằng Cash và Bounty!</STR>
@@ -6404,14 +6404,14 @@ White Tee</STR>
 <STR id="UI_LOGIN_01">Đăng nhập Gunz The Duel</STR>
 <STR id="UI_LOGIN_02">Tên người dùng</STR>
 <STR id="UI_LOGIN_03">Mật khẩu</STR>
-<STR id="UI_LOGIN_04">Kết nối (C)</STR>
+<STR id="UI_LOGIN_04">Kết nối (&amp;C)</STR>
 <STR id="UI_LOGIN_05">Bạn có chắc chắn muốn thoát khỏi Gunz: The Duel?</STR>
-<STR id="UI_LOGIN_06">Thoát (X)</STR>
+<STR id="UI_LOGIN_06">Thoát (&amp;X)</STR>
 <STR id="UI_LOGIN_07">Ghi nhớ tài khoản?</STR>
 
 <!-- Lobby.xml -->
 <STR id="UI_LOBBY_01">Sảnh</STR>
-<STR id="UI_LOBBY_02">Bắt đầu ngay (G)</STR>
+<STR id="UI_LOBBY_02">Bắt đầu ngay (&amp;G)</STR>
 <STR id="UI_LOBBY_03">Đang tìm người chơi để bắt đầu...</STR>
 <STR id="UI_LOBBY_04">Đang tìm kiếm người chơi để bắt đầu trận chiến...</STR>
 <STR id="UI_LOBBY_05">Hủy</STR>
@@ -6429,11 +6429,11 @@ White Tee</STR>
 <STR id="UI_LOBBY_14">Chiến tranh Clan</STR>
 <STR id="UI_LOBBY_15">Chiến đấu với tính năng cân bằng Clan được bật.</STR>
 <STR id="UI_LOBBY_16">Chọn thành viên Clan để tham gia chiến tranh Clan.</STR>
-<STR id="UI_LOBBY_17">OK (O)</STR>
-<STR id="UI_LOBBY_18">Hủy (C)</STR>
+<STR id="UI_LOBBY_17">OK (&amp;O)</STR>
+<STR id="UI_LOBBY_18">Hủy (&amp;C)</STR>
 <STR id="UI_LOBBY_19">Rút khỏi Clan</STR>
 <STR id="UI_LOBBY_20">Bạn có chắc chắn muốn rút khỏi Clan?</STR>
-<STR id="UI_LOBBY_21">Có (Y)</STR>
+<STR id="UI_LOBBY_21">Có (&amp;Y)</STR>
 <STR id="UI_LOBBY_23">Để chơi Bảng xếp hạng, nhấn nút OK và thưởng thức!</STR>
 <STR id="UI_LOBBY_24">Sự kiện : 0</STR>
 <STR id="UI_LOBBY_25">Người chơi trực tuyến : 0</STR>
@@ -6471,13 +6471,13 @@ White Tee</STR>
 <STR id="UI_REPLAY_02">../Documents/Gunz The Duel/Replay</STR>
 <STR id="UI_REPLAY_03">Bạn có thể gặp sự cố khi xem lại các bản phát lại từ phiên bản cũ hơn.</STR>
 <STR id="UI_REPLAY_04"></STR>
-<STR id="UI_REPLAY_05">Xem (V)</STR>
+<STR id="UI_REPLAY_05">Xem (&amp;V)</STR>
 <STR id="UI_REPLAY_06">Bạn có chắc chắn muốn xem bản phát lại?</STR>
 <STR id="UI_REPLAY_07">Phát lại</STR>
 <STR id="UI_REPLAY_08">Bạn có chắc chắn muốn xem lại video?</STR>
-<STR id="UI_REPLAY_09">Xem (V)</STR>
-<STR id="UI_REPLAY_10">Thoát (X)</STR>
-<STR id="UI_REPLAY_A01">Đóng (C)</STR>
+<STR id="UI_REPLAY_09">Xem (&amp;V)</STR>
+<STR id="UI_REPLAY_10">Thoát (&amp;X)</STR>
+<STR id="UI_REPLAY_A01">Đóng (&amp;C)</STR>
 
 <!-- ItemExpired.xml -->
 <STR id="UI_ITEMEXPIRED">Các vật phẩm sau đã hết hạn:</STR>
@@ -6490,22 +6490,22 @@ White Tee</STR>
 <!-- NetPortConfirm.xml -->
 <STR id="UI_NPC_01">Sửa đổi cổng mạng</STR>
 <STR id="UI_NPC_02">Khởi động lại GunZ The Duel để áp dụng cổng mạng đã sửa đổi. Thoát game ngay bây giờ?</STR>
-<STR id="UI_NPC_03">OK (O)</STR>
-<STR id="UI_NPC_04">Hủy (C)</STR>
+<STR id="UI_NPC_03">OK (&amp;O)</STR>
+<STR id="UI_NPC_04">Hủy (&amp;C)</STR>
 
 <!-- Greter.xml -->
-<STR id="UI_GREETER_01">Bắt đầu (G)</STR>
+<STR id="UI_GREETER_01">Bắt đầu (&amp;G)</STR>
 
 <!-- CombatInterface.xml -->
 <STR id="UI_CI_01">Tới tất cả:</STR>
 <STR id="UI_CI_02">Tới đội:</STR>
 <STR id="UI_CI_03">Menu trò chơi</STR>
-<STR id="UI_CI_04">Tùy chọn (O)</STR>
-<STR id="UI_CI_05">Quay lại trò chơi (X)</STR>
-<STR id="UI_CI_06">Thoát ra Phòng (R)</STR>
-<STR id="UI_CI_07">Thoát ra Sảnh (L)</STR>
+<STR id="UI_CI_04">Tùy chọn (&amp;O)</STR>
+<STR id="UI_CI_05">Quay lại trò chơi (&amp;X)</STR>
+<STR id="UI_CI_06">Thoát ra Phòng (&amp;R)</STR>
+<STR id="UI_CI_07">Thoát ra Sảnh (&amp;L)</STR>
 <STR id="UI_CI_08">Bạn có chắc chắn muốn thoát ra sảnh?</STR>
-<STR id="UI_CI_09">Thoát trò chơi (Q)</STR>
+<STR id="UI_CI_09">Thoát trò chơi (&amp;Q)</STR>
 <STR id="UI_CI_10">Bạn có chắc chắn muốn thoát khỏi GunZ: The Duel?</STR>
 <STR id="UI_CI_11">Báo cáo người dùng xấu</STR>
 <STR id="UI_CI_10">Bạn có chắc chắn muốn đăng xuất?</STR>
@@ -6573,7 +6573,7 @@ White Tee</STR>
 <STR id="UI_CS_01">Tên</STR>
 <STR id="UI_CS_02">0 Lv.</STR>
 <STR id="UI_CS_03">Clan</STR>
-<STR id="UI_CS_04">Chọn (G)</STR>
+<STR id="UI_CS_04">Chọn (&amp;G)</STR>
 <STR id="UI_CS_05">Bạn có chắc chắn muốn đăng xuất?</STR>
 <STR id="UI_CS_06">Xóa nhân vật</STR>
 <STR id="UI_CS_07">Để xóa nhân vật, vui lòng nhập 'YES' vào ô</STR>
@@ -6581,8 +6581,8 @@ White Tee</STR>
 
 <!-- Clan.xml -->
 <STR id="UI_CLAN_01">Tạo Clan</STR>
-<STR id="UI_CLAN_02">Đồng ý (A)</STR>
-<STR id="UI_CLAN_03">Từ chối (D)</STR>
+<STR id="UI_CLAN_02">Đồng ý (&amp;A)</STR>
+<STR id="UI_CLAN_03">Từ chối (&amp;D)</STR>
 <STR id="UI_CLAN_04">Thời hạn :</STR>
 <STR id="UI_CLAN_05">Đồng ý tạo Clan</STR>
 <STR id="UI_CLAN_06">Vui lòng đợi cho đến khi các thành viên đồng ý tạo Clan.</STR>
@@ -6660,7 +6660,7 @@ White Tee</STR>
 <STR id="UI_RC_05">Bạn có chắc chắn muốn áp dụng độ phân giải mới?</STR>
 <STR id="UI_RC_06">Độ phân giải mới đã được áp dụng.</STR>
 <STR id="UI_RC_07">Bạn có muốn áp dụng độ phân giải này không?</STR>
-<STR id="UI_RC_08">Có (Y)</STR>
+<STR id="UI_RC_08">Có (&amp;Y)</STR>
 
 <!-- StageSettingFrame.xml -->
 <STR id="UI_SSF_01">Tùy chọn trò chơi</STR>

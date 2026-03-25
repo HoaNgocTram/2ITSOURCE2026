@@ -1,69 +1,69 @@
 ﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   stdafx.cpp
 E:\2ITSOURCE2026\CSCommon\Include\MMatchItem.h(146,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(918,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchObject.h(1130,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(93,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(145,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(252,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStageSetting.h(324,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\RealCPNet.h(35,14): warning C4091: 'typedef ': ignored on left of 'RCP_IO_OPERATION' when no variable is declared
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchRule.h(144,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchTransDataType.h(391,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchWorldItem.h(94,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchWorldItem.h(124,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(23,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(191,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchStage.h(335,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(355,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(398,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(448,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\CSCommon\Include\MMatchServer.h(738,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
   
 E:\2ITSOURCE2026\MatchServer\stdafx.h(68,9): warning C4005: '_QUEST_ITEM': macro redefinition
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
       E:\2ITSOURCE2026\CSCommon\MFeatureDefine.h(21,9):
       see previous definition of '_QUEST_ITEM'
   
 E:\2ITSOURCE2026\MatchServer\stdafx.h(69,9): warning C4005: '_MONSTER_BIBLE': macro redefinition
-  (compiling source file '../MatchServer/stdafx.cpp')
+  (compiling source file 'stdafx.cpp')
       E:\2ITSOURCE2026\CSCommon\MFeatureDefine.h(22,9):
       see previous definition of '_MONSTER_BIBLE'
   

@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <XML id="zitem_event">
-<ITEM id="21011" name="STR:ZITEM_NAME_21011" mesh_name="eq_chest_clanmaster" totalpoint="0" type="equip" res_sex="m" res_level="0" slot="chest" weight="16" bt_price="0" hp="6" ap="23" maxwt="0" sf="0" fr="0" cr="0" pr="0" lr="0" color="#FFFFFFFF" rent_period="15" desc="STR:ZITEM_DESC_21011" elu="man-parts_clanmaster.elu" Currency="Event" />
-<ITEM id="21511" name="STR:ZITEM_NAME_21511" mesh_name="eq_chest_clanmaster" totalpoint="0" type="equip" res_sex="f" res_level="0" slot="chest" weight="16" bt_price="0" hp="6" ap="23" maxwt="0" sf="0" fr="0" cr="0" pr="0" lr="0" color="#FFFFFFFF" rent_period="15" desc="STR:ZITEM_DESC_21511" elu="woman-parts_clanmaster.elu" Currency="Event" />
+<ITEM id="21011" name="STR:ZITEM_NAME_21011" mesh_name="eq_chest_clanmaster" totalpoint="0" type="equip" res_sex="m" res_level="0" slot="chest" weight="16" bt_price="0" hp="6" ap="23" maxwt="0" sf="0" fr="0" cr="0" pr="0" lr="0" color="#FFFFFFFF" rent_period="15" desc="STR:ZITEM_DESC_21011" get_elu="man-parts_clanmaster.elu" Currency="Event" />
+<ITEM id="21511" name="STR:ZITEM_NAME_21511" mesh_name="eq_chest_clanmaster" totalpoint="0" type="equip" res_sex="f" res_level="0" slot="chest" weight="16" bt_price="0" hp="6" ap="23" maxwt="0" sf="0" fr="0" cr="0" pr="0" lr="0" color="#FFFFFFFF" rent_period="15" desc="STR:ZITEM_DESC_21511" get_elu="woman-parts_clanmaster.elu" Currency="Event" />
 
  <!--
       /////////////////////////////////////////////////////////////////////////////////////////////////////////////

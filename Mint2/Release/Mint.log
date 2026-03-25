@@ -1,10 +1,9 @@
 ﻿  stdafx.cpp
-  MAniBmButton.cpp
-  MAnimation.cpp
   MBButtonLook.cpp
   MBEditLook.cpp
   MBFrameLook.cpp
   MBGroupLook.cpp
+  MBitmapDrawer.cpp
   MBLabelLook.cpp
   MBListBoxLook.cpp
   MBMultiColListBoxLook.cpp
@@ -13,48 +12,49 @@
   MBSliderLook.cpp
   MBTabCtrlLook.cpp
   MBTextAreaLook.cpp
-  MBitmap.cpp
-  MBitmapDrawer.cpp
+  MAniBmButton.cpp
+  MAnimation.cpp
   MBmButton.cpp
   MBmLabel.cpp
   MButton.cpp
   MComboBox.cpp
+  MConsoleFrame.cpp
   Generating Code...
   Compiling...
-  MConsoleFrame.cpp
-  MCursor.cpp
   MDragObject.cpp
-  MDrawContext.cpp
   MEdit.cpp
   MEvent.cpp
   MFileBox.cpp
   MFileDialog.cpp
-  MFont.cpp
   MFrame.cpp
   MFrameDrawer.cpp
   MGroup.cpp
   MHotKey.cpp
   MHyperText.cpp
-  MIDLResource.cpp
+  Mint.cpp
   MLabel.cpp
   MLayoutManager.cpp
   MListBox.cpp
   MMsgBox.cpp
   MMultiColListBox.cpp
-  Generating Code...
-  Compiling...
   MPanel.cpp
   MPicture.cpp
   MPopupMenu.cpp
-  MResourceManager.cpp
   MScrollBar.cpp
+  Generating Code...
+  Compiling...
   MSlider.cpp
-  MStringTable.cpp
   MTabCtrl.cpp
   MTextArea.cpp
   MToolTip.cpp
   MTypes.cpp
   MWidget.cpp
-  Mint.cpp
+  MBitmap.cpp
+  MCursor.cpp
+  MDrawContext.cpp
+  MFont.cpp
+  MIDLResource.cpp
+  MResourceManager.cpp
+  MStringTable.cpp
   Generating Code...
   Mint.vcxproj -> E:\2ITSOURCE2026\Mint2\Runtime\Lib\Mint2.lib

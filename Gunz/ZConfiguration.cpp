@@ -1676,7 +1676,7 @@ void ZConfiguration::Init()
 	m_Video.bShotEffects = false;
 	m_Video.bBulletMarks = false;
 #ifdef _FLOATDMGTEXT
-	m_Video.bFloatDamage = false;
+	m_Video.bFloatDamage = true;
 #endif
 	m_MovingPicture.iResolution = 0;
 	m_MovingPicture.iFileSize = 0;
@@ -1752,7 +1752,7 @@ void ZConfiguration::Init()
 	m_Etc.bPosture = false;
 	m_Etc.bVisible = true;
 #ifdef _DYNAMIC
-	m_Etc.bDynamicLoad = false;
+	m_Etc.bDynamicLoad = true;
 #endif
 #ifdef _TRAILCOLOR
 	m_Etc.bTrailColors = 0xFFFFFFFF;
@@ -1768,7 +1768,7 @@ void ZConfiguration::Init()
 #endif
 
 #ifdef _FLOATDMG2
-	m_Etc.bFloatdmg2 = true;
+	m_Etc.bFloatdmg2 = false;
 #endif
 
 #ifdef _VOICE_CHAT
