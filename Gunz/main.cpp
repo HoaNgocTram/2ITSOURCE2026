@@ -798,18 +798,18 @@ RRESULT OnRender(void *pParam)
 		x = (x * 800 + 80) / 590.f;
 		screenx = x * MGetWorkspaceWidth();
 	}
-	static unsigned long nLastTime = 0;
-	if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState('F') & 0x8000))
-	{
-		unsigned long nNow = timeGetTime();
-		if (nNow - nLastTime > 300) // Chỉ cho phép đảo trạng thái sau mỗi 300ms
-		{
-			// Đảo ngược giá trị cấu hình (Toggle)
-			bool bCurrent = ZGetConfiguration()->GetEtc()->bShowFPS;
-			ZGetConfiguration()->GetEtc()->bShowFPS = !bCurrent;
-			nLastTime = nNow;
-		}
-	}
+	//static unsigned long nLastTime = 0;
+	//if ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState('F') & 0x8000))
+	//{
+	//	unsigned long nNow = timeGetTime();
+	//	if (nNow - nLastTime > 300) // Chỉ cho phép đảo trạng thái sau mỗi 300ms
+	//	{
+	//		// Đảo ngược giá trị cấu hình (Toggle)
+	//		bool bCurrent = ZGetConfiguration()->GetEtc()->bShowFPS;
+	//		ZGetConfiguration()->GetEtc()->bShowFPS = !bCurrent;
+	//		nLastTime = nNow;
+	//	}
+	//}
 	if (g_pDefFont && ZGetConfiguration()->GetEtc()->bShowFPS && !ZIsActionKeyPressed(ZACTION_SCORE))
 	{
 		sprintf(__buffer, "FPS: %3.0f", g_fFPS); // Ẩn FPS ở góc trái
