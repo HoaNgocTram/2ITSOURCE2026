@@ -427,6 +427,8 @@ void MEdit::Initialize(int nMaxLength, const char* szName)
 	MFont* pFont = GetFont();
 	int w = MEDIT_DEFAULT_WIDTH;
 	int h = pFont->GetHeight()+2;
+
+	m_TextAlignment = MAM_LEFT;	// text align for xml
 	//SetTextOffset(MPOINT(1, 1));
 
 	//m_TextColor = MCOLOR(0, 255, 0); 
@@ -840,13 +842,21 @@ void MEditLook::OnTextDraw(MEdit* pEdit, MDrawContext* pDC, bool bShowLanguageTa
 		//	pDC->FillRectangle( r.x+nCaretPosInWidget, r.y, nWidth, r.h );
 		//}
 		//else
+
+		// text align for xml
 		{
+			// Calculate alignment offset for caret
+			int nAlignOffset = 0;
+			if (pEdit->m_TextAlignment & MAM_HCENTER) {
+				int nFullTextWidth = pFont->GetWidth(szStartText);
+				nAlignOffset = (r.w - nFullTextWidth) / 2;
+				if (nAlignOffset < 0) nAlignOffset = 0;
+			}
+
 			// Caret
 			long nCurrTime = timeGetTime();
-			if((nCurrTime%(MEDIT_BLINK_TIME*2))>MEDIT_BLINK_TIME){
-				//pDC->Text(r.x+nWidth-1, r.y, "|");
-//				r.x+=nCaretPosInWidget-(int)((float)pFont->GetHeight()*0.3f);
-				r.x+=nCaretPosInWidget;//-(int)((float)pFont->GetHeight());
+			if ((nCurrTime % (MEDIT_BLINK_TIME * 2)) > MEDIT_BLINK_TIME) {
+				r.x += nCaretPosInWidget + nAlignOffset;
 				pDC->Text(r, "|", MAM_LEFT);
 			}
 		}
@@ -854,33 +864,16 @@ void MEditLook::OnTextDraw(MEdit* pEdit, MDrawContext* pDC, bool bShowLanguageTa
 
 		r = pEdit->GetClientRect();
 
-		// Composition 언더바 출력
+		// Composition
 		MPOINT p;
-		pDC->GetPositionOfAlignment(&p, r, szStartText, MAM_LEFT);
+		pDC->GetPositionOfAlignment(&p, r, szStartText, pEdit->m_TextAlignment);	// text align for xml
 		p.x += nInsertPosInWidget;
 		pMint->DrawCompositionAttributes(pDC, p, pEdit->GetCompositionString());
 	}
 
 
 	r = pEdit->GetClientRect();
-	//if(pEdit->m_nSelectionRange != 0 )
-	//{
-	//	if( nSelStartPos != 0 ) 
-	//	{
-	//		strncpy( szBuffer, szStartText, nSelStartPos );
-	//		szBuffer[nSelStartPos+1]=0;
-	//		pDC->Text( );
-	//	}
-	//	if( )
-	//	{
-
-	//	}
-
-	//	pDC->Text(r, szBuffer, MAM_LEFT);
-	//}
-	//else
-	pDC->Text(r, szStartText, MAM_LEFT);
-
+	pDC->Text(r, szStartText, pEdit->m_TextAlignment);
 
 	// 인디케이터 표기, 지전분하게 텍스트와 겹쳐서 보이지 않게 앞쪽에 그려준다.
 	if(pEdit->IsFocus()==true){

@@ -21,6 +21,7 @@ public:
 	/// @param	pWidget		메세지를 보내는 위젯 포인터
 	/// @param	szMessage	메세지(스트링)
 	virtual bool OnCommand(MWidget* pWidget, const char* szMessage) = 0;
+	bool m_bMouseHover = false;	// logic for text marquee scroll when text is wider than the label and mouse is hovering over it
 };
 
 

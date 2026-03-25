@@ -254,7 +254,7 @@ void ZChat::InitCmds()
 	_CC_AC("unignore",					&ChatCmd_UnIgnorePlayer,	CCF_ALL, ARGVNoMin, 1, true, "/unignore <charname>", "Removes a player from the ignore list");
 	_CC_AC("ignorelist",				&ChatCmd_IgnoreList,		CCF_ALL, ARGVNoMin,	ARGVNoMax, true, "/ignorelist", "Display users in the ignore list");
 	_CC_AC("nojjang",                   &ChatCmd_HideJjang,         CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/nojjang", "");
-	_CC_AC("rl_ui",						&ChatCmd_ReloadUI,			CCF_ALL, ARGVNoMin, ARGVNoMax, true, "/rl_ui", "Reload all UI XML files");	// reloadUI
+	_CC_AC("rl",						&ChatCmd_ReloadUI,			CCF_ALL, ARGVNoMin, ARGVNoMax, true, "/rl", "Reload all UI XML files");	// reloadUI
 	//_CC_AC("super", &ChatCmd_Ki, CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/super", "");
 	_CC_AC("jump", &ChatCmd_NinjaJump, CCF_GAME, ARGVNoMin, ARGVNoMax, true, "/jump", "");
 	_CC_AC("clean", &ChatCmd_ClearChat, CCF_ALL, ARGVNoMin, 1, true, "/clean", "");

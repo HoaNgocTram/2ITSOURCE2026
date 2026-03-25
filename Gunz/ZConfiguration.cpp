@@ -1776,7 +1776,7 @@ void ZConfiguration::Init()
 #endif
 
 #ifdef _CAMERADISTANCE
-	m_Etc.nCameraDistance = 1;
+	m_Etc.nCameraDistance = 390.f;
 #endif
 
 #ifdef _CHATBACKGROUND

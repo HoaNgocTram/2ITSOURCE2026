@@ -848,5 +848,15 @@ int MFontR2::GetHeight(void)
 
 int MFontR2::GetWidth(const char* szText, int nSize)
 {
-	return int(m_Font.GetTextWidth(szText, nSize)*m_fScale);
+	// Convert UTF-8 to wchar_t for correct width calculation
+	int wlen = MultiByteToWideChar(CP_UTF8, 0, szText, -1, NULL, 0);
+	if (wlen <= 0)
+		return int(m_Font.GetTextWidth(szText, nSize) * m_fScale); // fallback
+
+	wchar_t* wtext = new wchar_t[wlen];
+	MultiByteToWideChar(CP_UTF8, 0, szText, -1, wtext, wlen);
+
+	int width = int(m_Font.GetTextWidth(wtext, nSize) * m_fScale);
+	delete[] wtext;
+	return width;
 }

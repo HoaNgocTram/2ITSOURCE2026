@@ -4,17 +4,32 @@
 
 #include "MDebug.h"
 
+// fix borderless edit box bug
 void MBEditLook::OnFrameDraw(MEdit* pEdit, MDrawContext* pDC)
 {
 	MRECT r = pEdit->GetInitialClientRect();
- 	if(GetCustomLook())
+	if (GetCustomLook())
 	{
-		pDC->SetColor(MCOLOR(200,200,200,255));
+		pDC->SetColor(MCOLOR(200, 200, 200, 255));
 		pDC->Rectangle(r);
-		HLineBitmap( pDC, r.x+1, r.y+1, r.w-2, m_pFrameBitmaps[4], false );
+		HLineBitmap(pDC, r.x + 1, r.y + 1, r.w - 2, m_pFrameBitmaps[4], false);
 		return;
 	}
-	DrawBitmapFrame9(pDC, r, m_pFrameBitmaps);
+
+	// Check if bitmaps are loaded
+	bool bHasBitmaps = false;
+	for (int i = 0; i < 9; i++) {
+		if (m_pFrameBitmaps[i] != NULL) { bHasBitmaps = true; break; }
+	}
+
+	if (bHasBitmaps) {
+		DrawBitmapFrame9(pDC, r, m_pFrameBitmaps);
+	}
+	else {
+		// Fallback: draw simple border when no bitmaps
+		pDC->SetColor(MCOLOR(200, 200, 200, 255));
+		pDC->Rectangle(r);
+	}
 }
 
 MBEditLook::MBEditLook(void)

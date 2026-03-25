@@ -1602,6 +1602,11 @@ MEdit* MIDLResource::GetEdit(MXmlElement& element)
 			childElement.GetContents(&nMaxLength);
 			pEdit->SetMaxLength(nMaxLength);
 		}
+		// text align for xml
+		else if (!strcmp(szBuf, "TEXTALIGN"))
+		{
+			pEdit->m_TextAlignment = GetAlignmentMode(childElement);
+		}
 	}
 
 	return pEdit;
