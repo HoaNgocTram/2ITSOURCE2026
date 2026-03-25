@@ -806,10 +806,13 @@ void ZOptionInterface::InitInterfaceOption(void)
 			pCrossHairPreview->SetOnDrawCallback(ZCrossHair::OnDrawOptionCrossHairPreview);
 		}
 #ifdef _CAMERADISTANCE
-		pComboBox = (MComboBox*)pResource->FindWidget("CameraDistance");
-		if (pComboBox)
+		pEdit = (MEdit*)pResource->FindWidget("CameraDistance");
+		if (pEdit)
 		{
-			pComboBox->SetSelIndex(Z_ETC_CAMERA);
+			char szBuf[64];
+			sprintf(szBuf, "%i", Z_ETC_CAMERA);
+			pEdit->SetText(szBuf);
+			pEdit->SetMaxLength(3);
 			ZGetCamera()->RSetCameraDistance(Z_ETC_CAMERA);
 		}
 #endif
@@ -1917,11 +1920,12 @@ bool ZOptionInterface::SaveInterfaceOption(void)
 			Z_ETC_CROSSHAIR = pComboBox->GetSelIndex();
 		}
 #ifdef _CAMERADISTANCE
-		pComboBox = (MComboBox*)pResource->FindWidget("CameraDistance");
-		if (pComboBox)
+		pEdit = (MEdit*)pResource->FindWidget("CameraDistance");
+		if (pEdit)
 		{
-			Z_ETC_CAMERA = pComboBox->GetSelIndex();
-			ZGetCamera()->RSetCameraDistance(Z_ETC_CAMERA);
+			int nCameraDistance = Z_ETC_CAMERA;
+			Z_ETC_CAMERA = atoi(pEdit->GetText());
+			ZGetCamera()->RSetCameraDistance(atoi(pEdit->GetText()));
 			ZGetCamera()->UpdateDist();
 		}
 #endif

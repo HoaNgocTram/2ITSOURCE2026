@@ -439,6 +439,7 @@ bool MWidget::Event(MEvent* pEvent)
 	// Disable상태에서도 툴팁은 보이게 해준다.
 	//if(pEvent->nMessage==MWM_MOUSEMOVE && m_Rect.InPoint(pEvent->Pos)==true && (MWidget::m_pCapturedWidget==NULL || MWidget::m_pCapturedWidget==this)){
 	if(r.InPoint(LocalEvent.Pos)==true && (MWidget::m_pCapturedWidget==NULL || MWidget::m_pCapturedWidget==this) && IsVisible()==true){
+		m_bMouseHover = true;	// logic for text marquee scroll when text is wider than the label and mouse is hovering over it
 		if(m_pCursor!=NULL) MCursorSystem::Set(m_pCursor);
 		else MCursorSystem::Set(MCURSOR_ARROW);		// 아무것도 지정되어 있지 않으면 Default Cursor로...
 
@@ -449,6 +450,7 @@ bool MWidget::Event(MEvent* pEvent)
 		}
 	}
 	else{
+		m_bMouseHover = false;	// logic for text marquee scroll when text is wider than the label and mouse is hovering over it
 		if(m_pToolTip!=NULL){
 			m_pToolTip->Show(false);
 		}

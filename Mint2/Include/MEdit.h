@@ -17,7 +17,7 @@ class MEditLook{
 protected:
 	bool		m_bCustomLook;
 public:
-	MEditLook(){}
+	MEditLook() : m_bCustomLook(false) {}	// fix borderless edit box bug
 	virtual void OnFrameDraw(MEdit* pEdit, MDrawContext* pDC);
 	virtual void OnTextDraw(MEdit* pEdit, MDrawContext* pDC, bool bShowLanguageTab);
 
@@ -50,6 +50,8 @@ protected:
 
 public:
 	int			m_nSelectionRange;	//< [m_nCaretPos, m_nCaretPos+m_nSelectionRange]
+	MAlignmentMode m_TextAlignment;	// text align for xml
+
 protected:
 	list<char*>				m_History;			///< 문자열 히스토리
 	list<char*>::iterator	m_nCurrentHistory;	///< 문자열 히스토리중 현재 문자열

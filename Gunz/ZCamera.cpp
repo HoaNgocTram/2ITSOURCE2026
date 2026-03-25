@@ -19,7 +19,7 @@
 #define CAMERA_TRACKSPEED	.20f
 #define CAMERA_WALL_TRACKSPEED		0.7f
 #ifdef _CAMERADISTANCE
-short g_nCameraDistance = 0.f;
+unsigned short g_nCameraDistance = 0.f;
 #endif
 ZCamera::ZCamera() : m_fAngleX(CAMERA_DEFAULT_ANGLEX) , m_fCurrentAngleX(CAMERA_DEFAULT_ANGLEX) , 
 					m_fAngleZ(CAMERA_DEFAULT_ANGLEZ) , m_fCurrentAngleZ(CAMERA_DEFAULT_ANGLEZ) , 
@@ -364,12 +364,14 @@ void ZCamera::SetDirection(rvector& dir)
 	m_fCurrentAngleX = m_fAngleX = fAngleX;
 	m_fCurrentAngleZ = m_fAngleZ = fAngleZ;
 }
+
 #ifdef _CAMERADISTANCE
-void ZCamera::UpdateDist()
+void ZCamera::RSetCameraDistance(unsigned short nCameraDistance)
 {
-	m_fDist = g_nCameraDistance;
+	g_nCameraDistance = nCameraDistance;
 }
 #endif
+
 void ZCamera::Init()
 {
 	m_fAngleX = CAMERA_DEFAULT_ANGLEX;
@@ -410,23 +412,7 @@ void ZCamera::Init()
 	/*if (!ZGetGameClient()->GetMatchStageSetting()->IsModifierUsed(MMOD_FPS))
 		AdjustDist();*/
 }
-#ifdef _CAMERADISTANCE
-void ZCamera::RSetCameraDistance(unsigned short nCameraDistance)
-{
-	switch (nCameraDistance)
-	{
-	case 0: {	g_nCameraDistance = 290.f;	}	break;
-	case 1: {	g_nCameraDistance = 390.f;	}	break;
-	case 2: {	g_nCameraDistance = 490.f;	}	break;
-	case 3: {	g_nCameraDistance = 590.f;	}	break;
-	case 4: {	g_nCameraDistance = 690.f;	}	break;
-	case 5: {	g_nCameraDistance = 790.f;	}	break;
-	case 6: {	g_nCameraDistance = 890.f;	}	break;
-	case 7: {	g_nCameraDistance = 990.f;	}	break;
-	default: {	g_nCameraDistance = 290.f;	}	break;
-	}
-}
-#endif
+
 bool ZCamera::CheckCollisionWall(float &fRealDist, rvector& pos, rvector& dir)
 {
 	RBSPPICKINFO bpi;
@@ -794,7 +780,9 @@ void ZCamera::SetNextLookMode()
 }
 
 
-/*void ZCamera::AdjustDist()
+#ifdef _CAMERADISTANCE
+void ZCamera::UpdateDist()
 {
-	m_fDist = CAMERA_DEFAULT_DISTANCE;
-}*/
+	m_fDist = g_nCameraDistance;
+}
+#endif
