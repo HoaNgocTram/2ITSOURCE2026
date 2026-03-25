@@ -7,9 +7,11 @@
 #include "defer.h"
 #include "MClipboard.h"
 #include "CodePageConversion.h"
-
 #include <windows.h>
 #include <string>
+#include "EmojiManager.h"
+#include "AnimatedGifTexture.h"
+#include "RealSpace2.h"
 
 inline std::string WideToUTF8(const std::wstring& wstr)
 {
@@ -1284,11 +1286,138 @@ int Chat::DrawTextWordWrap(MFontR2& Font, const WStringView& Str, const D3DRECT&
 	}
 }
 
-void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT &r, u32 Color)
+void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT& r, u32 Color, MDrawContext* pDC)
 {
-	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bNewChatEnable)
+	if (!ZGetGame() || !ZGetConfiguration()->GetEtc()->bNewChatEnable)
+		return;
+
+	bool bEmoji = pDC && ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded();
+
+	if (!bEmoji || Str.size() < 2)
 	{
 		pFont.m_Font.DrawTextWSV(r.x1, r.y1, Str, Color);
+		return;
+	}
+
+	int x = r.x1;
+	int y = r.y1;
+	int emojiSize = ZGetEmojiManager().GetSize(true); // ingame size
+	size_t segStart = 0;
+
+	for (size_t i = 0; i < Str.size(); i++)
+	{
+		EmojiMatchResult match = ZGetEmojiManager().FindEmojiW(Str.data(), (int)i, (int)Str.size());
+		if (match.pEntry)
+		{
+			// Draw text before emoji
+			if (i > segStart)
+			{
+				WStringView pre = Str.substr(segStart, i - segStart);
+				pFont.m_Font.DrawTextWSV(x, y, pre, Color);
+				for (size_t j = segStart; j < i; j++)
+					x += pFont.GetWidth(&Str[j], 1);
+			}
+
+			int w = match.pEntry->nWidth > 0 ? match.pEntry->nWidth : emojiSize;
+			int h = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : emojiSize;
+
+			pFont.m_Font.EndFont();
+
+			if (match.pEntry->bAnimated)
+			{
+				// === ANIMATED GIF EMOJI ===
+				AnimatedGifTexture* pAnimTex = ZGetEmojiManager().GetAnimatedTexture(match.pEntry->filename.c_str());
+				if (pAnimTex && pAnimTex->IsValid())
+				{
+					LPDIRECT3DTEXTURE9 pFrameTex = pAnimTex->GetCurrentFrameTexture();
+					if (pFrameTex)
+					{
+						// Draw the current GIF frame directly via D3D
+						// We need to use the device directly since MBitmap doesn't wrap raw textures
+						LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+						if (pd3dDevice)
+						{
+							// Save current render states
+							DWORD dwPrevAlphaBlend, dwPrevSrcBlend, dwPrevDestBlend;
+							DWORD dwPrevColorOp, dwPrevColorArg1, dwPrevAlphaOp, dwPrevAlphaArg1;
+							pd3dDevice->GetRenderState(D3DRS_ALPHABLENDENABLE, &dwPrevAlphaBlend);
+							pd3dDevice->GetRenderState(D3DRS_SRCBLEND, &dwPrevSrcBlend);
+							pd3dDevice->GetRenderState(D3DRS_DESTBLEND, &dwPrevDestBlend);
+							pd3dDevice->GetTextureStageState(0, D3DTSS_COLOROP, &dwPrevColorOp);
+							pd3dDevice->GetTextureStageState(0, D3DTSS_COLORARG1, &dwPrevColorArg1);
+							pd3dDevice->GetTextureStageState(0, D3DTSS_ALPHAOP, &dwPrevAlphaOp);
+							pd3dDevice->GetTextureStageState(0, D3DTSS_ALPHAARG1, &dwPrevAlphaArg1);
+
+							// Setup alpha blending for transparent GIF
+							pd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+							pd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+							pd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+
+							pd3dDevice->SetTexture(0, pFrameTex);
+							pd3dDevice->SetFVF(D3DFVF_XYZRHW | D3DFVF_TEX1);
+
+							// Textured quad
+							struct GIFVERTEX {
+								float x, y, z, rhw;
+								float u, v;
+							};
+
+							float fx = (float)x;
+							float fy = (float)y;
+							float fw = (float)w;
+							float fh = (float)h;
+
+							GIFVERTEX verts[4] = {
+								{ fx,      fy,      0.f, 1.f, 0.f, 0.f },
+								{ fx + fw, fy,      0.f, 1.f, 1.f, 0.f },
+								{ fx + fw, fy + fh, 0.f, 1.f, 1.f, 1.f },
+								{ fx,      fy + fh, 0.f, 1.f, 0.f, 1.f },
+							};
+
+							pd3dDevice->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, verts, sizeof(GIFVERTEX));
+
+							// Restore previous states
+							pd3dDevice->SetTexture(0, nullptr);
+							pd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, dwPrevAlphaBlend);
+							pd3dDevice->SetRenderState(D3DRS_SRCBLEND, dwPrevSrcBlend);
+							pd3dDevice->SetRenderState(D3DRS_DESTBLEND, dwPrevDestBlend);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, dwPrevColorOp);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, dwPrevColorArg1);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, dwPrevAlphaOp);
+							pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, dwPrevAlphaArg1);
+						}
+					}
+				}
+			}
+			else
+			{
+				// === STATIC PNG EMOJI (original behavior) ===
+				MBitmap* pBmp = MBitmapManager::Get(match.pEntry->filename.c_str());
+				if (pBmp)
+				{
+					pDC->SetBitmap(pBmp);
+					pDC->Draw(x, y, w, h);
+				}
+			}
+
+			pFont.m_Font.BeginFont();
+
+			x += w;
+			i += match.nPatternLen - 1; // -1 because loop does i++
+			segStart = i + 1;
+			continue;
+		}
+	}
+
+	// Draw remaining text
+	if (segStart < Str.size())
+	{
+		WStringView rest = Str.substr(segStart);
+		pFont.m_Font.DrawTextWSV(x, y, rest, Color);
 	}
 }
 
@@ -1603,7 +1732,7 @@ void Chat::DrawChatLines(MDrawContext* pDC, float Time, int Limit, bool ShowAll)
 			if (!ShowAll && !InputEnabled)
 				Color = ScaleAlpha(Color, cl.Time, Time, FadeTime * 0.8f, FadeTime);
 
-			DrawTextN(Font, { String, Length }, Rect, Color);
+			DrawTextN(Font, { String, Length }, Rect, Color, pDC);
 
 			if (LineSegment.IsStartOfLine)
 			{
