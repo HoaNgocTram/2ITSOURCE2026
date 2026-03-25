@@ -488,7 +488,6 @@ public:
 #ifdef _KILLFEED
 	void LoadWeapons();
 	void LoadBlank();
-	void LoadEmojis();
 #endif
 
 	// XTrap

@@ -155,7 +155,7 @@ private:
 
 	int GetTextLength(MFontR2& Font, const wchar_t* Format, ...);
 	int DrawTextWordWrap(MFontR2& Font, const WStringView& Str, const D3DRECT &r, u32 Color);
-	void DrawTextN(MFontR2& Font, const WStringView& Str, const D3DRECT &r, u32 Color);
+	void DrawTextN(MFontR2& Font, const WStringView& Str, const D3DRECT& r, u32 Color, MDrawContext* pDC = nullptr);
 
 	void ResetFonts();
 };

@@ -101,6 +101,8 @@
 #include "RGMain.h"
 #include "RGMain.h"
 #include "NewChat.h"
+#include "EmojiManager.h"
+#include "AnimatedGifTexture.h"
 #include "ZMapCache.h"
 //#include "ZVoteInterface.h"
 #include "WebViewURLMap.h"
@@ -552,6 +554,7 @@ ZGameInterface::ZGameInterface(const char* szName, MWidget* pParent, MListener* 
 	specialCase = false;
 
 #ifdef _KILLFEED
+	ZGetEmojiManager().LoadFromXML("Interface/default/emojis/emojis.xml");
 	LoadWeapons();
 	LoadBlank();
 #endif
@@ -9140,61 +9143,10 @@ void ZGameInterface::UpdateDuelTournamantMyCharInfoPreviousUI()
 }
 
 
-
 #ifdef _KILLFEED
-#include <vector>
-#include <iostream>
-struct Emoji
-{
-	char A, B, C;
-	char name[20];
-	Emoji(char a, char b, char c, char* Name)
-	{
-		A = a;
-		B = b;
-		C = c;
-		memset(Name, 0, 20);
-		strcpy(name, Name);
-	}
-	Emoji(char a, char b, char* Name)
-	{
-		A = a;
-		B = b;
-		C = ' ';
-		memset(Name, 0, 20);
-		strcpy(name, Name);
-	}
 
-};
-
-typedef std::vector<Emoji*> Emojis;
-
-Emojis          m_Emoji;
-
-typedef std::vector<Emoji*> Weapons;
-
-Weapons          m_Weapons;
-
-typedef std::vector<Emoji*> Blank;
-
-Blank          m_Blank;
-
-void ZGameInterface::LoadEmojis()
-{
-	m_Emoji.push_back(new Emoji(':', 'D', "happy.png"));
-	m_Emoji.push_back(new Emoji(':', '*', "kiss.png"));
-	m_Emoji.push_back(new Emoji(';', '/', "cry.png"));
-	m_Emoji.push_back(new Emoji(';', '(', "crymore.png"));
-	m_Emoji.push_back(new Emoji(':', 'S', "wut.png"));
-	m_Emoji.push_back(new Emoji(':', 'P', "lick.png"));
-	m_Emoji.push_back(new Emoji(':', '/', "angry.png"));
-	m_Emoji.push_back(new Emoji(':', '(', "sad.png"));
-	m_Emoji.push_back(new Emoji('<', '3', "love.png"));
-	m_Emoji.push_back(new Emoji(';', ')', "wink.png"));
-	m_Emoji.push_back(new Emoji(':', '|', "bru.png"));
-	m_Emoji.push_back(new Emoji(':', ')', "smile.png"));
-	m_Emoji.push_back(new Emoji(':', 'O', "sorprise.png"));
-}
+Emojis m_Weapons;
+Emojis m_Blank;
 
 void ZGameInterface::LoadWeapons()
 {
@@ -9329,21 +9281,6 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 #endif
 					}
 #ifdef _KILLFEED
-					for (Emojis::iterator emoji = m_Emoji.begin(); emoji != m_Emoji.end(); emoji++) {
-
-						if (szCurrent[i - 1] == ' ' && szCurrent[i] == (*emoji)->A && szCurrent[i + 1] == (*emoji)->B) {
-							FLUSH;
-							SetBitmap(MBitmapManager::Get((*emoji)->name));
-							int nSize = 14;
-							Draw((r.x + nX) + xRight, y, nSize, nSize);
-							c = ' ';
-							cc = ' ';
-							szCurrent[i] = ' ';
-							szCurrent[i + 1] = ' ';
-							xRight += 10;
-						}
-					}
-
 					for (Emojis::iterator emoji = m_Blank.begin(); emoji != m_Blank.end(); emoji++) {
 
 						if (szCurrent[i] == (*emoji)->A && szCurrent[i + 1] == (*emoji)->B) {
@@ -9375,423 +9312,96 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 						}
 					}
 #endif
-					if (ZGetGame() && ZGetConfiguration()->GetEtc()->bEmote)
+					
+					if (ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
 					{
-
-						unsigned char cminus = szCurrent[i - 1], c = szCurrent[i], cc = szCurrent[i + 1], ccc = szCurrent[i + 2], cccc = szCurrent[i + 3];
-
-						if (c == '^' && ('0' <= cc) && (cc <= 'Z'))
+						EmojiMatchResult match = ZGetEmojiManager().FindEmoji(szCurrent, i, nCharCount);
+						if (match.pEntry)
 						{
-							xRight = 0;
 							FLUSH;
-							i++;
+
+							int nEmojiW = match.pEntry->nWidth > 0 ? match.pEntry->nWidth : (int)((float)RGetScreenWidth() / 800.f * 11);
+							int nEmojiH = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : nEmojiW;
+
+							if (match.pEntry->bAnimated)
+							{
+								// === ANIMATED GIF EMOJI ===
+								AnimatedGifTexture* pAnimTex = ZGetEmojiManager().GetAnimatedTexture(match.pEntry->filename.c_str());
+								if (pAnimTex && pAnimTex->IsValid())
+								{
+									LPDIRECT3DTEXTURE9 pFrameTex = pAnimTex->GetCurrentFrameTexture();
+									if (pFrameTex)
+									{
+										LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+										if (pd3dDevice)
+										{
+											// Save render states
+											DWORD dwPrevAlphaBlend, dwPrevSrcBlend, dwPrevDestBlend;
+											DWORD dwPrevColorOp, dwPrevColorArg1, dwPrevAlphaOp, dwPrevAlphaArg1;
+											pd3dDevice->GetRenderState(D3DRS_ALPHABLENDENABLE, &dwPrevAlphaBlend);
+											pd3dDevice->GetRenderState(D3DRS_SRCBLEND, &dwPrevSrcBlend);
+											pd3dDevice->GetRenderState(D3DRS_DESTBLEND, &dwPrevDestBlend);
+											pd3dDevice->GetTextureStageState(0, D3DTSS_COLOROP, &dwPrevColorOp);
+											pd3dDevice->GetTextureStageState(0, D3DTSS_COLORARG1, &dwPrevColorArg1);
+											pd3dDevice->GetTextureStageState(0, D3DTSS_ALPHAOP, &dwPrevAlphaOp);
+											pd3dDevice->GetTextureStageState(0, D3DTSS_ALPHAARG1, &dwPrevAlphaArg1);
+
+											// Setup alpha blending
+											pd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+											pd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+											pd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+
+											pd3dDevice->SetTexture(0, pFrameTex);
+											pd3dDevice->SetFVF(D3DFVF_XYZRHW | D3DFVF_TEX1);
+
+											float fx = (float)((r.x + nX) + xRight + m_Origin.x);
+											float fy = (float)(y + m_Origin.y);
+											float fw = (float)nEmojiW;
+											float fh = (float)nEmojiH;
+
+											struct GIFVERTEX {
+												float x, y, z, rhw;
+												float u, v;
+											};
+
+											GIFVERTEX verts[4] = {
+												{ fx,      fy,      0.f, 1.f, 0.f, 0.f },
+												{ fx + fw, fy,      0.f, 1.f, 1.f, 0.f },
+												{ fx + fw, fy + fh, 0.f, 1.f, 1.f, 1.f },
+												{ fx,      fy + fh, 0.f, 1.f, 0.f, 1.f },
+											};
+
+											pd3dDevice->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, verts, sizeof(GIFVERTEX));
+
+											// Restore states
+											pd3dDevice->SetTexture(0, nullptr);
+											pd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, dwPrevAlphaBlend);
+											pd3dDevice->SetRenderState(D3DRS_SRCBLEND, dwPrevSrcBlend);
+											pd3dDevice->SetRenderState(D3DRS_DESTBLEND, dwPrevDestBlend);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, dwPrevColorOp);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, dwPrevColorArg1);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, dwPrevAlphaOp);
+											pd3dDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, dwPrevAlphaArg1);
+										}
+									}
+								}
+							}
+							else
+							{
+								// === STATIC PNG EMOJI (original) ===
+								SetBitmap(MBitmapManager::Get(match.pEntry->filename.c_str()));
+								Draw((r.x + nX) + xRight, y, nEmojiW, nEmojiH);
+							}
+
+							for (int k = 0; k < match.nPatternLen; k++)
+								szCurrent[i + k] = ' ';
+							xRight += (int)((float)RGetScreenWidth() / 1920.f * 6);
+							i += match.nPatternLen - 1;
 							continue;
-						}
-
-						else if (c == ':' && (cc == 'D' || cc == 'd'))
-						{
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("1.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == 'D' || cc == 'd') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("1.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-						}
-
-
-						else if (c == ':' && (')' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("3.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == ')') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("3.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-						}
-						else if (c == ':' && ('(' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("4.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == '(') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("4.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == ':' && ('P' == cc || 'p' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("5.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && ('P' == cc || 'p' == cc) && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("5.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == ':' && ('/' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("6.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == '/') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("6.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == '<' && ('3' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("7.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == '<') && (cc == '3') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("7.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == '^' && ('_' == cc) && ('^' == ccc))
-						{
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("8.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-							else if ((cminus == ' ') && (c == '^') && (cc == '_') && (ccc == '^') && (cccc == ' ' || !cccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("8.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-						}
-						else if ((c == 'O' || c == 'o') && (':' == cc) && (')' == ccc))
-						{
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("9.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-							else if ((cminus == ' ') && (c == 'O' || c == 'o') && (cc == ':') && (ccc == ')') && (cccc == ' ' || !cccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("9.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-						}
-						else if (c == ':' && ('@' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("10.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == '@') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("10.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-
-						else if (c == ';' && ('(' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("2.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ';') && (cc == '(') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("2.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-
-						else if (c == ';' && (')' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("12.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ';') && (cc == ')') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("12.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == ':' && ('O' == cc || 'o' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("13.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && ('O' == cc || 'o' == cc) && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("13.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-
-							}
-						}
-						else if (c == '-' && ('_' == cc) && ('-' == ccc))
-						{
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("14.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-							else if ((cminus == ' ') && (c == '-') && (cc == '_') && (ccc == '-') && (cccc == ' ' || !cccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("14.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								ccc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								szCurrent[i + 2] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-							}
-						}
-						else if (c == ':' && ('*' == cc))
-						{
-
-							if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("15.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-							else if ((cminus == ' ') && (c == ':') && (cc == '*') && (ccc == ' ' || !ccc)) {
-								FLUSH;
-								SetBitmap(MBitmapManager::Get("15.png"));
-								Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-								c = ' ';
-								cc = ' ';
-								szCurrent[i] = ' ';
-								szCurrent[i + 1] = ' ';
-								xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-							}
-						}
-						else if ((cminus == ' ') && (c == ':') && (cc == 'v') && (ccc == ' ' || !ccc)) {
-							FLUSH;
-							SetBitmap(MBitmapManager::Get("16.png"));
-							Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-							c = ' ';
-							cc = ' ';
-							szCurrent[i] = ' ';
-							szCurrent[i + 1] = ' ';
-							xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-						}
-					}
-					else if (c == ':' && ('7' == cc))
-					{
-
-						if (strlen(szText) == strlen(ZGetMyInfo()->GetCharName()) + 5) {
-							FLUSH;
-							SetBitmap(MBitmapManager::Get("17.png"));
-							Draw((r.x + nX), y, (float)RGetScreenWidth() / (float)800 * 11, (float)RGetScreenWidth() / (float)800 * 11);
-							c = ' ';
-							cc = ' ';
-							szCurrent[i] = ' ';
-							szCurrent[i + 1] = ' ';
-							xRight = (float)RGetScreenWidth() / (float)1920 * 6;
-
-						}
-						else if (c == ':' && ('M' == cc || 'm' == cc))
-						{
-
 						}
 					}
 					int w;

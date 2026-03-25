@@ -271,6 +271,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedGifTexture.h" />
     <ClInclude Include="AntiCheat.h" />
     <ClInclude Include="AntiInject.h" />
     <ClInclude Include="aSB.h" />
@@ -282,6 +283,8 @@
     <ClInclude Include="discord\src\msg_queue.h" />
     <ClInclude Include="discord\src\rpc_connection.h" />
     <ClInclude Include="discord\src\serialization.h" />
+    <ClInclude Include="EmojiManager.h" />
+    <ClInclude Include="gif_load.h" />
     <ClInclude Include="Hitboxes.h" />
     <ClInclude Include="MemoryManagement.h" />
     <ClInclude Include="ProgressBarUI.h" />
@@ -586,6 +589,7 @@
     <ClInclude Include="ZWorldObject_Navigation.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedGifTexture.cpp" />
     <ClCompile Include="AntiCheat.cpp" />
     <ClCompile Include="AntiInject.cpp" />
     <ClCompile Include="AutoBan.cpp" />
@@ -641,6 +645,7 @@
       <EnableFiberSafeOptimizations Condition="'$(Configuration)|$(Platform)'=='Release_Desperate|Win32'">true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release_Desperate|Win32'">false</WholeProgramOptimization>
     </ClCompile>
+    <ClCompile Include="EmojiManager.cpp" />
     <ClCompile Include="Hitboxes.cpp" />
     <ClCompile Include="ProgressBarUI.cpp" />
     <ClCompile Include="WebViewOverlay.cpp" />

@@ -1111,6 +1111,15 @@
     <ClInclude Include="ZEACManager.h">
       <Filter>AntiHack\EAC</Filter>
     </ClInclude>
+    <ClInclude Include="EmojiManager.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedGifTexture.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="gif_load.h">
+      <Filter>Custom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZBandiCapturer.cpp">
@@ -1962,6 +1971,12 @@
     </ClCompile>
     <ClCompile Include="ZEACManager.cpp">
       <Filter>AntiHack\EAC</Filter>
+    </ClCompile>
+    <ClCompile Include="EmojiManager.cpp">
+      <Filter>Custom</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedGifTexture.cpp">
+      <Filter>Custom</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
