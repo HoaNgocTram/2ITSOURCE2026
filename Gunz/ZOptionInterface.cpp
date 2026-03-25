@@ -532,6 +532,13 @@ void ZOptionInterface::InitInterfaceOption(void)
 			pWidget->SetCheck(Z_ETC_FLOATDMG2);
 		}
 #endif
+#ifdef _FLOATDMGTEXT
+		pWidget = (MButton*)pResource->FindWidget("Floatdmgtext");
+		if (pWidget)
+		{
+			pWidget->SetCheck(Z_VIDEO_FLOATDMGTEXT);
+		}
+#endif
 
 #ifdef _KILLFEED
 		pWidget = (MButton*)pResource->FindWidget("KillFeed");
