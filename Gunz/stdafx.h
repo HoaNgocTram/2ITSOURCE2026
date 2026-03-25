@@ -124,7 +124,7 @@
 //#define _LOCATOR 1
 //#define _AFKSYSTEM 1 //kick khỏi room khi afk 15 phút
 #define _UTF8 1  // bên cml
-//#define _EAC 1
+#define _EAC 1
 #ifdef _EAC
 #include "eos_sdk.h"
 #include "eos_metrics.h"
