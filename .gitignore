@@ -1,24 +1,25 @@
 # Prerequisites
 *.d
-/Build/*
-/Gunz/.vs
-/cml/Debug
-/cml/Release
-/CSCommon/Release_Desperate
-/EOS/SDK/Tool/*.exe
-/EOS/Samples/.vs
-/Gunz/Gunz/Release_Desperate
-/Gunz/Release_Desperate
-/Locator/Release
-/MatchAgent/Release
-/MatchServer/Release_Desperate
-/MCountryFilter/Release
-/MDatabase/Release
-/Mint2/Release
-/RealSound/Release
-/RealSpace2/Release
-/SafeUDP/Release
-/StringLiteral/Release
+Build/*
+Gunz/.vs
+cml/Debug
+cml/Release
+CSCommon/Release_Desperate
+EOS/SDK/Tool/*.exe
+EOS/Samples/.vs
+Gunz/Gunz/Release_Desperate
+Gunz/Release_Desperate
+Locator/Release
+MatchAgent/Release
+MatchServer/Release_Desperate
+MCountryFilter/Release
+MDatabase/Release
+Mint2/Release
+RealSound/Release
+RealSpace2/Release
+SafeUDP/Release
+StringLiteral/Release
+Gunz/stdafx.h
 
 # Compiled Object files
 *.slo
@@ -56,3 +57,4 @@
 *.out
 *.app
 *.map
+Gunz/stdafx.h
