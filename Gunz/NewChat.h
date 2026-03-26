@@ -158,4 +158,5 @@ private:
 	void DrawTextN(MFontR2& Font, const WStringView& Str, const D3DRECT& r, u32 Color, MDrawContext* pDC = nullptr);
 
 	void ResetFonts();
+	void UpdateBorderFromOldChat(int screenW, int screenH);
 };
