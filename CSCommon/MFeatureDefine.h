@@ -59,7 +59,7 @@
 #define _POSTABINFO 1
 #define UPDATE_STAGE_CHARVIEWER 1
 #define UPDATE_STAGE_EQUIP_LOOK 1
-#define _KOR_THINGS 1
+//#define _KOR_THINGS 1
 #define _ROCKETGUIDED 1
 #define _PORTALGUN 1
 #define _TYPENET 1
@@ -68,7 +68,7 @@
 //#define _LOBBYSET 1		//bẫy vcl đụng vào ăn cook
 #define _SPEC 1
 //#define _RECOMMANDEDTEAM 1
-#define _FLOATDMG 1
+//#define _FLOATDMG 1
 #define _FLOATDMG2 1
 #define _FLOATDMGTEXT 1
 #define _PERFECT 1

@@ -31,6 +31,8 @@
 	<EMOJI pattern=";/" file="2.png" />
 	<EMOJI pattern=";)" file="12.png" />
 	<EMOJI pattern="&lt;3" file="7.png" />
+	<EMOJI pattern=":3" file="18.png" />
+	<EMOJI pattern=":))" file="19.png" />
 
 	<!-- 3-char face emojis -->
 	<EMOJI pattern="^_^" file="8.png" />
