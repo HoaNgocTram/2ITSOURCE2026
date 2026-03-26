@@ -2484,6 +2484,54 @@
 		</BOUNDS>
 	</ACTIONKEY>
 
+	<LABEL item="Label" parent="KeyboardOptionGroup3">
+		<FONT>FONTa9</FONT>
+		<TEXTCOLOR>
+			<R>205</R>
+			<G>205</G>
+			<B>205</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>20</X>
+			<Y>0</Y>
+			<W>100</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT>Save Position Key</TEXT> <!-- 아이템2 선택 -->
+	</LABEL>
+	<ACTIONKEY item="SaveActionKey" parent="KeyboardOptionGroup3">
+		<BOUNDS>
+			<X>140</X>
+			<Y>0</Y>
+			<W>200</W>
+			<H>24</H>
+		</BOUNDS>
+	</ACTIONKEY>	
+	
+	<LABEL item="Label" parent="KeyboardOptionGroup3">
+		<FONT>FONTa9</FONT>
+		<TEXTCOLOR>
+			<R>205</R>
+			<G>205</G>
+			<B>205</B>
+		</TEXTCOLOR>
+		<BOUNDS>
+			<X>20</X>
+			<Y>30</Y>
+			<W>100</W>
+			<H>24</H>
+		</BOUNDS>
+		<TEXT>Back Postion Key</TEXT> <!-- 아이템2 선택 -->
+	</LABEL>
+	<ACTIONKEY item="TeleportActionKey" parent="KeyboardOptionGroup3">
+		<BOUNDS>
+			<X>140</X>
+			<Y>30</Y>
+			<W>200</W>
+			<H>24</H>
+		</BOUNDS>
+	</ACTIONKEY>
+
 	<!-- emotion tab -->
 	<LABEL item="Label" parent="KeyboardOptionGroup4">
 		<FONT>FONTa9</FONT>

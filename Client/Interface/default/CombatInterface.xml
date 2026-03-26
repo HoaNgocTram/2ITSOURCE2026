@@ -507,6 +507,29 @@
 		<SCROLLBAR>false</SCROLLBAR>
 	</TEXTAREA>
 
+	<FRAME item="NewChatFrame">
+    <FRAMELOOK>ChatFrameLook</FRAMELOOK>
+	<ANCHORS>
+			<LEFT>true</LEFT>
+			<TOP>true</TOP>
+			<RIGHT>true</RIGHT>
+			<BOTTOM>true</BOTTOM>
+		</ANCHORS>
+    <BOUNDS>
+        <X>17</X>
+        <Y>462</Y>
+        <W>480</W>
+        <H>103</H>
+    </BOUNDS>
+    <ANCHORS>
+        <LEFT>TRUE</LEFT>
+        <TOP>FALSE</TOP>
+        <RIGHT>FALSE</RIGHT>
+        <BOTTOM>TRUE</BOTTOM>
+    </ANCHORS>
+    <VISIBLE>FALSE</VISIBLE>
+</FRAME>
+
 	<TEXTAREA item = "CombatChatOutputAdmin" parent = "CombatChatFrame">
 		<FONT>FONTa10b</FONT>
 		<ANCHORS>
