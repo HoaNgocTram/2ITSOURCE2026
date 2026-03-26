@@ -6,6 +6,7 @@
 #include "MDebug.h"
 #include "ZApplication.h"
 #include "RealSpace2.h"
+#include <algorithm>
 
 EmojiManager& EmojiManager::GetInstance()
 {
@@ -192,6 +193,11 @@ bool EmojiManager::LoadFromXML(const char* szFileName)
 
 		m_Emojis.push_back(entry);
 	}
+
+	// Sort: longer patterns first so ":diamond:" matches before ":D"
+	std::sort(m_Emojis.begin(), m_Emojis.end(), [](const EmojiEntry& a, const EmojiEntry& b) {
+		return a.pattern.size() > b.pattern.size();
+	});
 
 	xmlDoc.Destroy();
 	delete[] buffer;
