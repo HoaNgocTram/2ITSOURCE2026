@@ -48,8 +48,8 @@ bool operator == ( D3DDISPLAYMODE lhs, D3DDISPLAYMODE rhs )
 
 // Custom: Support 16:9 aspect ratios
 // Custom: Deprecate 640x480
-static int widths[]={ 800,1024,1280,1280,1366,1600,1280,1440, 1600, 1650, 1920, 1920, 2560};
-static int heights[]={ 600,768,720,960,768,1200,800,900, 900, 1050, 1080, 1200, 1600};
+static int widths[]={ 800,1024,1280,1280,1366,1600, 1600, 1920, 2560 };
+static int heights[]={ 600,768,720,960,768,1200, 900, 1080, 1440};
 
 //static int widths[]={ 640,800,1024,1280,1600,1280,1440, 1650, 1920, 2560};
 //static int heights[]={ 480,600,768,960,1200,800,900, 1050, 1200, 1600};
