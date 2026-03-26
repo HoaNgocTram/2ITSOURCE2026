@@ -159,4 +159,5 @@ private:
 
 	void ResetFonts();
 	void UpdateBorderFromOldChat(int screenW, int screenH);
+	int GetEffectiveLineHeight() const;
 };

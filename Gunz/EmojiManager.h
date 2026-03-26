@@ -43,6 +43,12 @@ public:
 	// Get draw size based on context
 	int GetSize(bool bIngame) const;
 
+	// Get actual line height: max(fontHeight, tallest emoji in line)
+	// For char* strings (lobby/old chat)
+	int GetLineHeight(const char* szText, int nLen, int nFontHeight, bool bIngame) const;
+	// For wchar_t* strings (NewChat)
+	int GetLineHeightW(const wchar_t* szText, int nLen, int nFontHeight, bool bIngame) const;
+
 	// Get animated GIF texture by filename (returns nullptr if not animated or not found)
 	AnimatedGifTexture* GetAnimatedTexture(const char* szFilename) const;
 

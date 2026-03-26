@@ -214,6 +214,42 @@ int EmojiManager::GetSize(bool bIngame) const
 	return bIngame ? m_nIngameSize : m_nLobbySize;
 }
 
+int EmojiManager::GetLineHeight(const char* szText, int nLen, int nFontHeight, bool bIngame) const
+{
+	int maxH = nFontHeight;
+	int defSize = GetSize(bIngame);
+
+	for (int i = 0; i < nLen; i++)
+	{
+		EmojiMatchResult match = FindEmoji(szText, i, nLen);
+		if (match.pEntry)
+		{
+			int h = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : defSize;
+			if (h > maxH) maxH = h;
+			i += match.nPatternLen - 1;
+		}
+	}
+	return maxH;
+}
+
+int EmojiManager::GetLineHeightW(const wchar_t* szText, int nLen, int nFontHeight, bool bIngame) const
+{
+	int maxH = nFontHeight;
+	int defSize = GetSize(bIngame);
+
+	for (int i = 0; i < nLen; i++)
+	{
+		EmojiMatchResult match = FindEmojiW(szText, i, nLen);
+		if (match.pEntry)
+		{
+			int h = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : defSize;
+			if (h > maxH) maxH = h;
+			i += match.nPatternLen - 1;
+		}
+	}
+	return maxH;
+}
+
 EmojiMatchResult EmojiManager::FindEmoji(const char* szText, int nPos, int nLen) const
 {
 	EmojiMatchResult result = { nullptr, 0 };
