@@ -10,6 +10,7 @@
 #include "MChattingFilter.h"
 #include "MTextArea.h"
 #include "ZConfiguration.h"
+#include "EmojiManager.h"
 #include "RGMain.h"
 #define MAX_CHAT_OUTPUT_LINE 7
 /////////////////
@@ -158,8 +159,16 @@ bool ZCombatChat::Create( const char* szOutputTxtarea,bool bUsePlayerList)
 	if (m_pChattingOutput != NULL)
 	{
 		m_pChattingOutput->Clear();
-//		m_pChattingOutput->RemoveAll();
-//		m_pChattingOutput->GetScrollBar()->Show(false);
+
+		// Set line height to max(fontHeight, emojiSize) so layout accounts for emojis
+		if (ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+		{
+			MFont* pFont = m_pChattingOutput->GetFont();
+			int nFontH = pFont ? pFont->GetHeight() : 12;
+			int nEmojiH = ZGetEmojiManager().GetSize(false); // lobby size for old chat
+			if (nEmojiH > nFontH)
+				m_pChattingOutput->SetCustomLineHeight(nEmojiH);
+		}
 	}
 	
 	pWidget = m_pIDLResource->FindWidget(ZIITEM_COMBAT_CHATINPUT);

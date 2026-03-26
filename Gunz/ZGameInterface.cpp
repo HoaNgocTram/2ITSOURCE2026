@@ -9194,13 +9194,14 @@ unsigned long int MMColorSetKillFeed[] =
 };
 #endif
 
-int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool bAutoNextLine, int nIndentation, int nSkipLine, MPOINT* pPositions)
+int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool bAutoNextLine, int nIndentation, int nSkipLine, MPOINT* pPositions, int* pOutPixelHeight)
 {
 	bool bColorSupport = true;
 
 	MBeginProfile(99, "MDrawContext::TextMultiLine");
 
 	int nLine = 0;
+	int nTotalPixelHeight = 0; // track actual pixel height
 	MFont* pFont = GetFont();
 
 	int nLength = strlen(szText);
@@ -9231,6 +9232,17 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 		{
 			int nCharCount = min(nOriginalCharCount, MAX_CHAR_A_LINE);
 			char buffer[256];
+
+			// Calculate line height and text offset BEFORE processing
+			// (must be before character loop which replaces emoji patterns with spaces)
+			int nLineH = pFont->GetHeight();
+			int nTextOffsetY = 0;
+			if (ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+			{
+				nLineH = ZGetEmojiManager().GetLineHeight(szCurrent, nCharCount, pFont->GetHeight(), false);
+				nTextOffsetY = (nLineH > pFont->GetHeight()) ? (nLineH - pFont->GetHeight()) / 2 : 0;
+			}
+
 			if (bColorSupport) {
 
 				// Text
@@ -9241,7 +9253,7 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 								}	\
 							}
 
-#define FLUSH				if(buffer[0]) { Text(r.x+nLastX+xRight, y, buffer); FLUSHPOS(r.x+nLastX); nLastX=nX; buffer[0]=0;pcurbuf=buffer; }
+#define FLUSH				if(buffer[0]) { Text(r.x+nLastX+xRight, y+nTextOffsetY, buffer); FLUSHPOS(r.x+nLastX); nLastX=nX; buffer[0]=0;pcurbuf=buffer; }
 
 //Armas
 #define ARMASFLUSHPOS(_Pos)		if(pCurrentPos!=NULL){	\
@@ -9320,8 +9332,32 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 						{
 							FLUSH;
 
-							int nEmojiW = match.pEntry->nWidth > 0 ? match.pEntry->nWidth : (int)((float)RGetScreenWidth() / 800.f * 11);
+							int nEmojiW = match.pEntry->nWidth > 0 ? match.pEntry->nWidth : ZGetEmojiManager().GetSize(false);
 							int nEmojiH = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : nEmojiW;
+
+							// Center emoji vertically within line (same logic as NewChat)
+							int emojiOffsetY = (nLineH > nEmojiH) ? (nLineH - nEmojiH) / 2 : 0;
+
+							// Clamp emoji if it would exceed the available drawing area
+							if (y + emojiOffsetY + nEmojiH > r.y + r.h)
+							{
+								int nAvail = (r.y + r.h) - (y + emojiOffsetY);
+								if (nAvail > 0)
+								{
+									float ratio = (float)nAvail / (float)nEmojiH;
+									nEmojiH = nAvail;
+									nEmojiW = (int)(nEmojiW * ratio);
+								}
+								else
+								{
+									// Completely outside, skip drawing
+									for (int k = 0; k < match.nPatternLen; k++)
+										szCurrent[i + k] = ' ';
+									xRight += nEmojiW;
+									i += match.nPatternLen - 1;
+									continue;
+								}
+							}
 
 							if (match.pEntry->bAnimated)
 							{
@@ -9335,6 +9371,12 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 										LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
 										if (pd3dDevice)
 										{
+											// Apply m_Origin offset (same as MDrawContextR2::Draw)
+											float fx = (float)((r.x + nX) + xRight + m_Origin.x);
+											float fy = (float)(y + emojiOffsetY + m_Origin.y);
+											float fw = (float)nEmojiW;
+											float fh = (float)nEmojiH;
+
 											// Save render states
 											DWORD dwPrevAlphaBlend, dwPrevSrcBlend, dwPrevDestBlend;
 											DWORD dwPrevColorOp, dwPrevColorArg1, dwPrevAlphaOp, dwPrevAlphaArg1;
@@ -9357,11 +9399,6 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 
 											pd3dDevice->SetTexture(0, pFrameTex);
 											pd3dDevice->SetFVF(D3DFVF_XYZRHW | D3DFVF_TEX1);
-
-											float fx = (float)((r.x + nX) + xRight + m_Origin.x);
-											float fy = (float)(y + m_Origin.y);
-											float fw = (float)nEmojiW;
-											float fh = (float)nEmojiH;
 
 											struct GIFVERTEX {
 												float x, y, z, rhw;
@@ -9394,12 +9431,12 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 							{
 								// === STATIC PNG EMOJI (original) ===
 								SetBitmap(MBitmapManager::Get(match.pEntry->filename.c_str()));
-								Draw((r.x + nX) + xRight, y, nEmojiW, nEmojiH);
+								Draw((r.x + nX) + xRight, y + emojiOffsetY, nEmojiW, nEmojiH);
 							}
 
 							for (int k = 0; k < match.nPatternLen; k++)
 								szCurrent[i + k] = ' ';
-							xRight += (int)((float)RGetScreenWidth() / 1920.f * 6);
+							xRight += nEmojiW;
 							i += match.nPatternLen - 1;
 							continue;
 						}
@@ -9428,13 +9465,19 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 				Text(r.x + nX, y, buffer);
 				FLUSHPOS(r.x + nX);
 			}
-			y += pFont->GetHeight() + nLineGap;
+			// Use nLineH already calculated before the character loop
+			int nActualLineH = nLineH + nLineGap + 3; // +3 padding between all lines
+			y += nActualLineH;
+			nTotalPixelHeight += nActualLineH;
 		}
 
 		szCurrent += nOriginalCharCount;
 		nLine++;
 		if (y >= r.y + r.h) break;
 	} while (szCurrent < szText + nLength);
+
+	if (pOutPixelHeight)
+		*pOutPixelHeight = nTotalPixelHeight;
 
 	MEndProfile(99);
 	return nLine - nSkipLine;

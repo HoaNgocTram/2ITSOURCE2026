@@ -15,6 +15,7 @@
 #include "ZTranslator.h"
 #include "ZChat_CmdID.h"
 #include "ZConfiguration.h"
+#include "EmojiManager.h"
 #define ZCHAT_CHAT_DELAY				1000		
 #define ZCHAT_CHAT_ABUSE_COOLTIME		(1000 * 60)		// 1ºÐ
 #define ZCHAT_CLEAR_DELAY				(1000 * 10)		// ¹Ýº¹ ÀÎ½Ä Á¦°Å ½Ã°£..10ÃÊ
@@ -542,16 +543,27 @@ void ZChat::Clear(ZCHAT_LOC loc)
 
 #define MAX_CHAT_LINES	100
 
-void ZChat::LobbyChatOutput(const char* szChat,MCOLOR color)
+void ZChat::LobbyChatOutput(const char* szChat, MCOLOR color)
 {
 	ZIDLResource* pResource = ZApplication::GetGameInterface()->GetIDLResource();
 	MTextArea* pWidget = (MTextArea*)pResource->FindWidget("ChannelChattingOutput");
-	if(!pWidget) return;
+	if (!pWidget) return;
 
-	pWidget->AddText(szChat,color);
-	while(pWidget->GetLineCount()>MAX_CHAT_LINES)
+	// One-time: adjust line height for emoji support
+	static bool bLineHeightSet = false;
+	if (!bLineHeightSet && ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+	{
+		MFont* pFont = pWidget->GetFont();
+		int nFontH = pFont ? pFont->GetHeight() : 12;
+		int nEmojiH = ZGetEmojiManager().GetSize(false);
+		if (nEmojiH > nFontH)
+			pWidget->SetCustomLineHeight(nEmojiH);
+		bLineHeightSet = true;
+	}
+
+	pWidget->AddText(szChat, color);
+	while (pWidget->GetLineCount() > MAX_CHAT_LINES)
 		pWidget->DeleteFirstLine();
-
 }
 
 void ZChat::StageChatOutput(const char* szChat,MCOLOR color)
@@ -559,6 +571,18 @@ void ZChat::StageChatOutput(const char* szChat,MCOLOR color)
 	ZIDLResource* pResource = ZApplication::GetGameInterface()->GetIDLResource();
 	MTextArea* pWidget = (MTextArea*)pResource->FindWidget("StageChattingOutput");
 	if(!pWidget) return;
+
+	// One-time: adjust line height for emoji support
+	static bool bLineHeightSet = false;
+	if (!bLineHeightSet && ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+	{
+		MFont* pFont = pWidget->GetFont();
+		int nFontH = pFont ? pFont->GetHeight() : 12;
+		int nEmojiH = ZGetEmojiManager().GetSize(false);
+		if (nEmojiH > nFontH)
+			pWidget->SetCustomLineHeight(nEmojiH);
+		bLineHeightSet = true;
+	}
 
 	pWidget->AddText(szChat,color);
 	while(pWidget->GetLineCount()>MAX_CHAT_LINES)

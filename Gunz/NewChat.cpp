@@ -1244,12 +1244,13 @@ void Chat::UpdateNewMessagesAnimation(float TimeDelta)
 }
 
 D3DRECT Chat::GetOutputRect(){
-	D3DRECT r = { Border.x1, Border.y1, Border.x2, Border.y2 - FontHeight };
+	D3DRECT r = { Border.x1, Border.y1, Border.x2, Border.y2 - GetEffectiveLineHeight() };
 	return r;
 }
 
 D3DRECT Chat::GetInputRect(){
-	D3DRECT r = { Border.x1, Border.y2 - FontHeight, Border.x2, Border.y2 + (InputHeight - 1) * FontHeight };
+	int effH = GetEffectiveLineHeight();
+	D3DRECT r = { Border.x1, Border.y2 - effH, Border.x2, Border.y2 + (InputHeight - 1) * effH };
 	return r;
 }
 
@@ -1281,13 +1282,14 @@ void Chat::OnDraw(MDrawContext* pDC)
 		auto&& Output = GetOutputRect();
 
 		int CeiledLimit, FlooredLimit;
+		int effectiveH = GetEffectiveLineHeight();
 		if (ShowAll)
 		{
-			CeiledLimit = FlooredLimit = (Output.y2 - 5) / FontHeight;
+			CeiledLimit = FlooredLimit = (Output.y2 - 5) / effectiveH;
 		}
 		else
 		{
-			auto Limit = float(Output.y2 - Output.y1 - 10) / FontHeight;
+			auto Limit = float(Output.y2 - Output.y1 - 10) / effectiveH;
 			FlooredLimit = int(Limit);
 			CeiledLimit = int(ceil(Limit));
 		}
@@ -1351,24 +1353,44 @@ void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT& r, u
 	int x = r.x1;
 	int y = r.y1;
 	int emojiSize = ZGetEmojiManager().GetSize(true); // ingame size
+	int fontH = pFont.GetHeight();
 	size_t segStart = 0;
+
+	// Calculate max emoji height in this line for vertical centering
+	int maxEmojiH = fontH;
+	for (size_t k = 0; k < Str.size(); k++)
+	{
+		EmojiMatchResult m = ZGetEmojiManager().FindEmojiW(Str.data(), (int)k, (int)Str.size());
+		if (m.pEntry)
+		{
+			int h = m.pEntry->nHeight > 0 ? m.pEntry->nHeight : emojiSize;
+			if (h > maxEmojiH) maxEmojiH = h;
+			k += m.nPatternLen - 1;
+		}
+	}
+
+	// Vertically center text within the tallest element
+	int textOffsetY = (maxEmojiH > fontH) ? (maxEmojiH - fontH) / 2 : 0;
 
 	for (size_t i = 0; i < Str.size(); i++)
 	{
 		EmojiMatchResult match = ZGetEmojiManager().FindEmojiW(Str.data(), (int)i, (int)Str.size());
 		if (match.pEntry)
 		{
-			// Draw text before emoji
+			// Draw text before emoji (vertically centered)
 			if (i > segStart)
 			{
 				WStringView pre = Str.substr(segStart, i - segStart);
-				pFont.m_Font.DrawTextWSV(x, y, pre, Color);
+				pFont.m_Font.DrawTextWSV(x, y + textOffsetY, pre, Color);
 				for (size_t j = segStart; j < i; j++)
 					x += pFont.GetWidth(&Str[j], 1);
 			}
 
 			int w = match.pEntry->nWidth > 0 ? match.pEntry->nWidth : emojiSize;
 			int h = match.pEntry->nHeight > 0 ? match.pEntry->nHeight : emojiSize;
+
+			// Center emoji vertically within line
+			int emojiOffsetY = (maxEmojiH - h) / 2;
 
 			pFont.m_Font.EndFont();
 
@@ -1416,7 +1438,7 @@ void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT& r, u
 							};
 
 							float fx = (float)x;
-							float fy = (float)y;
+							float fy = (float)(y + emojiOffsetY);
 							float fw = (float)w;
 							float fh = (float)h;
 
@@ -1449,7 +1471,7 @@ void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT& r, u
 				if (pBmp)
 				{
 					pDC->SetBitmap(pBmp);
-					pDC->Draw(x, y, w, h);
+					pDC->Draw(x, y + emojiOffsetY, w, h);
 				}
 			}
 
@@ -1462,11 +1484,11 @@ void Chat::DrawTextN(MFontR2& pFont, const WStringView& Str, const D3DRECT& r, u
 		}
 	}
 
-	// Draw remaining text
+	// Draw remaining text (vertically centered)
 	if (segStart < Str.size())
 	{
 		WStringView rest = Str.substr(segStart);
-		pFont.m_Font.DrawTextWSV(x, y, rest, Color);
+		pFont.m_Font.DrawTextWSV(x, y + textOffsetY, rest, Color);
 	}
 }
 
@@ -1475,7 +1497,7 @@ void Chat::DrawBorder(MDrawContext* pDC)
 	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bNewChatEnable)
 	{
 		auto rect = Border;
-		rect.y2 += (InputHeight - 1) * FontHeight;
+		rect.y2 += (InputHeight - 1) * GetEffectiveLineHeight();
 
 		// Draw the box outline
 		D3DXVECTOR2 vs[] = {
@@ -1527,7 +1549,7 @@ void Chat::DrawBackground(MDrawContext* pDC, float Time, int Limit, bool ShowAll
 					auto&& Output = GetOutputRect();
 					D3DRECT Rect = {
 						Output.x1,
-						Output.y2 - 5 - Lines * FontHeight,
+						Output.y2 - 5 - Lines * GetEffectiveLineHeight(),
 						Output.x2,
 						Output.y2,
 					};
@@ -1546,7 +1568,7 @@ void Chat::DrawBackground(MDrawContext* pDC, float Time, int Limit, bool ShowAll
 			else
 			{
 				auto Rect = Border;
-				Rect.y2 += (InputHeight - 1) * FontHeight;
+				Rect.y2 += (InputHeight - 1) * GetEffectiveLineHeight();
 
 				pDC->SetColor(BackgroundColor);
 				pDC->FillRectangle(MakeMRECT(Rect));
@@ -1751,11 +1773,24 @@ void Chat::DrawChatLines(MDrawContext* pDC, float Time, int Limit, bool ShowAll)
 		DefaultFont.m_Font.BeginFont();
 
 		auto PrevClipRect = pDC->GetClipRect();
+		DWORD dwPrevScissor = FALSE;
+		RECT prevScissorRect = {};
 		{
 			auto ClipRect = GetOutputRect();
 			if (ShowAll)
 				ClipRect.y1 = 0;
 			pDC->SetClipRect(MakeMRECT(ClipRect));
+
+			// Also set D3D scissor rect for GIF emoji (DrawPrimitiveUP bypasses Mint2 clip)
+			LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+			RECT scissor = { ClipRect.x1, ClipRect.y1, ClipRect.x2, ClipRect.y2 };
+			if (pd3dDevice)
+			{
+				pd3dDevice->GetRenderState(D3DRS_SCISSORTESTENABLE, &dwPrevScissor);
+				pd3dDevice->GetScissorRect(&prevScissorRect);
+				pd3dDevice->SetRenderState(D3DRS_SCISSORTESTENABLE, TRUE);
+				pd3dDevice->SetScissorRect(&scissor);
+			}
 		}
 
 		if (ChatLinesPixelOffsetY > 0)
@@ -1764,10 +1799,9 @@ void Chat::DrawChatLines(MDrawContext* pDC, float Time, int Limit, bool ShowAll)
 		auto MessagesOffset = max(0, NumNewlyAddedLines - 1);
 
 		int LinesDrawn = 0;
+		int AccumulatedPixelHeight = 0; // track total pixel height of drawn lines
 		for (auto&& LineSegment : Reverse(LineSegments, MessagesOffset))
 		{
-			v2i PixelOffset{ LineSegment.PixelOffsetX, int(ChatLinesPixelOffsetY) };
-			auto&& Rect = GetDrawLinesRect(GetOutputRect(), LinesDrawn, PixelOffset, FontHeight);
 			auto&& cl = Msgs[LineSegment.ChatMessageIndex];
 
 			if (!ShowAll && !InputEnabled && Time > cl.Time + FadeTime)
@@ -1778,13 +1812,37 @@ void Chat::DrawChatLines(MDrawContext* pDC, float Time, int Limit, bool ShowAll)
 			auto&& Font = GetFont(LineSegment.Emphasis);
 			auto Color = LineSegment.TextColor;
 
+			// Calculate actual line height considering emojis
+			int lineH = FontHeight;
+			if (ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+				lineH = ZGetEmojiManager().GetLineHeightW(String, Length, FontHeight, true);
+
 			if (!ShowAll && !InputEnabled)
 				Color = ScaleAlpha(Color, cl.Time, Time, FadeTime * 0.8f, FadeTime);
 
-			DrawTextN(Font, { String, Length }, Rect, Color, pDC);
+			// Position line using accumulated height instead of fixed FontHeight
+			v2i PixelOffset{ LineSegment.PixelOffsetX, int(ChatLinesPixelOffsetY) };
+			D3DRECT Rect = {
+				GetOutputRect().x1 + 5 + PixelOffset.x,
+				GetOutputRect().y2 - 5 - AccumulatedPixelHeight - lineH + PixelOffset.y,
+				GetOutputRect().x2 - 5,
+				GetOutputRect().y2 - 5
+			};
+
+			// Skip lines that are above the output area (out of bounds)
+			if (!ShowAll && Rect.y1 < GetOutputRect().y1)
+			{
+				if (LineSegment.IsStartOfLine)
+					break; // no more lines will fit
+			}
+			else
+			{
+				DrawTextN(Font, { String, Length }, Rect, Color, pDC);
+			}
 
 			if (LineSegment.IsStartOfLine)
 			{
+				AccumulatedPixelHeight += lineH + 4; // +4 padding between all lines
 				++LinesDrawn;
 				if (LinesDrawn >= Limit)
 					break;
@@ -1792,6 +1850,17 @@ void Chat::DrawChatLines(MDrawContext* pDC, float Time, int Limit, bool ShowAll)
 		}
 
 		pDC->SetClipRect(PrevClipRect);
+
+		// Restore D3D scissor rect
+		{
+			LPDIRECT3DDEVICE9 pd3dDevice = RGetDevice();
+			if (pd3dDevice)
+			{
+				pd3dDevice->SetRenderState(D3DRS_SCISSORTESTENABLE, dwPrevScissor);
+				pd3dDevice->SetScissorRect(&prevScissorRect);
+			}
+		}
+
 		DefaultFont.m_Font.EndFont();
 	}
 }
@@ -1937,6 +2006,17 @@ void Chat::ResetFonts()
 
 		FontHeight = DefaultFont.GetHeight();
 	}
+}
+
+int Chat::GetEffectiveLineHeight() const
+{
+	int h = FontHeight;
+	if (ZGetConfiguration()->GetEtc()->bEmote && ZGetEmojiManager().IsLoaded())
+	{
+		int emojiH = ZGetEmojiManager().GetSize(true); // ingame size
+		if (emojiH > h) h = emojiH;
+	}
+	return h;
 }
 
 //void Chat::SetBackgroundColor()
