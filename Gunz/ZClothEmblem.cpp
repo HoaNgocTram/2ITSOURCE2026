@@ -549,6 +549,7 @@ void ZClothEmblem::render()
 	
 	if( bHardwareBuffer )
 	{
+		if (g_hw_Buffer == nullptr) return;
 		// TODO: 무조건 DISCARD 로 lock할것이 아니라, nooverwrite 로 적절히 낭비되지않도록해주자.
 		VOID* pVertex;
 		if( FAILED( g_hw_Buffer->Lock( 0,  mpMeshNode->m_point_num * 3 * sizeof(RVertex), (VOID**)&pVertex, D3DLOCK_DISCARD )))

@@ -2,6 +2,7 @@
 #include "RGMain.h"
 #include "NewChat.h"
 #include "ZConfiguration.h"
+#include "RealSpace2.h"
 #include "ZRule.h"
 #include "VoiceChat.h"
 #include "FileInfo.h"
@@ -246,6 +247,9 @@ void RGMain::SetListeners()
 
 void RGMain::OnGameCreate()
 {
+	// Update NewChat position from UI widgets (now loaded)
+	GetChat().Resize(RGetScreenWidth(), RGetScreenHeight());
+
 	if (auto&& Widget = ZFindWidget("TrainingFrame"))
 	{
 		if (ZGetGame()->GetMatch()->IsTraining())

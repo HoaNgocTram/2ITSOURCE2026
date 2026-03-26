@@ -12,6 +12,9 @@
 #include "EmojiManager.h"
 #include "AnimatedGifTexture.h"
 #include "RealSpace2.h"
+#include "ZApplication.h"
+#include "ZGameInterface.h"
+#include "ZIDLResource.h"
 
 inline std::string WideToUTF8(const std::wstring& wstr)
 {
@@ -298,16 +301,71 @@ void ChatMessage::SubstituteFormatSpecifiers()
 	}
 }
 
+void Chat::UpdateBorderFromOldChat(int screenW, int screenH)
+{
+	// Priority:
+	// 1. "NewChatFrame" widget in XML (dedicated config for NewChat)
+	// 2. "CombatChatOutput" widget (align with old chat)
+	// 3. Fallback: hardcoded percentage
+
+	if (ZGetGameInterface() && ZGetGameInterface()->GetIDLResource())
+	{
+		ZIDLResource* pRes = ZGetGameInterface()->GetIDLResource();
+
+		// Priority 1: dedicated NewChatFrame widget
+		MWidget* pNewChatFrame = pRes->FindWidget("NewChatFrame");
+		if (pNewChatFrame)
+		{
+			MRECT rc = pNewChatFrame->GetScreenRect();
+			Border.x1 = rc.x;
+			Border.y1 = rc.y;
+			Border.x2 = rc.x + rc.w;
+			Border.y2 = rc.y + rc.h;
+			return;
+		}
+
+		// Priority 2: align with old chat widgets
+		MWidget* pOutput = pRes->FindWidget("CombatChatOutput");
+		if (pOutput)
+		{
+			MRECT rc = pOutput->GetScreenRect();
+			Border.x1 = rc.x;
+			Border.y1 = rc.y;
+			Border.x2 = rc.x + rc.w;
+
+			MWidget* pInput = pRes->FindWidget("CombatChatInput");
+			if (pInput)
+			{
+				MRECT rcInput = pInput->GetScreenRect();
+				Border.y2 = rcInput.y;
+			}
+			else
+			{
+				Border.y2 = rc.y + rc.h;
+			}
+			return;
+		}
+	}
+
+	// Priority 3: fallback from XML baseline (800x600)
+	double scaleX = (double)screenW / 800.0;
+	double scaleY = (double)screenH / 600.0;
+	int frameX = (int)(10 * scaleX);
+	int frameY = screenH - (int)(250 * scaleY);
+
+	Border.x1 = frameX + (int)(7 * scaleX);
+	Border.y1 = frameY + (int)(112 * scaleY);
+	Border.x2 = frameX + (int)(487 * scaleX);
+	Border.y2 = frameY + (int)(215 * scaleY);
+}
+
 Chat::Chat(const std::string& FontName, bool BoldFont, int FontSize)
 	: FontName{ FontName }, BoldFont{ BoldFont }, FontSize{ FontSize }
 {
 	const auto ScreenWidth = RGetScreenWidth();
 	const auto ScreenHeight = RGetScreenHeight();
 
-	Border.x1 = 10;
-	Border.y1 = double(1080 - 300) / 1080 * ScreenHeight;
-	Border.x2 = (double)500 / 1920 * ScreenWidth;
-	Border.y2 = double(1080 - 100) / 1080 * ScreenHeight;
+	UpdateBorderFromOldChat(ScreenWidth, ScreenHeight);
 
 	Cursor.x = ScreenWidth / 2;
 	Cursor.y = ScreenHeight / 2;
@@ -411,10 +469,7 @@ void Chat::Scale(double WidthRatio, double HeightRatio)
 {
 	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bNewChatEnable)
 	{
-		Border.x1 *= WidthRatio;
-		Border.x2 *= WidthRatio;
-		Border.y1 *= HeightRatio;
-		Border.y2 *= HeightRatio;
+		UpdateBorderFromOldChat(RGetScreenWidth(), RGetScreenHeight());
 
 		ResetFonts();
 	}
@@ -424,10 +479,7 @@ void Chat::Resize(int nWidth, int nHeight)
 {
 	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bNewChatEnable)
 	{
-		Border.x1 = 10;
-		Border.y1 = double(1080 - 300) / 1080 * RGetScreenHeight();
-		Border.x2 = (double)500 / 1920 * RGetScreenWidth();
-		Border.y2 = double(1080 - 100) / 1080 * RGetScreenHeight();
+		UpdateBorderFromOldChat(RGetScreenWidth(), RGetScreenHeight());
 
 		ResetFonts();
 	}
@@ -1059,10 +1111,7 @@ void Chat::OnUpdate(float TimeDelta)
 
 			if (CursorInRange(Border.x2 - 15, Border.y1 - 18, Border.x2 - 15 + 12, Border.y1 - 18 + FontHeight) &&
 				Action == ChatWindowAction::None) {
-				Border.x1 = 10;
-				Border.y1 = double(1080 - 300) / 1080 * RGetScreenHeight();
-				Border.x2 = (double)500 / 1920 * RGetScreenWidth();
-				Border.y2 = double(1080 - 100) / 1080 * RGetScreenHeight();
+				UpdateBorderFromOldChat(RGetScreenWidth(), RGetScreenHeight());
 			}
 			else if (CursorInRange(Border.x1 + 5, Border.y1 + 5, Border.x2 - 5, Border.y2 - 5)) {
 				if (Action != ChatWindowAction::Selecting) {

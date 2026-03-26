@@ -1328,30 +1328,13 @@ void RResetDevice(const RMODEPARAMS* params)
 	}
 	g_d3dpp.MultiSampleType = g_MultiSample;
 
-	HRESULT hr;
-
-	if (g_isDirect3D9ExEnabled)
-	{
-		D3DDISPLAYMODEEX displayMode = {};
-		displayMode.Size = sizeof(displayMode);
-		displayMode.Width = RGetScreenWidth();
-		displayMode.Height = RGetScreenHeight();
-		displayMode.Format = g_d3ddm.Format;
-		displayMode.ScanLineOrdering = D3DSCANLINEORDERING_PROGRESSIVE;
-
-		hr = g_pd3dDevice->ResetEx(&g_d3dpp,
-			(RGetScreenType() != 0) ? &displayMode : nullptr);
-	}
-	else
-	{
-		hr = g_pd3dDevice->Reset(&g_d3dpp);
-	}
+	HRESULT hr = E_FAIL;
 
 	int nRetryCount = 0;
 	const int nMaxRetries = 3;
 
-	// Vòng lặp thử lại nếu Reset thất bại
-	while (nRetryCount < nMaxRetries) {
+	// Reset device with retry logic
+	while (nRetryCount <= nMaxRetries) {
 		if (g_isDirect3D9ExEnabled) {
 			D3DDISPLAYMODEEX displayMode = {};
 			displayMode.Size = sizeof(displayMode);
@@ -1366,19 +1349,17 @@ void RResetDevice(const RMODEPARAMS* params)
 			hr = g_pd3dDevice->Reset(&g_d3dpp);
 		}
 
-		if (hr == D3D_OK) break; // Nếu ngon lành thì thoát vòng lặp ngay
+		if (hr == D3D_OK) break;
 
-		// Nếu lỗi, ghi log và chờ một chút (khoảng 500ms mỗi lần) rồi thử lại
-		mlog("RResetDevice: Reset failed (hr=%p). Retrying... (%d/%d)\n", hr, nRetryCount + 1, nMaxRetries);
+		mlog("RResetDevice: Reset failed (hr=%08X). Retrying... (%d/%d)\n", (unsigned int)hr, nRetryCount + 1, nMaxRetries);
 		Sleep(500);
 		nRetryCount++;
 	}
 
-	// Kiểm tra cuối cùng sau khi đã thử hết số lần
 	_ASSERT(hr == D3D_OK);
 	if (hr != D3D_OK) {
 		mlog("RResetDevice: Final attempt failed. Giving up.\n");
-		return; // Dừng lại ở đây nếu vẫn lỗi sau 3 lần thử
+		return;
 	}
 
 	InitDevice();
@@ -1508,7 +1489,7 @@ void RResetDevice(const RMODEPARAMS* params)
 	}
 	g_d3dpp.MultiSampleType = g_MultiSample;
 
-	HRESULT hr = g_pd3dDevice->Reset(&g_d3dpp);
+	HRESULT hr = E_FAIL;
 
 	if (g_isDirect3D9ExEnabled) {
 		D3DDISPLAYMODEEX displayMode;
@@ -1526,8 +1507,8 @@ void RResetDevice(const RMODEPARAMS* params)
 
 	_ASSERT(hr == D3D_OK);
 	if (hr != D3D_OK) {
-		int* a = 0;
-		*a = 1;	// CRASH #1
+		mlog("RResetDevice: Reset failed (hr=%08X)\n", (unsigned int)hr);
+		return;
 	}
 
 	InitDevice();
