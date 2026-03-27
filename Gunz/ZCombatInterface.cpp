@@ -1282,6 +1282,12 @@ void ZCombatInterface::OnDraw(MDrawContext* pDC)
 	if (ZGetGame()->m_pMyCharacter->GetStatus().Ref().isESP == 1)
 		bDrawAllPlayerName = true;
 
+	if (strstr(ZGetGameClient()->GetStageName(), "[NAME]") && ZGetGameClient()->GetMatchStageSetting()->GetGameType() == MMATCH_GAMETYPE_TRAINING)
+	{
+		bDrawAllPlayerName = true;
+		DrawAllPlayerName(pDC);
+	}
+
 	if (ZGetGame()->m_pMyCharacter->IsAdminHide() && MEvent::GetAltState() && ZGetCamera()->GetLookMode() != ZCAMERA_MINIMAP)
 		bDrawAllPlayerName = true;
 
@@ -4520,7 +4526,7 @@ void ZCombatInterface::DrawFriendName(MDrawContext* pDC)
 					}
 
 					//pFont = bFriend == true ? MFontManager::Get("FONTa12_O1Blr") : MFontManager::Get("Fonta12_O1Red");
-					pDC->SetColor(MCOLOR(0xFFFF0000));//pDC->SetColor(MCOLOR(0xFF00FF00));
+					pDC->SetColor(MCOLOR(0xFF0000FF));//pDC->SetColor(MCOLOR(0xFF00FF00));
 				}
 
 				pDC->SetBitmap(NULL);

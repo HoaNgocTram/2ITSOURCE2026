@@ -3810,9 +3810,8 @@ case MC_PEER_SKILL:
 
 		if (pAttacker == NULL) break;
 		if (pVictim == NULL) break;
-		if (ZGetGame()->GetMatch()->IsQuestChallengue()) break;
 		// Custom: float dmg text quest
-		if (ZGetGame()->GetMatch()->IsQuestDrived())
+		if (ZGetGame()->GetMatch()->IsQuestDrived() || ZGetGame()->GetMatch()->IsQuestChallengue())
 		{
 			// Nếu người công là NPC
 			if (MDynamicCast(ZActorBase, pAttacker))
@@ -3851,7 +3850,7 @@ case MC_PEER_SKILL:
 			{
 				pCharacterAttacker->GetStatus().CheckCrc();
 				pCharacterAttacker->GetStatus().Ref().nGivenDamage += (int)fDamage;
-				pCharacterAttacker->GetStatus().Ref().nRoundGivenDamage += (int)fDamage;
+				//pCharacterAttacker->GetStatus().Ref().nRoundGivenDamage += (int)fDamage;
 				pCharacterAttacker->GetStatus().MakeCrc();
 			}
 		}
@@ -5573,7 +5572,37 @@ void ZGame::OnExplosionGrenade(MUID uidOwner, rvector pos, float fDamage, float 
 		float fActualDamage = fDamage * fDamageRange;
 		float fRatio = ZItem::GetPiercingRatio(MWT_FRAGMENTATION, eq_parts_chest);//????z?? ???? ???????..
 		pTarget->OnDamaged(pOwnerCharacter, pos, ZD_EXPLOSION, MWT_FRAGMENTATION, fActualDamage, fRatio);
-		//					pTarget->OnDamagedGrenade( uidOwner, dir, fDamage * fDamageRange, nTeamID);
+		// 1. PHẦN LOGIC TÍNH TOÁN: Chỉ cộng dồn sát thương 1 lần duy nhất
+		bool bWantFloat1 = false;
+#ifdef _FLOATDMGTEXT
+		bWantFloat1 = ZGetConfiguration()->GetVideo()->bFloatDamage;
+#endif
+
+		bool bWantFloat2 = false;
+#ifdef _FLOATDMG2
+		bWantFloat2 = ZGetConfiguration()->GetEtc()->bFloatdmg2;
+#endif
+
+		// Nếu mình là người gây dame và trúng mục tiêu khác mình
+		if (uidOwner == ZGetMyUID() && pTarget->GetUID() != ZGetMyUID() && fActualDamage > 0)
+		{
+			// Kiểm tra xem ít nhất 1 trong 2 cái đang bật thì mới cộng dồn vào bảng điểm
+			if (bWantFloat1 || bWantFloat2)
+			{
+				ZGetGame()->m_pMyCharacter->GetStatus().CheckCrc();
+				ZGetGame()->m_pMyCharacter->GetStatus().Ref().nRoundGivenDamage += (int)fActualDamage;
+				ZGetGame()->m_pMyCharacter->GetStatus().MakeCrc();
+
+				// ZPostDamageCounter(fActualDamage, ZGetMyUID(), pTarget->GetUID(), false);
+			}
+
+			// 2. PHẦN LOGIC HIỂN THỊ: Chỉ vẽ hiệu ứng nếu bFloatdmg2 được bật
+			if (bWantFloat2)
+			{
+				ZGetEffectManager()->AddDamageEffect((int)fActualDamage, pTarget, pOwnerCharacter);
+			}
+		}
+		// 				pTarget->OnDamagedGrenade( uidOwner, dir, fDamage * fDamageRange, nTeamID);
 
 				/*if(pTarget && !pTarget->IsDie())
 				{
@@ -6228,6 +6257,20 @@ void ZGame::OnPeerShot_Melee(const MUID& uidOwner, float fShotTime)
 		float fRatio = pItem->GetPiercingRatio(pItemDesc->m_nWeaponType.Ref(), eq_parts_chest);
 		pVictim->OnDamaged(pAttacker, pAttacker->GetPosition(), ZD_MELEE, pItemDesc->m_nWeaponType.Ref(),
 			fActualDamage, fRatio, cm);
+#ifdef _FLOATDMG2
+		if (ZGetConfiguration()->GetEtc()->bFloatdmg2)
+		{
+			// Nếu mình là người cầm kiếm chém (pAttacker là mình)
+			if (pAttacker == ZGetGame()->m_pMyCharacter && pVictim != pAttacker)
+			{
+				if (fActualDamage > 0)
+				{
+					// Hiện số damage bay lên trên đầu nạn nhân
+					ZGetEffectManager()->AddDamageEffect((int)fActualDamage, pVictim, pAttacker);
+				}
+			}
+		}
+#endif
 
 		ZActor* pATarget = MDynamicCast(ZActor, pVictim);
 		ZActorWithFSM* pFSMActor = MDynamicCast(ZActorWithFSM, pVictim);
@@ -6530,23 +6573,16 @@ void ZGame::OnPeerShot_Range_Damaged(ZObject* pOwner, float fShotTime, const rve
 #ifdef _FLOATDMG2
 	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bFloatdmg2)
 	{
-		ZCharacter* pCharacter = ZGetGame()->m_pMyCharacter;
-		static int nLastDamage = 0;
-		int nCurrDamage = pCharacter->GetStatus().Ref().nRoundGivenDamage;
-		int Shots = ZGetGame()->m_pMyCharacter->m_nShots;
-		int Hits = ZGetGame()->m_pMyCharacter->m_nHits;
-		if ((pObject->GetUID() != ZGetMyUID()) && (pOwner->GetUID() == ZGetMyUID()))
+		// Kiểm tra: Mình là người bắn và mục tiêu không phải là mình
+		if ((pObject->GetUID() != ZGetMyUID()) && (pOwner == ZGetGame()->m_pMyCharacter))
 		{
-			if (Hits == 1 && Shots > 0 && nCurrDamage != nLastDamage)
-			{
-				nLastDamage = nCurrDamage;
-				ZGetEffectManager()->AddDamageEffect(nLastDamage, pObject, pOwner);
-			}
+			// DÙNG TRỰC TIẾP fActualDamage - Sát thương của chính viên đạn này
+			int nDisplayDmg = (int)fActualDamage;
 
-			else if (Hits > 1 && Shots > 0) {
-				ZGetGame()->m_pMyCharacter->m_nLastShot = nCurrDamage - ZGetGame()->m_pMyCharacter->m_nLastShot;
-				ZGetEffectManager()->AddDamageEffect(ZGetGame()->m_pMyCharacter->m_nLastShot, pObject, pOwner);
-				ZGetGame()->m_pMyCharacter->m_nLastShot = nCurrDamage;
+			if (nDisplayDmg > 0)
+			{
+				// Hiển thị số bay lên ngay lập tức
+				ZGetEffectManager()->AddDamageEffect(nDisplayDmg, pObject, pOwner);
 			}
 		}
 	}
@@ -6980,13 +7016,6 @@ void ZGame::OnPeerShot_Shotgun(ZItem* pItem, ZCharacter* pOwnerCharacter, float 
 //jintriple3 µð¹ö±× ·¹Áö½ºÅÍ ÇØÅ· ¹æÁö ÄÚµå »ðÀÔ
 MTD_AntiLeadN* ZGame::OnPeerShotgun_Damaged(ZObject* pOwner, float fShotTime, const rvector& pos, rvector& dir, ZPICKINFO pickinfo, DWORD dwPickPassFlag, rvector& v1, rvector& v2, ZItem* pItem, rvector& BulletMarkNormal, bool& bBulletMark, ZTargetType& nTargetType, bool& bHitEnemy, int Repeatcount)
 {
-#ifdef _FLOATDMG2
-	if (Repeatcount == 0) {
-		ZGetGame()->m_pMyCharacter->GetStatus().CheckCrc();
-		ZGetGame()->m_pMyCharacter->GetStatus().Ref().nRoundGivenDamage = 0;
-		ZGetGame()->m_pMyCharacter->GetStatus().MakeCrc();
-	}
-#endif
 	ZCharacter* pTargetCharacter = ZGetGameInterface()->GetCombatInterface()->GetTargetCharacter();
 	bool bReturnValue = !pTargetCharacter;
 	if (!pTargetCharacter)PROTECT_DEBUG_REGISTER(bReturnValue) return NULL;
@@ -7107,33 +7136,27 @@ MTD_AntiLeadN* ZGame::OnPeerShotgun_Damaged(ZObject* pOwner, float fShotTime, co
 	float fActualDamage = CalcActualDamage(pOwner, pObject, (float)pDesc->m_nDamage.Ref(), pItem->GetDesc()->m_nWeaponType.Ref());
 #endif
 #ifdef _FLOATDMG2
-	ZGetGame()->m_pMyCharacter->GetStatus().Ref().nRoundGivenDamage += fActualDamage;
 	if (ZGetGame() && ZGetConfiguration()->GetEtc()->bFloatdmg2)
 	{
-		/*ZCharacter* pCharacter = ZGetGame()->m_pMyCharacter;
-		static int nLastDamage = 0;
-
-
-		if ((pObject->GetUID() != ZGetMyUID()) && (pOwner->GetUID() == ZGetMyUID()))
+		if ((pObject->GetUID() != ZGetMyUID()) && (pOwner == ZGetGame()->m_pMyCharacter))
 		{
-			int nCurrDamage = pCharacter->GetStatus().Ref().nRoundGivenDamage;
-			int Shots = ZGetGame()->m_pMyCharacter->m_nShots;
-			int Hits = ZGetGame()->m_pMyCharacter->m_nHits;
-			if (Hits == 1 && Shots > 0 && nCurrDamage != nLastDamage)
+			// Biến tĩnh lưu trữ
+			static float fGomDame = 0.0f;
+			static float fLastShotTime = 0.0f;
+
+			// Nếu phát bắn này cách phát trước > 0.05 giây -> Coi như phát bắn mới -> Reset gom dame
+			if (fShotTime != fLastShotTime)
 			{
-				nLastDamage = nCurrDamage;
-				ZGetEffectManager()->AddDamageEffect(nLastDamage, pObject, pOwner);
+				fGomDame = 0.0f;
+				fLastShotTime = fShotTime;
 			}
-			else if (Hits > 1 && Shots > 0) {
-				ZGetGame()->m_pMyCharacter->m_nLastShot = nCurrDamage - ZGetGame()->m_pMyCharacter->m_nLastShot;
-				ZGetEffectManager()->AddDamageEffect(ZGetGame()->m_pMyCharacter->m_nLastShot, pObject, pOwner);
-				ZGetGame()->m_pMyCharacter->m_nLastShot = nCurrDamage;
-			}
-		}*/
-		if ((pObject->GetUID() != ZGetMyUID()) && (pOwner->GetUID() == ZGetMyUID()))
-		{
-			int nCurrDamage = ZGetGame()->m_pMyCharacter->GetStatus().Ref().nRoundGivenDamage;
-			ZGetEffectManager()->AddDamageEffect(nCurrDamage, pObject, pOwner);
+
+			// Cộng dồn viên đạn nhỏ này vào
+			fGomDame += fActualDamage;
+
+			// HIỆN SỐ: Vẽ đè lên liên tục để người chơi thấy số tăng dần (9 -> 18 -> ... -> 108)
+			// Cách này đảm bảo trúng bao nhiêu viên hiện đúng bấy nhiêu, không bao giờ sai số
+			ZGetEffectManager()->AddDamageEffect((int)fGomDame, pObject, pOwner);
 		}
 	}
 #endif
