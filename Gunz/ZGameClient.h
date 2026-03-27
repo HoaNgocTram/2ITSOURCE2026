@@ -293,6 +293,10 @@ public:
 	ZGameClient();
 	virtual ~ZGameClient();
 
+#ifdef _GLOBALANNOUNCE
+	ZGlobalAnnounce* GetGlobalAnnounce() { return m_GlobalAnnounce; }
+#endif
+
 	void PriorityBoost(bool bBoost);
 	bool GetPriorityBoost()				{ return m_bPriorityBoost; }
 	bool GetRejectNormalChat()			{ return m_bRejectNormalChat; }

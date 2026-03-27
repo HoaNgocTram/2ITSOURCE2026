@@ -252,7 +252,7 @@ inline MMatchTeam NegativeTeam(MMatchTeam nTeam)
 	return nTeam;
 }
 
-constexpr auto ANNOUNCE_STRING_LEN = 64;
+constexpr auto ANNOUNCE_STRING_LEN = 512;
 constexpr auto MSG_STRING_LEN = 64;
 constexpr auto CHAT_STRING_LEN = 64;
 constexpr auto VOTE_DISCUSS_STRING_LEN = 64;

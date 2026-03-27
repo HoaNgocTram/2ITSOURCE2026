@@ -393,11 +393,24 @@ ZGameClient::ZGameClient() : MMatchClient() , m_pUPnP(NULL)
 	LastVoteID = -1;
 	bMatching = false;;
 #endif // _CW_VOTE
+
+#ifdef _GLOBALANNOUNCE
+	m_GlobalAnnounce = new ZGlobalAnnounce();
+#endif
+
 }
 
 
 ZGameClient::~ZGameClient()
 {
+#ifdef _GLOBALANNOUNCE
+	if (m_GlobalAnnounce)
+	{
+		delete m_GlobalAnnounce;
+		m_GlobalAnnounce = NULL;
+	}
+#endif
+
 	DestroyUPnP();
 	m_EmblemMgr.Destroy();
 
@@ -2717,8 +2730,19 @@ void ZGameClient::OnAdminAnnounce(const char* szMsg, const ZAdminAnnounceType nT
 	{
 #ifdef _GLOBALANNOUNCE
 	case ZAAT_CHAT:
-		ZChatOutput(szMsg, ZChat::CMT_SYSTEM);
-		m_GlobalAnnounce->SetGlobalMessage(szMsg);
+		//ZChatOutput(szMsg, ZChat::CMT_SYSTEM);
+		// Gửi đến GameClient's announce (cho lobby)
+		if (m_GlobalAnnounce)
+			m_GlobalAnnounce->SetGlobalMessage(szMsg);
+			ZGetSoundEngine()->PlaySound("wall_notify");	// Phát âm thanh thông báo
+		// Gửi đến CombatInterface's announce (cho ingame)
+		if (ZGetGameInterface() && ZGetGameInterface()->GetCombatInterface())
+		{
+			ZGlobalAnnounce* pIngameAnnounce =
+				ZGetGameInterface()->GetCombatInterface()->GetGlobalAnnounce();
+			if (pIngameAnnounce)
+				pIngameAnnounce->SetGlobalMessage(szMsg);
+		}
 		break;
 #else
 	case ZAAT_CHAT:

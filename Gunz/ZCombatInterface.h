@@ -435,6 +435,10 @@ public:
 
 	// Custom: Snipers
 	ZWeaponScreenEffect* GetWeaponScreenEffect() { return m_pWeaponScreenEffect; }
+
+#ifdef _GLOBALANNOUNCE
+	ZGlobalAnnounce* GetGlobalAnnounce() { return m_GlobalAnnounce; }
+#endif
 	// Spy mode Interface.
 public:
 	void FloatDamage(MDrawContext* pDC, ZObject* pObject);
