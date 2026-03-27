@@ -11,6 +11,8 @@
 	* loop 속성은 실시간으로 바꿀수 없음
   -->
 <XML>
+	<!-- wall notify-->
+	<EFFECT NAME="wall_notify" type="1"/>
 
 	<!-- Snifer Sound -->
   	<EFFECT NAME="fire_snifer" MINDISTANCE="320"/>

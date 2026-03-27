@@ -343,6 +343,7 @@ public:
 
 	bool Update(float fElapsed);
 	void OnDraw(MDrawContext *pDC);
+	void DrawAfterWidgets(MDrawContext* pDC);
 
 	void SetCursorEnable(bool bEnable);
 	void OnResetCursor();

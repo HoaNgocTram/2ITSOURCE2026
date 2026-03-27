@@ -1482,7 +1482,7 @@ void ChatCmd_AdminAnnounce(const char* line, const int argc, char **const argv)
 		return;
 	}
 
-	char szMsg[256];
+	char szMsg[512];
 	strcpy(szMsg, argv[1]);
 	ZPostAdminAnnounce(ZGetGameClient()->GetPlayerUID(), szMsg, ZAAT_CHAT);
 }
@@ -1496,7 +1496,7 @@ void ChatCmd_GlobalAnnounce(const char* line, const int argc, char** const argv)
 		return;
 	}
 
-	char szMsg[256];
+	char szMsg[512];
 	strcpy(szMsg, argv[1]);
 }
 #endif
