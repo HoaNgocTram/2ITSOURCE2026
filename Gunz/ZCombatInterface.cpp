@@ -262,6 +262,10 @@ ZCombatInterface::ZCombatInterface(const char* szName, MWidget* pParent, MListen
 
 	m_bSpyNoticePlaying = false;
 	m_dwSpyNoticePlayStartedTime = 0;
+
+#ifdef _GLOBALANNOUNCE
+	m_GlobalAnnounce = NULL;
+#endif
 }
 
 ZCombatInterface::~ZCombatInterface()
@@ -511,6 +515,10 @@ bool ZCombatInterface::OnCreate()
 	if (pWidget)
 		pWidget->Show(false);
 
+#ifdef _GLOBALANNOUNCE
+	m_GlobalAnnounce = new ZGlobalAnnounce();
+#endif
+
 	return true;
 }
 
@@ -622,6 +630,15 @@ void ZCombatInterface::OnDestroy()
 	//	m_Radar->OnDestroy();
 	//	SAFE_DELETE(m_Radar);
 	//}
+
+#ifdef _GLOBALANNOUNCE
+	if (m_GlobalAnnounce)
+	{
+		delete m_GlobalAnnounce;
+		m_GlobalAnnounce = NULL;
+	}
+#endif
+
 	ZScoreBoardItem::Release();
 }
 

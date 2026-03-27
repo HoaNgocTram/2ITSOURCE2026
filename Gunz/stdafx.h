@@ -110,7 +110,7 @@
 #define _SYSINTERNEW 1
 //#define _INPUTFPS 1
 //#define _MOVINGFLOOR 1
-//#define _GLOBALANNOUNCE 1
+#define _GLOBALANNOUNCE 1
 //#define _SIMNAMEKOR 1	//kiểm tra tên sai phạm theo bảng hàn quốc
 #define _ZGUARD 1
 //#define _MAP_CACHING 1

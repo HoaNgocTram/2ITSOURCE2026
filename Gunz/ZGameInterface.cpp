@@ -559,6 +559,10 @@ ZGameInterface::ZGameInterface(const char* szName, MWidget* pParent, MListener* 
 	LoadBlank();
 #endif
 
+#ifdef _GLOBALANNOUNCE
+	m_GlobalAnnounceLobby = NULL;
+#endif
+
 }
 
 ZGameInterface::~ZGameInterface()
@@ -587,6 +591,14 @@ ZGameInterface::~ZGameInterface()
 	SAFE_DELETE(m_pLoginPanel);
 
 	SAFE_DELETE(m_pShopEquipInterface);
+
+#ifdef _GLOBALANNOUNCE
+	if (m_GlobalAnnounceLobby)
+	{
+		delete m_GlobalAnnounceLobby;
+		m_GlobalAnnounceLobby = NULL;
+	}
+#endif
 
 	// Custom: Fix bandicam support
 	SAFE_DELETE(m_Capture);
@@ -4897,17 +4909,12 @@ void ZGameInterface::OnDrawStateLobbyNStage(MDrawContext* pDC)
 			sprintf( buf, "%s", ZGetMyInfo()->GetCharName() );
 			pLabel->SetText(buf);
 		}
-#ifdef _GLOBALANNOUNCE
-		//pLabel = (MLabel*)pRes->FindWidget("Lobby_GlobalAnnounce");
-		//m_GlobalAnnounceLobby->DrawAnnounceLobby(pLabel);
-		//if (pLabel) pLabel->SetText(buf);
+/*#ifdef _GLOBALANNOUNCE
+		// Vẽ announce scrolling ở lobby
+		if (m_GlobalAnnounceLobby)
+			m_GlobalAnnounceLobby->DrawAnnounce(pDC);
+#endif*/
 
-		//pLabel = (MLabel*)pRes->FindWidget("Lobby_GlobalAnnounce");
-		//sprintf(buf, "%s", m_GlobalAnnounceLobby->DrawAnnounceLobby(pLabel));
-		//if (pLabel)
-		//	pLabel->SetText(buf);
-
-#endif
 		pLabel = (MLabel*)pRes->FindWidget("Lobby_PlayerSpecClan");
 		sprintf( buf, "%s: %s", ZMsg( MSG_CHARINFO_CLAN), ZGetMyInfo()->GetClanName());
 		if (pLabel) pLabel->SetText(buf);
@@ -9481,4 +9488,16 @@ int MDrawContext::TextMultiLine(MRECT& r, const char* szText, int nLineGap, bool
 
 	MEndProfile(99);
 	return nLine - nSkipLine;
+}
+
+void ZGameInterface::DrawAfterWidgets(MDrawContext* pDC)
+{
+#ifdef _GLOBALANNOUNCE
+	// Vẽ announce SAU tất cả widgets để không bị lobby panels đè lên
+	if (GetState() == GUNZ_LOBBY || GetState() == GUNZ_STAGE)
+	{
+		if (ZGetGameClient() && ZGetGameClient()->GetGlobalAnnounce())
+			ZGetGameClient()->GetGlobalAnnounce()->DrawAnnounce(pDC);
+	}
+#endif
 }
